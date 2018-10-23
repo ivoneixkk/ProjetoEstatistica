@@ -126,12 +126,12 @@ function chamarPagina() {
     console.log(tamanho);
     typeof (vetor)
     if (isNaN(testvar)) {
-        return window.location.href = "ProjetoEstatistica/teamplates/qualitativa.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "teamplates/qualitativa.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
 
     } else if (tamanho.length <= 7) {
-        return window.location.href = "ProjetoEstatistica/teamplates/discreta.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "teamplates/Discreta.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
     } else {
-        return window.location.href = "ProjetoEstatistica/teamplates/continua.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "teamplates/Continua.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
     }
 }
 
