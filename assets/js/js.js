@@ -126,12 +126,12 @@ function chamarPagina() {
     console.log(tamanho);
     typeof (vetor)
     if (isNaN(testvar)) {
-        return window.location.href = "teamplates/qualitativa.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "/teamplates/qualitativa.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
 
     } else if (tamanho.length <= 7) {
-        return window.location.href = "teamplates/discreta.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "/teamplates/discreta.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
     } else {
-        return window.location.href = "teamplates/continua.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
+        return window.location.href = "/teamplates/continua.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
     }
 }
 
