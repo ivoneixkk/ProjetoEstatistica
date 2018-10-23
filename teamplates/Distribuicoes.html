@@ -1,0 +1,336 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FATEC Franca - Trabalho estatistica" />
+
+    <title>FATEC - trabalho estatistica</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/style.css" />
+
+    <style>
+        #Umedia, #resultadoDistribuicao, #cv, #Udesvio, #tabelab{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: black
+        }
+
+        #uniforme {
+            padding: 2px;
+            margin: 0 auto;
+            border-radius: 25px;
+            width: 98%;
+            color: rgb(0, 0, 0);
+            display: none;
+            background:  rgb(255, 255, 255);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        #normal {
+            padding: 2px;
+            margin: 0 auto;
+            border-radius: 25px;
+            width: 98%;
+            color: rgb(0, 0, 0);
+            display: none;
+            background:  rgb(255, 255, 255);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+        #binomial {
+            padding: 2px;
+            margin: 0 auto;
+            border-radius: 25px;
+            width: 98%;
+            color: rgb(0, 0, 0);
+            display: none;
+            background:  rgb(255, 255, 255);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        #binomial {
+            display: none;
+        }
+
+        #normal {
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+
+            border: 1px solid black;
+        }
+
+        .btnDigi {
+
+            background-color: #3498db;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            padding: 6px 10px
+        }
+
+        .btnDigiR {
+
+            background-color: #42db34;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            padding: 6px 10px
+        }
+
+        #menorque {
+            display: inline;
+        }
+
+        #maiorque {
+            display: inline;
+        }
+
+        #enre {
+            display: inline;
+        }
+
+        #entreProd1 {
+            display: none;
+        }
+
+
+        #entreProd2 {
+            display: none;
+        }
+
+        #principal {
+            margin: 0 auto;
+            border-radius: 25px;
+            width: 90%;
+            background: #3498db;
+        }
+
+        #voltar {
+            display: none;
+        }
+
+        #desfaz {
+            display: none;
+        }
+
+        #ndesfaz {
+            display: none;
+        }
+
+        #txtVoltar {
+            display: none;
+        }
+        #ntxtVoltar {
+            display: none;
+        }
+        #ntxtEntre{
+            display:none;
+        }
+
+        #nentre2, #nentre1 {
+            display: none;
+        }
+
+
+        #voltar {
+            background: url('assets/img/voltar.png') left no-repeat;
+            background-size: 34px 34px;
+            padding: 25px 25px;
+            background-color: transparent;
+            border: none;
+        }
+        footer{
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+        }
+        #dn1transf{
+            display: none
+        }
+        #central {
+            margin-left: 10%;
+            width: 80%;
+            height: 50px;
+            line-height: 20px;
+            text-align:center;
+            background-color: rgba(10,23,55,0.7);
+            color: white;
+  
+            /* pura mágica */
+            position: absolute;
+            top: 20%; /* posiciona na metade da tela */
+            margin-top: -
+            25px; /* e retrocede metade da altura */
+        }
+        #ntxMaior{
+            display: none
+        }
+        #ntxate{
+            display: none
+        }
+
+</style>
+
+</head>
+
+<body>
+    <header>
+        <i class="far fa-chart-bar"></i>
+        FATEC
+    </header>
+    <div id="central">
+
+        <h2>Distribuições</h2>
+
+        <button type="button" class="btnDigi" onclick="DivDists('uniforme')">Unifome</button>
+        <button type="button" class="btnDigi" onclick="DivDists('binomial')">Binomial</button>
+        <button type="button" class="btnDigi" onclick="DivDists('normal')">Normal</button>
+        <input type="button" class="btnDigiR" onclick="window.location.reload()" value="Limpar Dados">
+
+        <br>
+        <!-- <input type="button" onclick="quantiDiscreta(vetor)" value="EXECUTAR"> -->
+        <!-- <input type="button" onclick="MostraGra(Repeticao)" value="GRAFICOS"> -->
+        <div id="principal">
+            <hr>
+
+            <div id="uniforme">
+                Uniforme
+                <br>
+                <input name="pontoMin" id="pontoMin" value="" size="10" type="text" placeholder="Ponto Minimo" />
+                &nbsp;&nbsp; - ao -&nbsp;&nbsp;
+                <input name="pontoMax" id="pontoMax" value="" size="10" type="text" placeholder="Ponto Maximo" />
+                <font>Probabilidade - </font>
+                <font id="txtEntrei">Entre:</font>
+
+                <select id="opuniforme">
+                    <option value="opcao">escolha uma Opção</option>
+                    <option value="maximo">No maximo</option>
+                    <option value="minimo">No minimo</option>
+                    <option value="amaximo">Achar o Maximo (precisa da media)</option>
+                    <option value="aminimo">Achar o Minimo (precisa da media)</option>
+                    <option value="deque">De que</option>
+                    <option value="prejuizo">Prejuizo</option>
+                    <option value="menosque">Menos que</option>
+                    <option value="maisque">Mais que</option>
+                    <option value="maisque">De que (k) ou mais </option>
+                    <option value="exatamente">Exatamente</option>
+                    <option value="pelomenos">Pelo menos</option>
+                    <option value="media">Valor medio (media)</option>
+                    <option value="variDisv">Variância e Desvio Padrao</option>
+
+                    <option value="todos">Todos</option>
+
+
+
+                </select>
+                <input name="prodentre1" id="entreProd1" value="" size="10" type="text" placeholder="de (X)" />
+                <input name="prodentre2" id="entreProd2" value="" size="10" type="text" placeholder="a (Y)" />
+                <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
+
+                <button type="button" class="btnDigi" onclick="DistUniforme()">Calcular</button>
+                <font id="txtEntre">Entre:</font>
+
+                <input type="radio" name="condic" id="entre" onclick="entreUniforme()" value="E">
+                <font id="txtVoltar">Voltar:</font>
+                <input type="radio" name="condic" id="desfaz" onclick="desfazEntre()" value="D">
+
+
+            </div>
+            <div id="binomial">
+                Binomial
+                <br>
+                <input name="pesqb" id="pesquisa" value="" size="10" type="text" placeholder="Ojeto da pesquisa(texto)" />X
+                <input name="destib" id="ppesquisa" value="" size="10" type="text" placeholder="Referente a:(texto)" />
+
+                <input id="pesquisan" value="" size="5" type="text" placeholder="n(amostra)" />
+                <input id="pesquisap" value="" size="10" type="text" placeholder="p(sucesso)" />
+                &nbsp;%&nbsp;&nbsp;&nbsp;
+                &nbsp;
+                <select id="opbinomial">
+                    <option value="opcao">escolha uma Opção</option>
+                    <option value="deque">De que</option>
+                    <option value="menosque">Menos que</option>
+                    <option value="maisque">De que (k) ou mais </option>
+                    <option value="exatamente">Exatamente</option>
+                    <option value="maximo">No maximo</option>
+                    <option value="minimo">No minimo</option>
+                    <option value="pelomenos">Pelo menos</option>
+                    <option value="acharQtd">Achar o evento (k)</option>
+                    <option value="bvariancia">Variancia</option>
+
+                    <option value="todos">Todos</option>
+                </select>
+                <input id="pesquisak" value="" size="10" type="text" placeholder="k(evento)" />
+                <span style=""></span>
+                </button>
+
+                <button type="button" class="btnDigi" onclick="DistBinomial()">Calcular</button>
+
+            </div>
+
+            <div id="normal">
+                Normal<br>
+                <br>
+                <input name="media" id="nmedia" value="" size="10" type="text" title="Media" placeholder="media" />&nbsp;&nbsp;
+                <input name="desvio" id="ndesvio" value="" size="10" type="text" title="Desvio Padrao" placeholder="desvio padrao" />
+
+
+                <select id="opnormal" onchange="arrumaElementos(this.value)">
+                    <option value="opcao">escolha uma Opção</option>
+                    <option value="uma">de uma/ para uma/ desta</option>
+                    <option value="maior">acima de /maior que/ mais que</option>
+                    <option value="menor">menos que /menor que</option>
+                    <option value="menormaior">Menor que OU Maior que</option>
+                    <option value="nentre">Entre</option>
+                    <option value="achaQuantidade">Dada a Porcentagem achar Quantidade</option>
+                    <option value="varianca">Dada a Variança</option>
+                </select>
+                <input name="nentre1" id="nentre1" value="" size="10" type="text" placeholder="parametro 1" />
+                <font id="ntxate"></font>
+                <input name="nentre2" id="nentre2" value="" size="10" type="text" placeholder="parametro 2" />
+                <font id="ntxMaior">- Ou - maior que:</font>
+                <input name="n1transf" id="n1transf" value="" size="10" type="text" placeholder="parametro" />
+                &nbsp;
+                <input name="n1transf" id="dn1transf" value="" size="10" type="text" onblur="mostraDesvio(this.value)"
+                    placeholder="parametro" />
+
+                <button type="button" class="btnDigi" onclick="DistNormal()">Calcular</button>
+
+            </div>
+
+            <hr>
+        </div>
+        <div id="tabelab"></div>
+        <div id="resultadoDistribuicao"></div>
+        <div id="Umedia"></div>
+        <div id="Udesvio"></div>
+        <div id="cv"></div>
+        <div id="verTabela"></div>
+
+    </div>
+    <footer>
+        <i class="fa fa-registered"></i>
+        FATEC - Análise e Desenvolvimento de Sistemas
+    </footer>
+
+    <script type='text/javascript' src='../assets/js/dist_uniforme.js'></script>
+    <script type='text/javascript' src='../assets/js/dist_binomial.js   '></script>
+    <script type='text/javascript' src='../assets/js/dist_normal.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FATEC Franca - Trabalho estatistica" />
+
+    <title>FATEC - trabalho estatistica</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <style type="text/css">
+        #container,
+        #sliders {
+            font-size: 9px;
+            margin: 0 auto;
+        }
+
+        #container {
+            height: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <i class="far fa-chart-bar"></i>
+        FATEC
+    </header>
+    <center><div id='titulo'><h1>Analise de Dados Qualitativo</h1></div></center>
+    <div id="voltarbtn"></div>
+    <div id="organizar"></div>
+
+    <div id='resolucaoCalculos'>
+        <div id="tabelaDados">
+            <div id='tabDados'></div>
+        </div>
+        <div id="divGrafico">
+            <div id="container"></div>
+
+        </div>
+    </div>
+    <!-- <div id="divSeparatriz">
+            <hr>
+            <font face=arial color=black>Separatrizes&nbsp;</font>
+            <br>
+            <select id="lista">
+                <option value=" ">escolha</option>
+                <option value="Q">Quartil</option>
+                <option value="K">Quintil</option>
+                <option value="D">Decil</option>
+                <option value="P">Porcentil</option>
+            </select>
+            <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
+            <input type="button" onclick="separatrizDiscreta()" value="IR">
+            <div id="separatriz"></div>
+        </div> -->
+    <div id="divResults">
+        <div id="Results"></div>
+    </div>
+    <!-- 
+    <footer id="footerDiscreta">
+        <i class="fa fa-registered"></i>
+        FATEC - Análise e Desenvolvimento de Sistemas
+    </footer> -->
+</body>
+<script type='text/javascript' src='../assets/js/qualitativa.js'></script>
+
+<script src="../assets/js/jquery.331.js"> </script>
+<script src="../assets/code/highcharts.js"></script>
+<script src="../assets/code/highcharts-3d.js"></script>
+<script src="../assets/code/modules/exporting.js"></script>
+<script src="../assets/code/modules/export-data.js"></script>
+
+</html>
