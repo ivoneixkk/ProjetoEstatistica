@@ -24,40 +24,40 @@
     </header>
 
     <div id='dadosEntrada'> 
-        <h2>ESTATISTICA DESCRITIVA</h2>
-        <h2>Escolha a opçao de entrada dos Dados:</h2>
-
-        <table>
-            <tr>
-                <td><input name="campo1" id="campo1" class="coluna1" value="" type="text" placeholder="Variavel Pesquisada" /></td>
-            </tr>
-            <tr>
-                <td><input name="campo2" id="campo2" class="coluna1" value="" type="text" placeholder="(fi) pesquisada" /></td>
-                <td><input type="radio" id="select2" class="coluna2" name="desvio" onclick="pegaDesvio(this.value)" value="P"> População</td>
-                <td><input type="radio" id="select1" class="coluna3" name="desvio" onclick="pegaDesvio(this.value)"  value="A"> Amostra</td>
-            </tr>
-        </table>
-        <hr>
-        <div id="escolha">
-            <button type="button" id="btnDigi" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp;
-            <button type="button" id="btnImp" onclick="ChamarDiv('importar')">Importar </button>
-            <button type="button" id="btnRec" onclick="history.go(0)">Recarregar </button>
-
+        <button type="button" id="btnDescri" onclick="ChamarDiv('estatisticaDescritiva')">ESTATISTICA DESCRITIVA</button>
+        <button type="button" id="btnDist" onclick="window.location.href = '../novo software estatistica/teamplates/Distribuicoes.html'">DISTRIBUIÇÃO</button>
+        <button type="button" id="btnCorre" onclick="window.location.href = '../novo software estatistica/teamplates/correlacao.html'">CORRELAÇÃO</button>
+           
+        <div id="estatisticaDescritiva">
+            <table> 
+                <h2>ESTATISTICA DESCRITIVA</h2>
+                <h2>Escolha a opçao de entrada dos Dados:</h2>
+                <tr>
+                    <td><input name="campo1" id="campo1" class="coluna1" value="" type="text" placeholder="Variavel Pesquisada" /></td>
+                </tr>
+                <tr>
+                    <td><input name="campo2" id="campo2" class="coluna1" value="" type="text" placeholder="(fi) pesquisada" /></td>
+                    <td><input type="radio" id="select2" class="coluna2" name="desvio" onclick="pegaDesvio(this.value)" value="P"> População</td>
+                    <td><input type="radio" id="select1" class="coluna3" name="desvio" onclick="pegaDesvio(this.value)"  value="A"> Amostra</td>
+                </tr>
+            </table>
+            <hr>
+            <div "escolha">
+                <button type="button" id="btnDigi" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp;
+                <button type="button" id="btnImp" onclick="ChamarDiv('importar')">Importar </button>
+                <button type="button" id="btnRec" onclick="history.go(0)">Recarregar </button>
+            </div>
+            <div id="digitar">
+                <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
+            </div>
+            <div id="importar">
+                <label for='inputCSV' id="selarq" onclick="mudarDiv()">Arquivo &#187;</label>
+                <br>
+                <input type="file" id="inputCSV" onchange="pegaCSV(this)">
+                <span id='file-name'> </span>
+                <center><input type="button" id="btnexecutar" onclick="chamarPagina()" value="OK"></center>
+            </div>
         </div>
-        <div id="digitar">
-            <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
-        </div>
-        <div id="importar">
-            <label for='inputCSV' id="selarq" onclick="mudarDiv()">Arquivo &#187;</label><br>
-            <input type="file" id="inputCSV" onchange="pegaCSV(this)">
-            <span id='file-name'> </span>
-            <center><input type="button" id="btnexecutar" onclick="chamarPagina()" value="OK"></center>
-
-        </div>
-        <hr>
-        <button type="button" id="btnDist" onclick="window.open('teamplates/Distribuicoes.html')">Distribuições
-        </button>
-
     </div>
 
     <footer>
