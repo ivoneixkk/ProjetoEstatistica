@@ -9,20 +9,50 @@ let valores = []
 //#         MUDAR ESTADO DA DIV                                                                       #
 //#####################################################################################################
 function ChamarDiv(el) {
-    var display = document.getElementById(el).style.display;
-    
-    if (display == "") {
-        document.getElementById(el).style.display = 'block';
-        document.getElementById('escolha').style.display = 'none';
-    }
-    else if(display =="estatisticaDescritiva"){
+    //var display = document.getElementById(el).style.display;
+    let display = el
+    console.log(display)
+    // if (display == "") {
+    //     document.getElementById(el).style.display = 'block';
+    //     document.getElementById('escolha').style.display = 'none';
+    // }
+    if (display == "estatisticaDescritiva") {
+
         document.getElementById('estatisticaDescritiva').style.display = 'inline';
- 
+        document.getElementById('btnCorre').style.display = 'none';
+        document.getElementById('btnDist').style.display = 'none';
+        document.getElementById('btnDescri').style.display = 'none';
+        document.getElementById('btnvoltarindex').style.display = 'inline';
     }
-    else {
-        document.getElementById(el).style.display = 'none';
-        document.getElementById('escolha').style.display = 'block';
+    else if (display == "correlacao") {
+
+        document.getElementById('estatisticaDescritiva').style.display = 'none';
+        document.getElementById('btnDist').style.display = 'none';
+        document.getElementById('btnDescri').style.display = 'none';
+        document.getElementById('btnCorre').style.display = 'none';
+        document.getElementById('btnvoltarindex').style.display = 'inline';
+        document.getElementById('correlacao').style.display = "block";
+        document.getElementById('escCorre').style.display = 'inline';
+
+    } else if (display == "importarC") {
+
+        document.getElementById('btnImpC').style.display = 'none';
+        document.getElementById('importarC').style.display = 'inline';
+
+    } else if (display == "importar") {
+
+        document.getElementById('btnImp').style.display = 'none';
+        document.getElementById('importar').style.display = 'inline';
+
     }
+
+
+
+
+    // else {
+    //     document.getElementById(el).style.display = 'none';
+    //     document.getElementById('escCorre').style.display = 'block';
+    // }
 }
 //#####################################################################################################
 //#####################################################################################################
@@ -34,17 +64,30 @@ function ChamarDiv(el) {
 //input.addEventListener('change', function(){
 //  var fileName.textContent = this.value;
 //});
-function mudarDiv() {
-    var input = document.getElementById('inputCSV');
-    var fileName = document.getElementById('file-name');
+function mudarDiv(condic) {
+    console.log(condic)
+    var input, fileName
+    if (condic == "arqCorr") {
+        input = document.getElementById('inputCSVC');
+        fileName = document.getElementById('file-namec');
+        input.addEventListener('change', function () {
+            fileName.textContent = this.value;
+            var display = document.getElementById('btnexecutarc').style.display = 'block';
+            document.getElementById('btnexecutar').style.display = 'block';
+        });
+        achar();
 
-    input.addEventListener('change', function () {
-        fileName.textContent = this.value;
-        var display = document.getElementById('btnexecutar').style.display = 'block';
-        document.getElementById('btnexecutar').style.display = 'block';
-    });
-    achar();
-
+    }
+    if (condic == "arqDesc") {
+        input = document.getElementById('inputCSV');
+        fileName = document.getElementById('file-name');
+        input.addEventListener('change', function () {
+            fileName.textContent = this.value;
+            var display = document.getElementById('btnexecutar').style.display = 'block';
+            document.getElementById('btnexecutar').style.display = 'block';
+        });
+        achar();
+    }
 }
 
 function achar() {
@@ -118,8 +161,8 @@ function tirarRepetidos(vetor) {
 function pegaDesvio() {
     Lvalor.push(document.getElementById('select1').checked)
     Lvalor.push(document.getElementById('select2').checked)
-   console.log(Lvalor)
-   return Lvalor
+    console.log(Lvalor)
+    return Lvalor
 }
 
 
