@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css" />
+    <script type='text/javascript' src='../assets/js/dist_uniforme.js'></script>
+    <script type='text/javascript' src='../assets/js/dist_binomial.js   '></script>
+    <script type='text/javascript' src='../assets/js/dist_normal.js'></script>
 
     <style>
         #Umedia, #resultadoDistribuicao, #cv, #Udesvio, #tabelab{
@@ -153,11 +156,7 @@
             background-color: transparent;
             border: none;
         }
-        footer{
-            width: 100%;
-            position: fixed;
-            bottom: 0px;
-        }
+
         #dn1transf{
             display: none
         }
@@ -285,8 +284,8 @@
             <div id="normal">
                 Normal<br>
                 <br>
-                <input name="media" id="nmedia" value="" size="10" type="text" title="Media" placeholder="media" />&nbsp;&nbsp;
-                <input name="desvio" id="ndesvio" value="" size="10" type="text" title="Desvio Padrao" placeholder="desvio padrao" />
+                <input name="media" id="nmedia" value="" size="10" type="text" placeholder="media" />&nbsp;&nbsp;
+                <input name="desvio" id="ndesvio" value="" size="10" type="text" placeholder="desvio padrao" />
 
 
                 <select id="opnormal" onchange="arrumaElementos(this.value)">
@@ -305,8 +304,7 @@
                 <font id="ntxMaior">- Ou - maior que:</font>
                 <input name="n1transf" id="n1transf" value="" size="10" type="text" placeholder="parametro" />
                 &nbsp;
-                <input name="n1transf" id="dn1transf" value="" size="10" type="text" onblur="mostraDesvio(this.value)"
-                    placeholder="parametro" />
+                <input name="n1transf" id="dn1transf" value="" size="10" type="text" onblur="mostraDesvio(this.value)" placeholder="parametro" />
 
                 <button type="button" class="btnDigi" onclick="DistNormal()">Calcular</button>
 
@@ -326,10 +324,6 @@
         <i class="fa fa-registered"></i>
         FATEC - Análise e Desenvolvimento de Sistemas
     </footer>
-
-    <script type='text/javascript' src='../assets/js/dist_uniforme.js'></script>
-    <script type='text/javascript' src='../assets/js/dist_binomial.js   '></script>
-    <script type='text/javascript' src='../assets/js/dist_normal.js'></script>
 
 </body>
 
