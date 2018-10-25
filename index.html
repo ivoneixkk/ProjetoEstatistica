@@ -20,25 +20,28 @@
 <body>
     <header>
         <i class="far fa-chart-bar"></i>
-        FATEC
+        nome do software
         <script type='text/javascript' src='assets/js/js.js'></script>
 
     </header>
 
-    <div id='dadosEntrada'> 
+    <div id='dadosEntrada'>
+        <div id = "logoIndex">
+            <i class="far fa-chart-bar"></i>
+            nome do software
+        </div>
         <button type="button" id="btnDescri" onclick="ChamarDiv('estatisticaDescritiva')">ESTATISTICA DESCRITIVA</button>
         <button type="button" id="btnDist" onclick="window.location.href = 'teamplates/Distribuicoes.html'">DISTRIBUIÇÃO</button>
         <button type="button" id="btnCorre" onclick="ChamarDiv('correlacao')">CORRELAÇÃO</button>
-        <button type="button" id="btnvoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
 
         <div id="correlacao">
-            <hr>
             <h2>CORRELAÇÃO</h2>
             <h2>Defina as Variaveis Dependente e Independente</h2>
             <td><input name="varDependente" id="Depend"   value="" type="text" placeholder="Variavel Dependente" /></td>
             <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
             <hr>
             <div id ="escCorre">
+                <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
                 <!-- <button type="button" id="btnDigiC" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
                 <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">Importar </button>
                 <!-- <button type="button" id="btnRecC" onclick="history.go(0)">Recarregar </button> -->
@@ -73,11 +76,13 @@
             </table>
             <hr>
             <div id="escolha">
-                <!-- <button type="button" id="btnDigi" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
+                <button type="button" id="btnvoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
                 <button type="button" id="btnImp" onclick="ChamarDiv('importar')">Importar </button>
+                <button type="button" id="btnDigi" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp;            
             </div>
-            <div id="digitar">
+            <div id="digitarr">
                 <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
+                <input type="button" id="btnexecutar2" value="OK">
             </div>
             <div id="importar">
                 <label for='inputCSV' id="selarq" onclick="mudarDiv('arqDesc')">Arquivo &#187;</label>

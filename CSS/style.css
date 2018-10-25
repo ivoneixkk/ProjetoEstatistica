@@ -3,11 +3,12 @@ body {
     margin: 0 auto;
     line-height: 1.6;
     background: #f1f1f1;
+    font-family: 'Times New Roman', Times, serif;
 }
 header {
     padding: 0.5%;
     background: #0077ff; 
-    color: white;
+    color: black;
     font-size: 140%
 }
 header i{
@@ -34,7 +35,7 @@ header i{
     height: 100%;
     width: 35%;
     padding: 10px;
-    margin: 8% 35% 8% 35%;  
+    margin: 15% 35% 8% 35%;  
     text-align: center;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
     background-color: #fff;  
@@ -45,142 +46,146 @@ input[type='file'] {
 }
 /* Aparência que terá o seletor de arquivo */
 label {
-  background-color: #0077ff;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 6px 20px
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
 }
 #btnexecutar{
     display: none;
 }
 
-#btnexecutar {
-  
-  background-color: #0077ff;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 6px 10px
+#btnexecutar, #btnexecutar2 {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
 }
 #btnexecutarc{
     display: none;
 }
 
 #btnexecutarc {
-  
-  background-color: #0077ff;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 6px 10px
+    border-width: 0; 
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
 }
 #voltarbtn{
     float: right;
     margin-left: 350px;
 }
 #btnvoltar {
+    border-width: 0;
     float: left;
     background-color: red ;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
+    padding: 8px 12px
   }
 
   #btnvoltarindex{
       display: none
   }
 
-  #btnvoltarindex {
+#btnvoltarindex, #btnCorrevoltarindex {
+    border-width: 0;
     background-color: red ;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
-  }
+    padding: 8px 12px
+}
 
 
 
-  #btnImp {
-  
-  background-color: #0077ff;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 6px 10px
+#btnImp {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
 }
 
 
 
 #btnDigi {
-  
-  background-color: #0077ff;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  padding: 6px 10px
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
 }
 #btnRec {
-  
-    background-color: #fd0e0e;
+    border-width: 0;  
+    background-color: red;
     border-radius: 5px;
     color: rgb(253, 253, 253);
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
-  }
+    padding: 8px 12px
+}
   
-  #btnImpC {
-  
+#btnImpC {
+    border-width: 0;
     background-color: #0077ff;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
-  }
+    padding: 8px 12px
+}
   
   
   
-  #btnDigiC {
-    
+#btnDigiC {
+    border-width: 0;    
     background-color: #0077ff;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
-  }
-  #btnRecC {
-    
-      background-color: #fd0e0e;
-      border-radius: 5px;
-      color: rgb(253, 253, 253);
-      cursor: pointer;
-      margin: 10px;
-      padding: 6px 10px
-    }
+    padding: 8px 12px
+}
+
+#btnRecC {
+    border-width: 0;
+    background-color: red;
+    border-radius: 5px;
+    color: rgb(253, 253, 253);
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
   
 
 
 
-  #btnDist, #btnCorre, #btnDescri {
-  
+#btnDist, #btnCorre, #btnDescri {
+    border-width: 0;
     background-color: #0077ff;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     margin: 10px;
-    padding: 6px 10px
-  }
+    padding: 8px 12px
+}
 
 
 #escolha{
@@ -254,6 +259,21 @@ input:focus {
     background: white
 }
 
+#dadosEntrada #estatisticaDescritiva table{
+    margin: 0 auto;
+}
+
+#logoIndex{
+    font-size: 250%;
+    margin-bottom: 10%;
+}
+
+#logoIndex i{
+    margin-left: -10%;
+    margin-right: 2%;
+    font-size: 150%;
+}
+
 #tabDados table,#tabDados th ,#tabDados tr,#tabDados td{
 
     align:center;
@@ -308,13 +328,178 @@ footer{
     position: fixed;
     bottom: 0px;
     background: #0077ff;
-    color: #fff;
+    color: black;
     text-align: center;
 }
 
 #footerDiscreta{
     background: #0077ff;
-    color: #fff;
+    color: black;
     text-align: center;
     padding: 0.5%;
+}
+
+#Umedia, #resultadoDistribuicao, #cv, #Udesvio, #tabelab{
+    font-weight: bold;
+    color: black
+}
+
+#uniforme {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#normal {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+#binomial {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#binomial {
+    display: none;
+}
+
+#normal {
+    display: none;
+}
+#tabelab{
+    border-collapse: collapse;
+}
+
+#tabelab table, #tabelab th, #tabelab td{
+    border: 1px solid black;
+}
+
+.btnDigi {
+    border-width: 0;
+    background-color: #0077fF;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+.btnDigiR {
+    border-width: 0;
+    background-color: #FFD700;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+#menorque {
+    display: inline;
+}
+
+#maiorque {
+    display: inline;
+}
+
+#entre {
+    display: inline;
+}
+
+#entreProd1 {
+    display: none;
+}
+
+#entreProd2 {
+    display: none;
+}
+
+#principal {
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 90%;
+    background: #0077ff;
+}
+
+#voltar {
+    display: none;
+}
+
+#desfaz {
+    display: none;
+}
+
+#ndesfaz {
+    display: none;
+}
+
+#txtVoltar {
+    display: none;
+}
+
+#ntxtVoltar {
+    display: none;
+}
+
+#ntxtEntre{
+    display:none;
+}
+
+#nentre2, #nentre1 {
+    display: none;
+}
+
+#voltar {
+    background: url('assets/img/voltar.png') left no-repeat;
+    background-size: 34px 34px;
+    padding: 25px 25px;
+    background-color: transparent;
+    border: none;
+}
+
+#dn1transf{
+    display: none
+}
+
+#central {
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
+    line-height: 20px;
+    text-align:center;
+    background-color: #000080;
+    color: white;  
+    /* pura mágica */
+    position: absolute;
+    top: 20%; /* posiciona na metade da tela */
+    margin-top: -25px; /* e retrocede metade da altura */
+}
+
+#ntxMaior{
+    display: none
+}
+
+#ntxate{
+    display: none
+}
+
+#digitarr ,#btnexecutar2{
+    display: none;
 }
