@@ -37,8 +37,10 @@
         <div id="correlacao">
             <h2>CORRELAÇÃO</h2>
             <h2>Defina as Variaveis Dependente e Independente</h2>
-            <td><input name="varDependente" id="Depend"   value="" type="text" placeholder="Variavel Dependente" /></td>
-            <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
+            <h4 id="erro" >Por favor preencha todos os campos!!<br><br></h4>
+            <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente(X) " /></td>
+            <td><input name="varDependente" id="Depend"   value="" type="text" placeholder="Variavel Dependente(Y)" /></td>
+
             <hr>
             <div id ="escCorre">
                 <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
@@ -54,7 +56,7 @@
                 <br>
                 <input type="file" id="inputCSVC" onchange="pegaCSV(this)">
                 <span id='file-namec'> </span>
-                <center><input type="button" id="btnexecutarc" onclick="chamarPagina()" value="OK"></center>
+                <center><input type="button" id="btnexecutarc" onclick="chamarPagina('correlacao')" value="OK"></center>
             </div>
 
         </div>          
@@ -89,7 +91,7 @@
                 <br>
                 <input type="file" id="inputCSV" onchange="pegaCSV(this)">
                 <span id='file-name'> </span>
-                <center><input type="button" id="btnexecutar" onclick="chamarPagina()" value="OK"></center>
+                <center><input type="button" id="btnexecutar" onclick="chamarPagina('descritivas')" value="OK"></center>
             </div>
         </div>
     </div>

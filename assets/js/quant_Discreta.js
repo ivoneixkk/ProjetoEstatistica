@@ -213,8 +213,6 @@ function mountTabelaResult(vet) {
     mounTable4 += "<th>Desvio padrao</th>"
     mounTable4 += "<td><div id=desviopadrao></div></td>";
     mounTable4 += "</tr>";
-    
-
     mounTable4 += "</table>";
     var tabela4 = document.getElementById('Results');
     tabela4.innerHTML = mounTable4;

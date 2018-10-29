@@ -12,8 +12,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css" />
+    <script src="../assets/js/Chart.bundle.min.js"></script>
 
-<body onload="correlacao()">
+    <style type="text/css">
+    </style>
+
+</head>
+
+<body>
     <header>
         <i class="far fa-chart-bar"></i>
         FATEC
@@ -21,41 +27,30 @@
 
     <div id='resolucaoCalculos'>
 
-        <h2>Correlação</h2>
+        <h2>Correlação e Regrassão</h2>
+        <hr>
 
-
-        <div id="divGrafico">
-            <div id="container"></div>
-            <div id="sliders">
-                <table>
-                    <tr>
-                        <td>X</td>
-                        <td><input id="alpha" type="range" min="0" max="45" value="15" /> <span id="alpha-value" class="value"></span></td>
-                        <td>Y</td>
-                        <td><input id="beta" type="range" min="-45" max="45" value="15" /> <span id="beta-value" class="value"></span></td>
-                        <td>Z</td>
-                        <td><input id="depth" type="range" min="20" max="100" value="50" /> <span id="depth-value"
-                                class="value"></span></td>
-                    </tr>
-                </table>
-            </div>
-
-
+        <div id="calcCorrelacao">
+            <div id="resultadoCorrelacao"></div>
+            <div id="equacao"></div>
+            <div id="forca"></div>
         </div>
+        <hr id="separa">
+        <div id="fazproje">
+            <input id="fproje" type="button"  value="Fazer Projeçoes" onclick="fazerProjecao()">
+        </div>
+        <div id="inppt"></div>
+        <div id="resprojecao"></div>
+        <div id="divGrafico">
+            <hr id="abaixo">
 
+            <h2 id="titulo"></h2>
 
-
+            <canvas id="Container"></canvas>
+        </div>
     </div>
 
-
-
-
 </body>
-<script src="../assets/js/jquery.331.js"> </script>
-<script src="../assets/code/highcharts.js"></script>
-<script src="../assets/code/highcharts-3d.js"></script>
-<script src="../assets/code/modules/exporting.js"></script>
-<script src="../assets/code/modules/export-data.js"></script>
 <script type='text/javascript' src='../assets/js/correlacao.js'></script>
 
 </html>
