@@ -1,0 +1,605 @@
+body {
+    height: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+    background: #f1f1f1;
+    font-family: 'Times New Roman', Times, serif;
+}
+header {
+    padding: 0.5%;
+    background: #0077ff; 
+    color: black;
+    font-size: 140%
+}
+header i{
+    font-size: 140%;
+    margin-left: 10%;
+}
+
+#correlacao{
+    display: none
+}
+
+.ordInput{
+    margin-left: 30px;
+}
+
+#ordDentro{
+    background: #0077ff;
+    margin-left: 40%;
+    width: 20%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white
+}
+#dadosEntrada{
+    height: 100%;
+    width: 35%;
+    padding: 10px;
+    margin: 15% 35% 8% 35%;  
+    text-align: center;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    background-color: #fff;  
+}
+
+input[type='file'] {
+  display: none
+}
+/* Aparência que terá o seletor de arquivo */
+label {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+#btnexecutar{
+    display: none;
+}
+
+#btnexecutar, #btnexecutar2 {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+#btnexecutarc{
+    display: none;
+}
+
+#btnexecutarc {
+    border-width: 0; 
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+#voltarbtn{
+    float: right;
+    margin-left: 350px;
+}
+#btnvoltar {
+    border-width: 0;
+    float: left;
+    background-color: red ;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+  }
+
+  #btnvoltarindex{
+      display: none
+  }
+
+#btnvoltarindex, #btnCorrevoltarindex {
+    border-width: 0;
+    background-color: red ;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+
+
+#btnImp {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+
+
+#btnDigi {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+.tbtnDigi {
+    margin-left: 2%;
+    border: solid 1px black;
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px
+}
+
+
+#btnRec {
+    border-width: 0;  
+    background-color: red;
+    border-radius: 5px;
+    color: rgb(253, 253, 253);
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+  
+#btnImpC {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+  
+  
+  
+#btnDigiC {
+    border-width: 0;    
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+#btnRecC {
+    border-width: 0;
+    background-color: red;
+    border-radius: 5px;
+    color: rgb(253, 253, 253);
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+#btnDist, #btnCorre, #btnDescri {
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+
+#escolha{
+    width: 100%;
+    background-color: #fff;
+    font-size: 12px;   
+}
+#digitar{
+    display: none;
+    
+}
+#importar{
+    display: none;
+    
+}
+
+#escCorre{
+    width: 100%;
+    background-color: #fff;
+    font-size: 12px;   
+}
+#digitarC{
+    display: none;
+    
+}
+#importarC{
+    display: none;
+    
+}
+
+
+
+
+input {
+    margin-left: 0 auto;
+	margin-bottom:10px;
+	border:1px solid #999;
+    border-radius:3px;
+}
+
+input:focus {
+	border:1px solid #ccc;
+	outline:none;
+}
+
+#tabelaDados{
+    border: 2px solid #0077ff;
+    width: 100%;
+    margin-left: 1%;
+    margin-top: 3%;
+    /* float: left; */
+}
+
+#resolucaoCalculos{
+    padding-bottom: 75%;
+    width: 80%;
+    height: auto;
+    margin: 0 10%;
+    line-height: 30px;  
+    color: black;
+    text-align: center;
+}
+
+
+#tabDados{
+    float: left;
+    margin: 1% 0% 0% 10%;
+    text-align: left;
+    border: solid 1px black;
+    color: black;
+    background: white
+}
+
+#dadosEntrada #estatisticaDescritiva table{
+    margin: 0 auto;
+}
+
+#logoIndex{
+    font-size: 250%;
+    margin-bottom: 10%;
+}
+
+#logoIndex i{
+    margin-left: -10%;
+    margin-right: 2%;
+    font-size: 150%;
+}
+
+#tabDados table,#tabDados th ,#tabDados tr,#tabDados td{
+
+    align:center;
+
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    /* border-collapse: collapse; */
+    text-align: center;
+    padding: 1px;
+    
+}
+
+#Results{
+    color: black;
+    position: relative;
+    display: inline;
+    float: left;
+    margin: 1% 0% 0% 1%;
+    display: inline;
+    text-align: left
+}
+
+th{
+    background: #e3e6eb;
+}
+
+/* table{
+    width: 100%;
+} */
+
+
+
+#divContinua{
+    margin: 1% 0% 0% 1%;
+    float: left;
+}
+
+#container{
+    background: transparent;
+    width: 40%;
+    height: 300px;
+    float: left;
+}
+#Container{
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border: #0077fF solid 1px;
+}
+
+#estatisticaDescritiva{
+    display: none;
+}
+
+footer{
+    width: 100%;
+    padding: 0.5%;
+    position: fixed;
+    bottom: 0px;
+    background: #0077ff;
+    color: black;
+    text-align: center;
+}
+
+#footerDiscreta{
+    background: #0077ff;
+    color: black;
+    text-align: center;
+    padding: 0.5%;
+}
+
+#Umedia, #resultadoDistribuicao, #cv, #Udesvio, #tabelab{
+    font-weight: bold;
+    color: black
+}
+
+#uniforme {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#normal {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+#binomial {
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 98%;
+    color: rgb(0, 0, 0);
+    display: none;
+    background:  rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#binomial {
+    display: none;
+}
+
+#normal {
+    display: none;
+}
+#tabelab{
+    border-collapse: collapse;
+}
+
+#tabelab table, #tabelab th, #tabelab td{
+    border: 1px solid black;
+}
+
+.btnDigi {
+    border-width: 0;
+    background-color: #0077fF;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+.btnDigiR {
+    border-width: 0;
+    background-color: #FFD700;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 12px
+}
+
+#menorque {
+    display: inline;
+}
+
+#maiorque {
+    display: inline;
+}
+
+#entre {
+    display: inline;
+}
+
+#entreProd1 {
+    display: none;
+}
+
+#entreProd2 {
+    display: none;
+}
+
+#principal {
+    margin: 0 auto;
+    border-radius: 25px;
+    width: 90%;
+    background: #0077ff;
+}
+
+#voltar {
+    display: none;
+}
+
+#desfaz {
+    display: none;
+}
+
+#ndesfaz {
+    display: none;
+}
+
+#txtVoltar {
+    display: none;
+}
+
+#ntxtVoltar {
+    display: none;
+}
+
+#ntxtEntre{
+    display:none;
+}
+
+#nentre2, #nentre1 {
+    display: none;
+}
+
+#voltar {
+    background: url('assets/img/voltar.png') left no-repeat;
+    background-size: 34px 34px;
+    padding: 25px 25px;
+    background-color: transparent;
+    border: none;
+}
+
+#dn1transf{
+    display: none
+}
+
+#central {
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
+    line-height: 20px;
+    text-align:center;
+    background-color: #000080;
+    color: white;  
+    /* pura mágica */
+    position: absolute;
+    top: 20%; /* posiciona na metade da tela */
+    margin-top: -25px; /* e retrocede metade da altura */
+}
+
+#ntxMaior{
+    display: none
+}
+
+#ntxate{
+    display: none
+}
+
+#digitarr ,#btnexecutar2{
+    display: none;
+}
+
+#erro{
+    display: none;
+    color: red
+}
+
+#ind, #dep{
+    color: #0077ff
+    
+}
+
+#calcCorrelacao{
+    align-content: left
+}
+#resultadoCorrelacao{
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#equacao{
+    margin-left: 2%;
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#forca{
+    margin-left: 2%;
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#entrproj{
+    padding: 10px;
+    float: left;
+    margin-left: 2%;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    border-radius: 10px;
+}   
+#separa{
+    margin-top: 7%
+}
+#fazproje{
+    float: left
+}
+.destacar{
+    margin-left: 0.5cm;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.75cm;
+    
+}
+#opproje, #fproje{
+    background: no-repeat #353680; 
+    background-color: #0077fF;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    color: #fff
+}
+
+#cproje{
+    float: left
+}
+#resprojecao{
+    display: none
+}
+#resprojecao{
+    background: #fff;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    padding: 5px;
+    float: left;
+    margin-left: 2%;
+    border-radius: 10px;}
+#abaixo{
+    margin-top: 6%
+}

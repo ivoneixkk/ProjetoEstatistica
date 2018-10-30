@@ -18,21 +18,31 @@ function quantiDiscreta() {
     Lvalor = Lvalor.split(',');
     console.log(Lvalor);
     testvalores = testvalores.split(',');
+
+    /////////////////// CORRIGIR ERRO DE STRING QUANDO HÁ ESPAÇO NA FRASE///////////////////////////////
+    for(let i = 0; i < testvalores.length; i++){
+        if(testvalores[i].match('%20')){
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%20');
+            testvalores[i] = ''
+            for(let j = 0; j < auxTestValores.length; j++){
+                testvalores[i] += auxTestValores[j] + ' ';
+            }	
+        }
+    }
+    /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
+
     testevar = testevar.split(',');
     for (let i = 0; i < testevar.length; i++) {
         vetor[i] = parseInt(testevar[i]);
         ''
     }
-
     ordenarVetor(vetor, vetor.length);
     repeticao(vetor, testvalores[0], testvalores[1]);
     mountTabelaDiscreta(vetor, testvalores[0], testvalores[1]);
     MostraGraDiscreta(Repeticao, testvalores);
-
-    desvioPadraoDiscreta(Lvalor);
-
     mountTabelaResult(vetor);
-
+    desvioPadraoDiscreta(Lvalor);
 }
 
 
@@ -80,10 +90,11 @@ function ordenarVetor(ent, cont) {
 
 function mountTabelaDiscreta(vet, val1, val2) {
 
-    let mounTable3 = "<strong>TABELA DE ANALISE DOS DADOS</strong>";
+    let mounTable3 ="<div>"
+    mounTable3 += "<strong>TABELA DE ANALISE DE DADOS</strong>";
 
 
-    mounTable3 += "<table><td><table>";
+    mounTable3 += "<table id='tabDiscreta'>";
     mounTable3 += "<tr>";
     mounTable3 += "<th>" + val1 + "</th>";
     mounTable3 += "<th>N.: " + val2 + "(fi)</th>";
@@ -124,7 +135,6 @@ function mountTabelaDiscreta(vet, val1, val2) {
     for (let h = 0; h < vetEnt.length; h++) {
         if (vetEnt[h].repeticao > maior) {
             maior = vetEnt[h].repeticao;
-
         }
     }
 
@@ -133,10 +143,9 @@ function mountTabelaDiscreta(vet, val1, val2) {
 
 
     media = media / total;
-    mounTable3 += "</tr>";
-    mounTable3 += "</table></td><div id=Results></div>";
-    mounTable3 += "<div id=desviopadrao></div></table>";
-    var tabela3 = document.getElementById('tabDados');
+    mounTable3 += "</table>";
+    mounTable3 += "</div>"
+    var tabela3 = document.getElementById('tabDadosDiscreta');
     tabela3.innerHTML = mounTable3;
 
 }
@@ -177,8 +186,9 @@ function repeticao(vet, val1, val2) {
 
 function mountTabelaResult(vet) {
 
-    var mounTable4 = "<table><th collspan=2>RESULTADOS OBTIDOS</th>";
-    mounTable4 += "<tr><th>Media</td><td>" + media.toFixed(2) + "</th></tr>";
+    var mounTable4 = "<div>";
+    mounTable4 = "<table><th collspan=2>RESULTADOS OBTIDOS</th>";
+    mounTable4 += "<tr><th>Media</th><td>" + media.toFixed(2) + "</th></tr>";
 
     let ttotal;
     if (total % 2 == 0) {
@@ -186,7 +196,6 @@ function mountTabelaResult(vet) {
         mediana = (vet[ttotal - 1] + vet[ttotal]) / 2;
 
     } else {
-        alert('sou impar');
         ttotal = Math.floor(total / 2);
         console.log(ttotal);
         mediana = (vet[ttotal]);
@@ -211,11 +220,14 @@ function mountTabelaResult(vet) {
     mounTable4 += "</tr>";
     mounTable4 += "<tr>"
     mounTable4 += "<th>Desvio padrao</th>"
-    mounTable4 += "<td><div id=desviopadrao></div></td>";
+    mounTable4 += "<td><div id='desviopadrao'></div></td>";
     mounTable4 += "</tr>";
-    
-
+    mounTable4 += "<tr>"
+    mounTable4 += "<th><div id='coeficienteTexto'></div></th>"
+    mounTable4 += "<td><div id='coeficienteResp'></div></td>"
+    mounTable4 += "</tr>"
     mounTable4 += "</table>";
+    mounTable4 += "</div>"
     var tabela4 = document.getElementById('Results');
     tabela4.innerHTML = mounTable4;
 }
@@ -416,8 +428,9 @@ function desvioPadraoDiscreta(Lvalor) {
             resPadrao = Math.sqrt(resPadrao).toFixed(2);
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
-            document.getElementById('desviopadrao').innerHTML =  resPadrao;
-            document.getElementById('coeficiente').innerHTML = '<p><strong>Amostra Coeficiente de Variação:&nbsp;&nbsp;&nbsp;</strong>' + coeficiente + '&nbsp;%&nbsp;<p>';
+            document.getElementById('desviopadrao').innerHTML =  resPadrao ;
+            document.getElementById('coeficienteTexto').innerHTML = 'Amostra Coeficiente de Variação:';
+            document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
         } else if (Lvalor[i + 1] == "true") {
@@ -432,7 +445,8 @@ function desvioPadraoDiscreta(Lvalor) {
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
             document.getElementById('desviopadrao').innerHTML = resPadrao.toFixed(3);
-            document.getElementById('coeficiente').innerHTML = '<p><strong>Populacao Coeficiente de Variação:&nbsp;&nbsp;&nbsp;</strong>' + coeficiente + '&nbsp;%&nbsp;<p>';
+            document.getElementById('coeficienteTexto').innerHTML = 'Populacao Coeficiente de Variação:';
+            document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
         } else {

@@ -32,29 +32,30 @@
         </div>
         <button type="button" id="btnDescri" onclick="ChamarDiv('estatisticaDescritiva')">ESTATISTICA DESCRITIVA</button>
         <button type="button" id="btnDist" onclick="window.location.href = 'teamplates/Distribuicoes.html'">DISTRIBUIÇÃO</button>
-        <button type="button" id="btnCorre" onclick="ChamarDiv('correlacao')">CORRELAÇÃO</button>
+        <button type="button" id="btnCorre" onclick="ChamarDiv('correlacao')">CORRELAÇÃO E REGREÇÃO</button>
 
         <div id="correlacao">
             <h2>CORRELAÇÃO</h2>
             <h2>Defina as Variaveis Dependente e Independente</h2>
+            <h4 id="erro" >Por favor preencha todos os campos!!<br><br></h4>
             <td><input name="varDependente" id="Depend"   value="" type="text" placeholder="Variavel Dependente" /></td>
             <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
             <hr>
             <div id ="escCorre">
                 <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
                 <!-- <button type="button" id="btnDigiC" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
-                <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">Importar </button>
+                <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">IMPORTAR </button>
                 <!-- <button type="button" id="btnRecC" onclick="history.go(0)">Recarregar </button> -->
             </div>
             <!-- <div id="digitarC">
                 <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
             </div> -->
             <div id="importarC">
-                <label for='inputCSVC' id="selarqC" onclick="mudarDiv('arqCorr')">Arquivo &#187;</label>
+                <label for='inputCSVC' id="selarqC" onclick="mudarDiv('arqCorr')">ARQUIVO &#187;</label>
                 <br>
                 <input type="file" id="inputCSVC" onchange="pegaCSV(this)">
                 <span id='file-namec'> </span>
-                <center><input type="button" id="btnexecutarc" onclick="chamarPagina()" value="OK"></center>
+                <center><input type="button" id="btnexecutarc" onclick="chamarPagina('correlacao')" value="OK"></center>
             </div>
 
         </div>          
@@ -77,19 +78,21 @@
             <hr>
             <div id="escolha">
                 <button type="button" id="btnvoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
-                <button type="button" id="btnImp" onclick="ChamarDiv('importar')">Importar </button>
-                <button type="button" id="btnDigi" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp;            
+                <button type="button" id="btnImp" onclick="ChamarDiv('importar')">IMPORTAR </button>
+                <button type="button" id="btnDigi" onclick="ChamarDiv('digitarr')">DIGITAR </button>&nbsp;&nbsp;&nbsp;            
             </div>
             <div id="digitarr">
                 <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
                 <input type="button" id="btnexecutar2" value="OK">
+                <button type="button" id="btnDigivoltarindex" onclick="ChamarDiv('escolha')">VOLTAR</button>
             </div>
             <div id="importar">
-                <label for='inputCSV' id="selarq" onclick="mudarDiv('arqDesc')">Arquivo &#187;</label>
+                <button type="button" id="btnDescrivoltarindex" onclick="ChamarDiv('escolha')">VOLTAR</button>
+                <label for='inputCSV' id="selarq" onclick="mudarDiv('arqDesc')">ARQUIVO &#187;</label>
                 <br>
                 <input type="file" id="inputCSV" onchange="pegaCSV(this)">
                 <span id='file-name'> </span>
-                <center><input type="button" id="btnexecutar" onclick="chamarPagina()" value="OK"></center>
+                <center><input type="button" id="btnexecutar" onclick="chamarPagina('descritivas')" value="OK"></center>
             </div>
         </div>
     </div>
