@@ -60,14 +60,14 @@ function ChamarDiv(el) {
         document.getElementById('btnDigi').style.display = 'none';
         document.getElementById('btnImp').style.display = 'none';
 
-    } else if (display ="btnDescrivoltarindex"){
+    } else if (display ="escolha"){
         document.getElementById('importar').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
         document.getElementById('btnvoltarindex').style.display = 'inline';
         document.getElementById('btnImp').style.display = 'inline';
         document.getElementById('btnDigi').style.display = 'inline';
 
-    }  else if (display ="escolha"){
+    }  else if (display =="escolhaDigi"){
         document.getElementById('digitarr').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
         document.getElementById('btnvoltarindex').style.display = 'inline';
