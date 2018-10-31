@@ -44,7 +44,7 @@ function executar() {
         }
 
         dadosGraficos.push(objDadosGraf)
-        dadoGra.push([VetIndependente[i],VetDependente[i]])
+        dadoGra.push([VetIndependente[i], VetDependente[i]])
     }
 
     console.log(VetDependente)
@@ -214,7 +214,7 @@ function popularGrafico() {
         y
     });
 
-    testeLInha.push([x,y])
+    testeLInha.push([x, y])
     console.log(testeLInha)
 
     //    x = 0;
@@ -229,7 +229,7 @@ function popularGrafico() {
             x,
             y
         });
-        testeLInha.push([x,y])
+        testeLInha.push([x, y])
 
     } else {
         y = VetDependente[0];
@@ -240,13 +240,13 @@ function popularGrafico() {
         linhaGraf.push({
             x,
             y
-            
+
         });
-        testeLInha.push([x,y])
+        testeLInha.push([x, y])
 
     }
 
-//    MostraGraCorrelacao();
+    //    MostraGraCorrelacao();
     outroGrafico()
 }
 
@@ -286,7 +286,7 @@ function calcProjecao(param) {
             x: py,
             y: px
         }
-        dadoGra.push([py,px])
+        dadoGra.push([py, px])
         dadosGraficos.push(objDadosGraf)
         console.log(dadoGra)
         console.log(VetDependente[0])
@@ -310,7 +310,7 @@ function calcProjecao(param) {
             x: px,
             y: py
         }
-        dadoGra.push([py,px])
+        dadoGra.push([px, py])
         dadosGraficos.push(objDadosGraf)
         console.log(dadoGra)
         console.log(dadosGraficos)
@@ -327,7 +327,7 @@ function calcProjecao(param) {
     popularGrafico()
 }
 
-function outroGrafico(){
+function outroGrafico() {
 
     Highcharts.chart('GraGra', {
         chart: {
@@ -339,7 +339,7 @@ function outroGrafico(){
         },
         subtitle: {
             text: 'Correlação entre: ' + independente + ' VS ' + dependente,
-        
+
         },
         legend: {
             align: 'auto',
@@ -371,18 +371,18 @@ function outroGrafico(){
             }
         },
         series: [{
-            name:  independente + ' - ' + dependente,
+            name: independente + ' - ' + dependente,
             color: 'rgba(223, 83, 83, .5)',
             data: dadoGra
-    
+
         },
         {
             type: 'line',
-            name: equi.replace(/&nbsp;/g,' '),
-            data: linhaGraf,
+            name: equi.replace(/&nbsp;/g, ' '),
+            data: testeLInha,
         }]
     });
-    
+
 
 }
 
