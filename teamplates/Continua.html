@@ -18,29 +18,6 @@
     <script src="../assets/code/highcharts.js"></script>
     <script src="../assets/code/modules/histogram-bellcurve.js"></script>
     <style type="text/css">
-        .btnDigi {
-
-            background-color: #3498db;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-            margin: 10px;
-            padding: 6px 10px
-        }
-
-        #container {
-            max-width: 100%;
-            margin: 1em auto;
-        }
-
-        .btnMenu {
-            background-color: #0f5355;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-            margin: 10px;
-            padding: 6px 10px
-        }
     </style>
 </head>
 
@@ -51,37 +28,51 @@
     </header>
 
     <div id='resolucaoCalculos'>
-        <center>
-            <h2>Estatistica Descritiva Continua</h2>
-        </center>
-        <button type="button" class="btnDigi" onclick="chamaDistribuicao()">DISTRIBUIÇÕES</button>
-        <button type="button" class="btnMenu" onclick="window.location = '../index.html'">MENU PRINCIPAL</button>
-
-        <div id="divGrafico">
-            <div id="container"></div>
+        <div id="tabDados">
+            <div id="tabDadosContinua"></div>
+            <div id="XXX">
+                <div id="Results"></div>
+                <div id="X">
+                    <div id="divContinua">
+                        <table>
+                            <tr>
+                                <th>
+                                    <font face=arial>Separatrizes</font>
+                                    <select id="lista">
+                                        <option value=" ">escolha</option>
+                                        <option value="Q">Quartil</option>
+                                        <option value="K">Quintil</option>
+                                        <option value="D">Decil</option>
+                                        <option value="P">Porcentil</option>
+                                    </select>
+                                    <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
+                                    <input type="button" onclick="separatrizCont()" value="IR">
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="separatriz">
+                        <table>
+                            <tr id="trSeparatriz">
+                                <th id="separatriz1"></th>
+                                <td id="resulSeparatriz1"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="conjuntoBtn">
+                <button type="button" id="btnDigiCont" onclick="chamaDistribuicao()">PROBABILIDADE</button>
+                <button type="button" id="btnMenu" onclick="window.location = '../index.html'">PÁGINA PRINCIPAL</button>    
+            </div>
         </div>
-
-        <div id="tabDados"></div>
-
-        <div id="Results"></div>
-
 
         <!-- <div id="topo"></div> -->
         <!-- <div id="eleRept"></div> -->
-        <div id="divContinua">
-            <font face=arial color=black>Separatrizes&nbsp;</font>
-            <select id="lista">
-                <option value=" ">escolha</option>
-                <option value="Q">Quartil</option>
-                <option value="K">Quintil</option>
-                <option value="D">Decil</option>
-                <option value="P">Porcentil</option>
-            </select>
-            <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
-            <input type="button" onclick="separatrizCont()" value="IR">
-            <div id="separatriz"></div>
-            <div id="desviopadrao"></div>
-            <div id="coeficiente"></div>
+     
+        <div id="divGrafico">
+            <div id="container"></div>
+        </div>
 
         </div>
 

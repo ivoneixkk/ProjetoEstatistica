@@ -122,6 +122,7 @@ function DistUniforme() {
             break;
         case "media":
             let UmediaR = 'Valor Medio de:' + Umedia;
+            document.getElementById('qtdProd').style.display = 'none'
             document.getElementById('Umedia').innerHTML = UmediaR;
             break;
         case "variDisv":
