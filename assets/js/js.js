@@ -60,27 +60,12 @@ function ChamarDiv(el) {
         document.getElementById('btnDigi').style.display = 'none';
         document.getElementById('btnImp').style.display = 'none';
 
-<<<<<<< HEAD
     }  else if (display =="escolha"){
-=======
-    } else if (display ="escolha"){
-        document.getElementById('importar').style.display = 'none';
-        document.getElementById('escolha').style.display = 'inline';
-        document.getElementById('btnvoltarindex').style.display = 'inline';
-        document.getElementById('btnImp').style.display = 'inline';
-        document.getElementById('btnDigi').style.display = 'inline';
-
-    }  else if (display =="escolhaDigi"){
->>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
         document.getElementById('digitarr').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
         document.getElementById('btnvoltarindex').style.display = 'inline';
         document.getElementById('btnImp').style.display = 'inline';
         document.getElementById('btnDigi').style.display = 'inline';
-<<<<<<< HEAD
-=======
-
->>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
     }
     else if (display == "escolhaDigi"){
         document.getElementById('importar').style.display = 'none';
@@ -147,10 +132,7 @@ function achar() {
 //#####################################################################################################
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
 var fileArr
 var strCorre
 var testCSV

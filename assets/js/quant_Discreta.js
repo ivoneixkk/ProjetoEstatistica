@@ -27,7 +27,6 @@ function quantiDiscreta() {
             testvalores[i] = ''
             for(let j = 0; j < auxTestValores.length; j++){
                 testvalores[i] += auxTestValores[j] + ' ';
-<<<<<<< HEAD
             }
         } 
         if(testvalores[i].match('%C3%A7')){
@@ -54,10 +53,6 @@ function quantiDiscreta() {
                 }
             }
         }	
-=======
-            }	
-        }
->>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
     }
     /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
 
@@ -69,11 +64,7 @@ function quantiDiscreta() {
     ordenarVetor(vetor, vetor.length);
     repeticao(vetor, testvalores[0], testvalores[1]);
     mountTabelaDiscreta(vetor, testvalores[0], testvalores[1]);
-<<<<<<< HEAD
     MostraGraDiscreta(frpercentual, testvalores);
-=======
-    MostraGraDiscreta(Repeticao, testvalores);
->>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
     mountTabelaResult(vetor);
     desvioPadraoDiscreta(Lvalor);
 }
