@@ -100,7 +100,7 @@ label {
       display: none
   }
 
-#btnvoltarindex, #btnCorrevoltarindex, #btnDescrivoltarindex, #btnDigivoltarindex, #btnVoltarindex {
+#btnvoltarindex, #btnCorrevoltarindex, #btnDescrivoltarindex, #btnDigivoltarindex, #btnVoltarindex, #btnMenu{
     border-width: 0;
     background-color: rgb(158, 0, 0) ;
     border-radius: 5px;
@@ -110,11 +110,6 @@ label {
     padding: 8px 12px
 }
 
-#btnVoltarindex{
-    margin: 0 0 0 88%;
-    width: 12%;
-    height: 7%;;
-}
 
 #btnImp {
     border-width: 0;
@@ -128,7 +123,7 @@ label {
 
 
 
-#btnDigi {
+#btnDigi,#btnDigiCont {
     border-width: 0;
     background-color: #0077ff;
     border-radius: 5px;
@@ -137,6 +132,7 @@ label {
     margin: 10px;
     padding: 8px 12px
 }
+
 #btnRec {
     border-width: 0;  
     background-color: rgb(158, 0, 0);
@@ -258,7 +254,33 @@ input:focus {
     background: white 
 }
 
-#tabDados strong{
+#tabDadosContinua{
+    width: 96%;
+    margin: 2%;
+    font-size: 120%
+}
+
+#tabDadosContinua table{
+    width: 100%;
+}
+
+#tabDadosContinua tr:first-child th, #tabDadosContinua tr:last-child th{
+    color: white;
+    background-color: rgb(92, 92, 92);
+}
+
+#tabDadosContinua tr th, #tabDadosContinua tr td{
+    border-radius: 5px;
+}
+
+#tabDadosContinua tr:nth-child(even){
+    background-color: rgb(218, 218, 218);
+}
+
+#tabDadosContinua tr:nth-child(odd){
+    background-color: rgb(235, 235, 235);}
+
+#tabDadosContinua strong{
     margin-left: 6%;
 }
 
@@ -507,7 +529,7 @@ footer{
 
 #container {
     margin: 1% 0 5% 0;
-    width: 70%;
+    width: 100%;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
 }
 
@@ -569,6 +591,10 @@ footer{
 
 #divContinua table{
     width: 70%;
+}
+
+#divContinua tr{
+    text-align: center;
 }
 
 #divContinua th{
@@ -695,10 +721,9 @@ footer{
 #recarregaCorrelacao{
     float: right;
 }
-#Gragra{
-    margin-top: 2%;
-    width: 100%;
-    height: 50%;
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
 
+#conjuntoBtn{
+    width: 100%;
+    margin: 0;
+    text-align: right;
 }

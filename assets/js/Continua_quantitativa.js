@@ -135,11 +135,11 @@ function medianaCont(vet) {
     //ACHAR A POSIÇAO PARA ANALIZAR O CALCULO DA MEDIANA
     //CASO FOR PAR ACHA O MEIO DO VETOR E SOMA COM A PROXIMA POSIÇAO E DIVIDE POR 2
     if (Med % 2 == 0) {
-        alert('sou par');
+//        alert('sou par');
         Med = vet.length / 2;
         Med = (Med + (Med + 1)) / 2;
     } else {
-        alert('sou impar');
+      //  alert('sou impar');
         //SE FOR IMPAR PEGA O MEIO DO VETOR 
         Med = vet.length / 2;
 
@@ -347,11 +347,11 @@ function mountarTabelaResultados() {
     for (let i = 0; i < Dadostabela.length; i++) {
         if (posicao == Dadostabela[i].fac) {
             if (posicao == GFac[0]) {
-                alert("fac anterior nao existe, entao assume o valor 0 na formula");
+              //  alert("fac anterior nao existe, entao assume o valor 0 na formula");
                 mediana = Dadostabela[i].intervalo_classeI + ((((somatorioFi / 2) - 0) / Dadostabela[i].n_elementos_fi) * Dadostabela[i].h_Ic);
             }
             else {
-                alert('oba achei vou analizar a classe .: ' + Dadostabela[i].classe);
+               // alert('oba achei vou analizar a classe .: ' + Dadostabela[i].classe);
                 console.log(Dadostabela[i].intervalo_classeI);
                 console.log(somatorioFi);
                 console.log(Dadostabela[i - 1].fac);
@@ -432,7 +432,7 @@ function separatrizCont() {
                 break;
             }
         }
-        alert("sou a posiçao da medida separatriz" + sep);
+    //    alert("sou a posiçao da medida separatriz" + sep);
         let ope1 = 0;
         let ope2 = 0;
         let ope3 = 0;
