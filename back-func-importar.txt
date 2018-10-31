@@ -1,0 +1,46 @@
+
+var leitorDeCSV = new FileReader()
+window.onload = function init() {
+    leitorDeCSV.onload = leCSV;
+}
+
+for (let i = 0; i < leitorDeCSV.length; i++) {
+    vetor.push(FileReader.onload.result);
+}
+
+
+
+function pegaCSV(inputFile) {
+    var file = inputFile.files[0];
+    leitorDeCSV.readAsText(file);
+}
+
+let testvar
+
+function leCSV(evt) {
+
+    var fileArr = evt.target.result.split('n');
+    var strDiv = '<strong>Arquivo CSV importado</strong>';
+    strDiv += '<table>';
+    for (var i = 0; i < fileArr.length; i++) {
+        strDiv += '<tr>';
+
+        var fileLine = fileArr[i].split(';');
+
+        testvar = parseFloat(fileLine[0])
+        for (var j = 0; j < fileLine.length; j++) {
+            strDiv += '<td>' + fileLine[j].trim() + '</td>';
+            if (isNaN(testvar)) {
+                vetor.push(fileLine[j].trim());
+
+            } else {
+                vetor.push(parseFloat(fileLine[j].trim()));
+            }
+        }
+        strDiv += '</tr>';
+    }
+
+    strDiv += '</table>';
+    var CSVsaida = document.getElementById('CSVsaida');
+    return vetor;
+}

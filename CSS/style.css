@@ -6,9 +6,10 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 header {
-    padding: 0.5%;
+    width: 100%;
+    padding: 0.5% 0;
     background: #0077ff; 
-    color: black;
+    color: white;
     font-size: 140%
 }
 header i{
@@ -33,9 +34,9 @@ header i{
 }
 #dadosEntrada{
     height: 100%;
-    width: 35%;
+    width: 50%;
     padding: 10px;
-    margin: 15% 35% 8% 35%;  
+    margin: 11% 25% 8% 25%;  
     text-align: center;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
     background-color: #fff;  
@@ -45,6 +46,7 @@ input[type='file'] {
   display: none
 }
 /* Aparência que terá o seletor de arquivo */
+
 label {
     border-width: 0;
     background-color: #0077ff;
@@ -70,7 +72,6 @@ label {
 #btnexecutarc{
     display: none;
 }
-
 #btnexecutarc {
     border-width: 0; 
     background-color: #0077ff;
@@ -87,7 +88,7 @@ label {
 #btnvoltar {
     border-width: 0;
     float: left;
-    background-color: red ;
+    background-color: rgb(158, 0, 0) ;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
@@ -99,9 +100,9 @@ label {
       display: none
   }
 
-#btnvoltarindex, #btnCorrevoltarindex {
+#btnvoltarindex, #btnCorrevoltarindex, #btnDescrivoltarindex, #btnDigivoltarindex, #btnVoltarindex {
     border-width: 0;
-    background-color: red ;
+    background-color: rgb(158, 0, 0) ;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
@@ -109,7 +110,11 @@ label {
     padding: 8px 12px
 }
 
-
+#btnVoltarindex{
+    margin: 0 0 0 88%;
+    width: 12%;
+    height: 7%;;
+}
 
 #btnImp {
     border-width: 0;
@@ -134,7 +139,7 @@ label {
 }
 #btnRec {
     border-width: 0;  
-    background-color: red;
+    background-color: rgb(158, 0, 0);
     border-radius: 5px;
     color: rgb(253, 253, 253);
     cursor: pointer;
@@ -166,7 +171,7 @@ label {
 
 #btnRecC {
     border-width: 0;
-    background-color: red;
+    background-color: rgb(158, 0, 0);
     border-radius: 5px;
     color: rgb(253, 253, 253);
     cursor: pointer;
@@ -188,17 +193,13 @@ label {
 }
 
 
-#escolha{
-    width: 100%;
-    background-color: #fff;
-    font-size: 12px;   
-}
 #digitar{
     display: none;
     
 }
 #importar{
     display: none;
+    margin-top: -10px;
     
 }
 
@@ -240,10 +241,9 @@ input:focus {
 }
 
 #resolucaoCalculos{
-    padding-bottom: 75%;
     width: 80%;
     height: auto;
-    margin: 0 10%;
+    margin: 2% 10% 0 10%;
     line-height: 30px;  
     color: black;
     text-align: center;
@@ -251,12 +251,15 @@ input:focus {
 
 
 #tabDados{
-    float: left;
-    margin: 1% 0% 0% 10%;
-    text-align: left;
-    border: solid 1px black;
-    color: black;
-    background: white
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    width: 100%;
+    border: solid 1px white;
+    color: black; 
+    background: white 
+}
+
+#tabDados strong{
+    margin-left: 6%;
 }
 
 #dadosEntrada #estatisticaDescritiva table{
@@ -274,49 +277,17 @@ input:focus {
     font-size: 150%;
 }
 
-#tabDados table,#tabDados th ,#tabDados tr,#tabDados td{
-
-    align:center;
-
+#tabDiscreta th ,#tabDiscreta tr,#tabDiscreta td{
     border-radius: 5px;
-    /* border: 1px solid black; */
-    /* border-collapse: collapse; */
     text-align: center;
     padding: 1px;
     
-}
-
-#Results{
-    color: black;
-    position: relative;
-    display: inline;
-    float: left;
-    margin: 1% 0% 0% 1%;
-    display: inline;
-    text-align: left
 }
 
 th{
     background: #e3e6eb;
 }
 
-/* table{
-    width: 100%;
-} */
-
-
-
-#divContinua{
-    margin: 1% 0% 0% 1%;
-    float: left;
-}
-
-#container{
-    background: transparent;
-    width: 40%;
-    height: 300px;
-    float: left;
-}
 
 #estatisticaDescritiva{
     display: none;
@@ -328,13 +299,15 @@ footer{
     position: fixed;
     bottom: 0px;
     background: #0077ff;
-    color: black;
+    color: white;
     text-align: center;
 }
 
 #footerDiscreta{
     background: #0077ff;
-    color: black;
+    width: 99%;
+    color: white;
+    position: inherit;
     text-align: center;
     padding: 0.5%;
 }
@@ -345,9 +318,9 @@ footer{
 }
 
 #uniforme {
+    border: 4px solid #0077ff;
     padding: 2px;
-    margin: 0 auto;
-    border-radius: 25px;
+    margin: 0 ;
     width: 98%;
     color: rgb(0, 0, 0);
     display: none;
@@ -356,9 +329,9 @@ footer{
 }
 
 #normal {
+    border: 4px solid #0077ff;
     padding: 2px;
     margin: 0 auto;
-    border-radius: 25px;
     width: 98%;
     color: rgb(0, 0, 0);
     display: none;
@@ -366,9 +339,9 @@ footer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 #binomial {
+    border: 4px solid #0077ff;
     padding: 2px;
     margin: 0 auto;
-    border-radius: 25px;
     width: 98%;
     color: rgb(0, 0, 0);
     display: none;
@@ -403,7 +376,8 @@ footer{
 
 .btnDigiR {
     border-width: 0;
-    background-color: #FFD700;
+    border: 1px solid black;
+    background-color: #C0C0C0;
     border-radius: 5px;
     color: black;
     cursor: pointer;
@@ -432,10 +406,8 @@ footer{
 }
 
 #principal {
-    margin: 0 auto;
-    border-radius: 25px;
+    margin: 5% 5% 0 5%;
     width: 90%;
-    background: #0077ff;
 }
 
 #voltar {
@@ -484,12 +456,15 @@ footer{
     height: 50px;
     line-height: 20px;
     text-align:center;
-    background-color: #000080;
-    color: white;  
+    color: black; 
     /* pura mágica */
     position: absolute;
     top: 20%; /* posiciona na metade da tela */
     margin-top: -25px; /* e retrocede metade da altura */
+}
+
+#central h2{
+    font-size: 300%;
 }
 
 #ntxMaior{
@@ -502,4 +477,221 @@ footer{
 
 #digitarr ,#btnexecutar2{
     display: none;
+}
+
+#erro{
+    display: none;
+    color: red
+}
+
+#tituloDiscreta{
+    text-align: center
+}
+
+#tabDadosDiscreta{
+    width: 96%;
+    margin: 2%;
+    font-size: 120%;
+}
+
+#tabDiscreta{
+    width: 100%;
+}
+
+#tabDiscreta tr:nth-child(even){
+    background-color: rgb(218, 218, 218);
+}
+#tabDiscreta tr:nth-child(odd){
+    background-color: rgb(235, 235, 235);
+}
+
+#container {
+    margin: 1% 0 5% 0;
+    width: 70%;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+}
+
+#divGrafico{
+    width: 100%;
+    margin: 2% 20% 0 0
+}
+
+#Results td {
+    border-radius: 5px;
+    background: #202c2c;
+    color: white;
+    font: bold;
+}
+
+#Results tr:first-child th{
+    padding: 2px 0px;
+    color: white;
+    background-color: rgb(92, 92, 92); 
+}
+
+#Results th{
+    border-radius: 5px;
+}
+
+#sliders {
+    font-size: 9px;
+    margin: 0 auto;
+}
+
+#tabDiscreta tr:first-child th{
+    color: white;
+    background-color: rgb(92, 92, 92);
+}
+
+#Results {
+    width: 34%;
+    margin: 0;
+}
+#Results table{
+    width: 100%;
+}
+
+#XXX{
+    margin: 2% 2% 0 2%;
+    display: flex
+}
+
+#X{
+    width: 60%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#divContinua{  
+    padding: 1px;
+    margin-left: 0;
+}
+
+#divContinua table{
+    width: 70%;
+}
+
+#divContinua th{
+    padding: 0px 50px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(92, 92, 92);
+}
+
+#separatriz{
+    margin: -0.3% 0 0 0;
+}
+
+#separatriz table{
+    width: 70%;
+    text-align: center;
+}
+
+#separatriz th{
+    border-radius: 5px;
+    background-color: #e3e6eb
+}
+
+#separatriz td{
+    border-radius: 5px;
+    color: white;
+    background-color: #202c2c;
+}
+
+#separatriz tr{
+    display: none;
+}
+
+
+#calcCorrelacao{
+    align-content: left
+}
+#resultadoCorrelacao{
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#equacao{
+    margin-left: 2%;
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#forca{
+    margin-left: 2%;
+    background: #EE7621;
+    box-shadow: 5px 5px 5px #fff;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff
+}
+#entrproj{
+    padding: 10px;
+    float: left;
+    margin-left: 2%;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    border-radius: 10px;
+}   
+#separa{
+    margin-top: 7%
+}
+#fazproje{
+    float: left
+}
+.destacar{
+    margin-left: 0.5cm;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.75cm;
+    
+}
+#opproje, #fproje{
+    background: no-repeat #353680; 
+    background-color: #0077fF;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    color: #fff
+}
+
+#cproje{
+    float: left
+}
+#resprojecao{
+    display: none
+}
+#resprojecao{
+    background: #fff;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    padding: 5px;
+    float: left;
+    margin-left: 2%;
+    border-radius: 10px;}
+#abaixo{
+    margin-top: 6%
+}
+.tbtnDigi {
+    margin-left: 2%;
+    border: solid 1px black;
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px
+}
+
+#recarregaCorrelacao{
+    display: none;
+}
+#recarregaCorrelacao{
+    float: right;
 }

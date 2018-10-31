@@ -8,8 +8,8 @@ let vetObjeto = [];
 let vetor = [];
 let Repeticao = [];
 let Elementos = [];
-let Lvalor = []
-
+let Lvalor = [];
+let frpercentual = [];
 
 function quantiDiscreta() {
     let testevar = queryString("vetor");
@@ -18,21 +18,55 @@ function quantiDiscreta() {
     Lvalor = Lvalor.split(',');
     console.log(Lvalor);
     testvalores = testvalores.split(',');
+
+    /////////////////// CORRIGIR ERRO DE STRING QUANDO HÁ ESPAÇO NA FRASE///////////////////////////////
+    for(let i = 0; i < testvalores.length; i++){
+        if(testvalores[i].match('%20')){
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%20');
+            testvalores[i] = ''
+            for(let j = 0; j < auxTestValores.length; j++){
+                testvalores[i] += auxTestValores[j] + ' ';
+            }
+        } 
+        if(testvalores[i].match('%C3%A7')){
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%A7');
+            testvalores[i] = ''
+            for(let j = 0; j < auxTestValores.length; j++){
+                if(j == auxTestValores.length -1){
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ç';
+                }
+            } 
+        } 
+        if(testvalores[i].match('%C3%A3')){
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%A3');
+            testvalores[i] = ''
+            for(let j = 0; j < auxTestValores.length; j++){
+                if(j == auxTestValores.length -1){
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ã';
+                }
+            }
+        }	
+    }
+    /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
+
     testevar = testevar.split(',');
     for (let i = 0; i < testevar.length; i++) {
         vetor[i] = parseInt(testevar[i]);
         ''
     }
-
     ordenarVetor(vetor, vetor.length);
     repeticao(vetor, testvalores[0], testvalores[1]);
     mountTabelaDiscreta(vetor, testvalores[0], testvalores[1]);
-    MostraGraDiscreta(Repeticao, testvalores);
-
-    desvioPadraoDiscreta(Lvalor);
-
+    MostraGraDiscreta(frpercentual, testvalores);
     mountTabelaResult(vetor);
-
+    desvioPadraoDiscreta(Lvalor);
 }
 
 
@@ -80,10 +114,11 @@ function ordenarVetor(ent, cont) {
 
 function mountTabelaDiscreta(vet, val1, val2) {
 
-    let mounTable3 = "<strong>TABELA DE ANALISE DOS DADOS</strong>";
+    let mounTable3 ="<div>"
+    mounTable3 += "<strong>TABELA DE ANALISE DE DADOS</strong>";
 
 
-    mounTable3 += "<table><td><table>";
+    mounTable3 += "<table id='tabDiscreta'>";
     mounTable3 += "<tr>";
     mounTable3 += "<th>" + val1 + "</th>";
     mounTable3 += "<th>N.: " + val2 + "(fi)</th>";
@@ -116,7 +151,7 @@ function mountTabelaDiscreta(vet, val1, val2) {
             Fac_porcentagem: porfiacu.toFixed(2),
             Somatorio_fi: total
         }
-
+        frpercentual.push(parseFloat(porcfi.toFixed(2)))
         vetObjeto.push(dadosObjeto);
     }
 
@@ -124,7 +159,6 @@ function mountTabelaDiscreta(vet, val1, val2) {
     for (let h = 0; h < vetEnt.length; h++) {
         if (vetEnt[h].repeticao > maior) {
             maior = vetEnt[h].repeticao;
-
         }
     }
 
@@ -133,10 +167,9 @@ function mountTabelaDiscreta(vet, val1, val2) {
 
 
     media = media / total;
-    mounTable3 += "</tr>";
-    mounTable3 += "</table></td><div id=Results></div>";
-    mounTable3 += "<div id=desviopadrao></div></table>";
-    var tabela3 = document.getElementById('tabDados');
+    mounTable3 += "</table>";
+    mounTable3 += "</div>"
+    var tabela3 = document.getElementById('tabDadosDiscreta');
     tabela3.innerHTML = mounTable3;
 
 }
@@ -177,8 +210,9 @@ function repeticao(vet, val1, val2) {
 
 function mountTabelaResult(vet) {
 
-    var mounTable4 = "<table><th collspan=2>RESULTADOS OBTIDOS</th>";
-    mounTable4 += "<tr><th>Media</td><td>" + media.toFixed(2) + "</th></tr>";
+    var mounTable4 = "<div>";
+    mounTable4 = "<table><th collspan=2>RESULTADOS OBTIDOS</th>";
+    mounTable4 += "<tr><th>Media</th><td>" + media.toFixed(2) + "</th></tr>";
 
     let ttotal;
     if (total % 2 == 0) {
@@ -186,7 +220,6 @@ function mountTabelaResult(vet) {
         mediana = (vet[ttotal - 1] + vet[ttotal]) / 2;
 
     } else {
-        alert('sou impar');
         ttotal = Math.floor(total / 2);
         console.log(ttotal);
         mediana = (vet[ttotal]);
@@ -211,11 +244,14 @@ function mountTabelaResult(vet) {
     mounTable4 += "</tr>";
     mounTable4 += "<tr>"
     mounTable4 += "<th>Desvio padrao</th>"
-    mounTable4 += "<td><div id=desviopadrao></div></td>";
+    mounTable4 += "<td><div id='desviopadrao'></div></td>";
     mounTable4 += "</tr>";
-    
-
+    mounTable4 += "<tr>"
+    mounTable4 += "<th><div id='coeficienteTexto'></div></th>"
+    mounTable4 += "<td><div id='coeficienteResp'></div></td>"
+    mounTable4 += "</tr>"
     mounTable4 += "</table>";
+    mounTable4 += "</div>"
     var tabela4 = document.getElementById('Results');
     tabela4.innerHTML = mounTable4;
 }
@@ -269,25 +305,33 @@ function separatrizDiscreta() {
                 case "1":
                     Mseparatriz = (total * 25) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><strong>Quartil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;
                     break;
 
                 case "2":
                     Mseparatriz = (total * 50) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quartil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
 
                 case "3":
                     Mseparatriz = (total * 75) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quartil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
 
                     break;
                 case "4":
                     Mseparatriz = total * 100 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quartil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 default:
 
@@ -300,27 +344,37 @@ function separatrizDiscreta() {
                 case "1":
                     Mseparatriz = total * 20 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quintil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quintil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; 
                     break;
                 case "2":
                     Mseparatriz = total * 40 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quintil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quintil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "3":
                     Mseparatriz = total * 60 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quintil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quintil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "4":
                     Mseparatriz = total * 80 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quintil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quintil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "5":
                     Mseparatriz = total * 100 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Quintil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Quintil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
 
                 default:
@@ -332,52 +386,72 @@ function separatrizDiscreta() {
                 case "1":
                     Mseparatriz = total * 10 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "2":
                     Mseparatriz = total * 20 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "3":
                     Mseparatriz = total * 30 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "4":
                     Mseparatriz = total * 40 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "5":
                     Mseparatriz = total * 50 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "6":
                     Mseparatriz = total * 60 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "7":
                     Mseparatriz = total * 70 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "8":
                     Mseparatriz = total * 80 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "9":
                     Mseparatriz = total * 90 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "10":
                     Mseparatriz = total * 100 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
-                    document.getElementById('separatriz').innerHTML += '<p><p><strong>Decil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz + '<p>';
+                    document.getElementById('trSeparatriz').style.display = 'table-row'
+                    document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
 
                 default:
@@ -392,7 +466,9 @@ function separatrizDiscreta() {
             } else {
                 Mseparatriz = total * Lvalor / 100
                 Mseparatriz = acharPosicao(Mseparatriz);
-                document.getElementById('separatriz').innerHTML += '<p><p><strong>Porcentil</strong>&nbsp;-' + Lvalor + '&nbsp;=&nbsp;' + Mseparatriz ;
+                document.getElementById('trSeparatriz').style.display = 'table-row'
+                document.getElementById('separatriz1').innerHTML = 'Porcentil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
+                document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
             }
             break;
         default:
@@ -416,8 +492,9 @@ function desvioPadraoDiscreta(Lvalor) {
             resPadrao = Math.sqrt(resPadrao).toFixed(2);
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
-            document.getElementById('desviopadrao').innerHTML =  resPadrao;
-            document.getElementById('coeficiente').innerHTML = '<p><strong>Amostra Coeficiente de Variação:&nbsp;&nbsp;&nbsp;</strong>' + coeficiente + '&nbsp;%&nbsp;<p>';
+            document.getElementById('desviopadrao').innerHTML =  resPadrao ;
+            document.getElementById('coeficienteTexto').innerHTML = 'Amostra Coeficiente de Variação:';
+            document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
         } else if (Lvalor[i + 1] == "true") {
@@ -432,7 +509,8 @@ function desvioPadraoDiscreta(Lvalor) {
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
             document.getElementById('desviopadrao').innerHTML = resPadrao.toFixed(3);
-            document.getElementById('coeficiente').innerHTML = '<p><strong>Populacao Coeficiente de Variação:&nbsp;&nbsp;&nbsp;</strong>' + coeficiente + '&nbsp;%&nbsp;<p>';
+            document.getElementById('coeficienteTexto').innerHTML = 'Populacao Coeficiente de Variação:';
+            document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
         } else {
@@ -460,21 +538,33 @@ function MostraGraDiscreta(dado, val1) {
             type: 'column',
             options3d: {
                 enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
+                alpha: 0,
+                beta: 0,
+                depth: 100,
+                viewDistance: 0,
             }
         },
         title: {
-            text: val1[0] + ' - por -' + val1[1]
+            text: val1[0] + ' - ' + val1[1],
+            style: {
+                fontSize: 20
+            }
         },
         subtitle: {
-            text: 'Grafico da tabela Discreta'
+            text: 'Grafico da tabela Discreta',
+            style: {
+                fontSize: 16
+            },
+        },
+        legend:{
+            enabled:false
+        },
+        credits:{
+            enabled:false
         },
         plotOptions: {
             column: {
-                depth: 25,
+                depth: 0,
 
             }
         },
@@ -485,14 +575,16 @@ function MostraGraDiscreta(dado, val1) {
                 skew3d: true,
                 style: {
                     fontSize: '16px',
-
                 }
             }
         },
         yAxis: {
-
+            labels:{
+                format:'{value}\%'
+            },
+            tickInterval: 10 ,
             title: {
-                text: null
+                text: false
             }
         },
 
@@ -515,6 +607,7 @@ function MostraGraDiscreta(dado, val1) {
         showValues();
         chart.redraw(false);
     });
+    chart.reflow();
 
     showValues();
 

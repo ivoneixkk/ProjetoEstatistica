@@ -30,22 +30,18 @@
         <button type="button" class="btnDigi" onclick="DivDists('uniforme')">UNIFORME</button>
         <button type="button" class="btnDigi" onclick="DivDists('binomial')">BINOMIAL</button>
         <button type="button" class="btnDigi" onclick="DivDists('normal')">Normal</button>
-        <input type="button" class="btnDigiR" onclick="window.location.reload()" value="Limpar Dados">
+        <input type="button" class="btnDigiR" onclick="window.location.reload()" value="LIMPAR DADOS">
         <button type="button" id="btnCorrevoltarindex" onclick="window.location = '../index.html'">VOLTAR</button>
 
         <br>
         <!-- <input type="button" onclick="quantiDiscreta(vetor)" value="EXECUTAR"> -->
         <!-- <input type="button" onclick="MostraGra(Repeticao)" value="GRAFICOS"> -->
         <div id="principal">
-            <hr>
 
             <div id="uniforme">
                 Uniforme
                 <br>
-                <input name="pontoMin" id="pontoMin" value="" size="10" type="text" placeholder="Ponto Minimo" />
-                &nbsp;&nbsp; - ao -&nbsp;&nbsp;
-                <input name="pontoMax" id="pontoMax" value="" size="10" type="text" placeholder="Ponto Maximo" />
-                <font>Probabilidade - </font>
+                 <font>Probabilidade - </font>
                 <font id="txtEntrei">Entre:</font>
 
                 <select id="opuniforme">
@@ -63,12 +59,12 @@
                     <option value="pelomenos">Pelo menos</option>
                     <option value="media">Valor medio (media)</option>
                     <option value="variDisv">Variância e Desvio Padrao</option>
-
                     <option value="todos">Todos</option>
-
-
-
                 </select>
+                <input name="pontoMin" id="pontoMin" value="" size="10" type="text" placeholder="Ponto Minimo" />
+                &nbsp;&nbsp; - ao -&nbsp;&nbsp;
+                <input name="pontoMax" id="pontoMax" value="" size="10" type="text" placeholder="Ponto Maximo" />
+               
                 <input name="prodentre1" id="entreProd1" value="" size="10" type="text" placeholder="de (X)" />
                 <input name="prodentre2" id="entreProd2" value="" size="10" type="text" placeholder="a (Y)" />
                 <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
@@ -115,7 +111,7 @@
             </div>
 
             <div id="normal">
-                Normal<br>
+                Normal
                 <br>
                 <input name="media" id="nmedia" value="" size="10" type="text" placeholder="media" />&nbsp;&nbsp;
                 <input name="desvio" id="ndesvio" value="" size="10" type="text" placeholder="desvio padrao" />
@@ -143,7 +139,6 @@
 
             </div>
 
-            <hr>
         </div>
         <div id="tabelab"></div>
         <div id="resultadoDistribuicao"></div>

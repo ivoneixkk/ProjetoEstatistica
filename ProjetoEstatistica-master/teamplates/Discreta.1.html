@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FATEC Franca - Trabalho estatistica" />
+
+    <title>FATEC - trabalho estatistica</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <style type="text/css">
+
+
+#container{ 
+    margin: 1% 0 0 1%;
+    width: 800px;
+    height: 50px;
+    border: 1px solid black;
+ 
+}
+#desviopadrao{
+    float: right;
+}
+
+#Results td{
+    background: #202c2c;
+    color: white;
+    font: bold;
+}
+
+
+#Results{
+    float: right;
+    margin-top: 3%; 
+    margin-right: 20%;
+}
+#sliders {
+            font-size: 9px;
+            margin: 0 auto;
+        }
+
+        #container {
+            height: 400px;
+        }
+    </style>
+
+</head>
+
+<body onload="quantiDiscreta()">
+    <header>
+        <i class="far fa-chart-bar"></i>
+        FATEC
+    </header>
+
+    <div id='resolucaoCalculos'>
+
+    <h2>Estatistica Descritiva Discreta</h2>
+    <div id="tabDados"></div>
+
+        <!-- <div id="topo"></div> -->
+        <!-- <div id="eleRept"></div> -->
+        <div id="desviopadrao"></div>
+        <div id="coeficiente"></div>
+        <div id="divContinua">
+        <font face=arial color=black>Separatrizes&nbsp;</font>
+        <select id="lista">
+            <option value=" ">escolha</option>
+            <option value="Q">Quartil</option>
+            <option value="K">Quintil</option>
+            <option value="D">Decil</option>
+            <option value="P">Porcentil</option>
+        </select>
+        <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
+        <input type="button" onclick="separatrizDiscreta()" value="IR">
+        <div id="separatriz"></div>
+    </div>
+
+
+
+    <div id="divGrafico">
+            <div id="container"></div>
+            <div id="sliders">
+                <table>
+                    <tr>
+                        <td>X</td>
+                        <td><input id="alpha" type="range" min="0" max="45" value="15" /> <span id="alpha-value" class="value"></span></td>
+                        <td>Y</td>
+                        <td><input id="beta" type="range" min="-45" max="45" value="15" /> <span id="beta-value" class="value"></span></td>
+                        <td>Z</td>
+                        <td><input id="depth" type="range" min="20" max="100" value="50" /> <span id="depth-value" class="value"></span></td>
+                    </tr>
+                </table>
+            </div>
+    
+    
+        </div>
+    
+
+
+    </div>
+
+
+    <!-- <div id="divGrafico">
+                <div id="container" style="margin: 20% 0% 0% 10%; float: left;" ></div>
+                    <div id="sliders">
+                        <table>
+                            <tr>
+                                <td>X</td>
+                                <td><input id="alpha" type="range" min="0" max="45" value="15" /> <span id="alpha-value"
+                                        class="value"></span></td>
+                                <td>Y</td>
+                                <td><input id="beta" type="range" min="-45" max="45" value="15" /> <span id="beta-value"
+                                        class="value"></span></td>
+                                <td>Z</td>
+                                <td><input id="depth" type="range" min="20" max="100" value="50" /> <span id="depth-value"
+                                        class="value"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+            </div> -->
+
+    <!-- 
+    <footer id="footerDiscreta">
+        <i class="fa fa-registered"></i>
+        FATEC - Análise e Desenvolvimento de Sistemas
+    </footer> -->
+</body>
+<script src="../assets/js/jquery.331.js"> </script>
+<script src="../assets/code/highcharts.js"></script>
+<script src="../assets/code/highcharts-3d.js"></script>
+<script src="../assets/code/modules/exporting.js"></script>
+<script src="../assets/code/modules/export-data.js"></script>
+<script type='text/javascript' src='../assets/js/quant_Discreta.js'></script>
+
+</html>
