@@ -9,12 +9,15 @@ let a, b
 let correlacaoForca
 let dispersao = []
 let equa1grau = 0
+let equi = 0
 let dadosGraficos = []
 let Lmaior = 0
 let Lmenor = 0
 let linhaGraf = []
 let resultado = 0
 let x, y
+let testeLInha = []
+let dadoGra = []
 
 executar();
 function executar() {
@@ -41,15 +44,17 @@ function executar() {
         }
 
         dadosGraficos.push(objDadosGraf)
-
+        dadoGra.push([VetIndependente[i],VetDependente[i]])
     }
 
     console.log(VetDependente)
     console.log(VetIndependente)
+    console.log(dadoGra)
     console.log(dadosGraficos)
+    console.log(dadoGra)
     calcularCorrelacao()
     popularGrafico()
-//    MostraGraCorrelacao()
+    //    MostraGraCorrelacao()
 }
 
 function fazerProjecao(inputproj) {
@@ -146,9 +151,12 @@ function calcularCorrelacao() {
 
     if (b > 0) {
         equa1grau = '<b>equação é&nbsp;</b> <font class="destacar"> y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
+        equi = 'y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2)
     }
     else {
         equa1grau = '<b>equação é&nbsp;</b><font class"destacar">y =&nbsp;' + a.toFixed(2) + '&nbsp;&nbsp;x&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
+        equi = 'y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2)
+
     }
     document.getElementById('equacao').innerHTML = equa1grau
 
@@ -205,6 +213,10 @@ function popularGrafico() {
         x,
         y
     });
+
+    testeLInha.push([x,y])
+    console.log(testeLInha)
+
     //    x = 0;
 
     if (a < 0) {
@@ -217,6 +229,8 @@ function popularGrafico() {
             x,
             y
         });
+        testeLInha.push([x,y])
+
     } else {
         y = VetDependente[0];
         console.log(Lmenor)
@@ -226,11 +240,14 @@ function popularGrafico() {
         linhaGraf.push({
             x,
             y
+            
         });
+        testeLInha.push([x,y])
+
     }
 
-  
-   MostraGraCorrelacao();
+//    MostraGraCorrelacao();
+    outroGrafico()
 }
 
 
@@ -269,15 +286,16 @@ function calcProjecao(param) {
             x: py,
             y: px
         }
-
+        dadoGra.push([py,px])
         dadosGraficos.push(objDadosGraf)
+        console.log(dadoGra)
         console.log(VetDependente[0])
         console.log(VetIndependente[0])
         // console.log(dadosGraficos)
         document.getElementById('resprojecao').style.display = 'inline'
         let rescorrelacao = document.getElementById('resprojecao')
         rescorrelacao.innerHTML = '<b>' + independente + ' => ' + Y.toFixed(2) + '</b>'
-  //         popularGrafico()
+        //         popularGrafico()
     } else {
         X = (a * param) + b
         console.log(X.toFixed(2))
@@ -292,8 +310,9 @@ function calcProjecao(param) {
             x: px,
             y: py
         }
+        dadoGra.push([py,px])
         dadosGraficos.push(objDadosGraf)
-
+        console.log(dadoGra)
         console.log(dadosGraficos)
         console.log(VetDependente[0])
         console.log(VetIndependente[0])
@@ -301,64 +320,131 @@ function calcProjecao(param) {
         document.getElementById('resprojecao').style.display = 'inline'
         let rescorrelacao = document.getElementById('resprojecao')
         rescorrelacao.innerHTML = '<b>' + dependente + ' => ' + X.toFixed(0) + '</b>'
-//        popularGrafico()
+        //        popularGrafico()
     }
-  //  MostraGraCorrelacao()
+
+    //  MostraGraCorrelacao()
     popularGrafico()
 }
 
-
-
-function MostraGraCorrelacao() {
-    console.log(linhaGraf)
-    console.log(dadosGraficos)
-
-    let CanvGraf = '<canvas id="Container" width="780" height="400"></canvas>';
-    let mounGraf = document.getElementById('divGrafico');
-    let titulo = document.getElementById('titulo')
-    titulo.innerHTML = '<font id=ind>' + independente + '</font>    &nbsp;&nbsp;por&nbsp;&nbsp;<font id=dep>' + dependente + '</font>'
-
-    var ctx = document.getElementById("Contain");
-
-    var myChart = new Chart(ctx, {
-        type: 'scatter',
-        data: {
-
-            datasets: [{
-                label: independente + ' - ' + dependente,
-                data: dadosGraficos,
-                backgroundColor: "rgba(255,0,0,1)"
-            },
-            {
-                type: 'line',
-                label: 'Reta',
-                data: linhaGraf,
-                showLine: true,
-                backgroundColor: "rgba(0,0,255,0)",
-                pointBorderColor: "rgba(0,0,255,0)",
-                borderColor: "rgba(0,0,255,.5)"
-
-            },
-            
-            ]
-        },
-        events: {
-            render: false
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    beginAtZero: true
-                }],
-                xAxes: [{
-                    beginAtZero: true
-                }]
-            }
-        }
+function removeData() {
+    myChart.data.datasets[1].data.pop();
+    myChart.data.datasets[1].forEach((dataset) => {
+        dataset.data.pop();
     });
+    chart.update();
 }
 
 
+// function MostraGraCorrelacao() {
+
+//     removeData()
+//     console.log(linhaGraf)
+//     console.log(dadosGraficos)
+
+//     let CanvGraf = '<canvas id="Container" width="780" height="400"></canvas>';
+//     let mounGraf = document.getElementById('divGrafico');
+//     let titulo = document.getElementById('titulo')
+//     titulo.innerHTML = '<font id=ind>' + independente + '</font>    &nbsp;&nbsp;por&nbsp;&nbsp;<font id=dep>' + dependente + '</font>'
+
+//     var ctx = document.getElementById("Contain");
+
+//     var myChart = new Chart(ctx, {
+//         type: 'scatter',
+//         data: {
+
+//             datasets: [{
+//                 label: independente + ' - ' + dependente,
+//                 data: dadosGraficos,
+//                 backgroundColor: "rgba(255,0,0,1)"
+//             },
+//             {
+//                 type: 'line',
+//                 label: 'Reta',
+//                 data: linhaGraf,
+//                 showLine: true,
+//                 backgroundColor: "rgba(0,0,255,0)",
+//                 pointBorderColor: "rgba(0,0,255,0)",
+//                 borderColor: "rgba(0,0,255,.5)"
+
+//             },
+
+//             ]
+//         },
+//         events: {
+//             render: false
+//         },
+//         options: {
+//             scales: {
+//                 yAxes: [{
+//                     beginAtZero: true
+//                 }],
+//                 xAxes: [{
+//                     beginAtZero: true
+//                 }]
+//             }
+//         }
+//     });
+// }
 
 
+
+function outroGrafico(){
+
+    Highcharts.chart('GraGra', {
+        chart: {
+            type: 'scatter',
+            zoomType: 'yx'
+        },
+        title: {
+            text: 'GRAFICO DE DISPERSÃO'
+        },
+        subtitle: {
+            text: 'Correlação entre: ' + independente + ' VS ' + dependente,
+        
+        },
+        legend: {
+            align: 'auto',
+            verticalAlign: 'top',
+            x: 100,
+            y: 50,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+            borderWidth: 1
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+            }
+        },
+        series: [{
+            name:  independente + ' - ' + dependente,
+            color: 'rgba(223, 83, 83, .5)',
+            data: dadoGra
+    
+        },
+        {
+            type: 'line',
+            name: equi.replace(/&nbsp;/g,' '),
+            data: linhaGraf,
+        }]
+    });
+    
+
+}
 
