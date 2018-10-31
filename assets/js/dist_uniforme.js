@@ -16,6 +16,12 @@ function DivDists(dist) {
     }
 }
 
+function arrumaElementosUniforme(arruma) {
+    if (arruma == "media") {
+        document.getElementById('qtdProd').style.display = 'none'
+    }
+}
+
 
 function entreUniforme() {
     document.getElementById('txtVoltar').style.display = "inline";

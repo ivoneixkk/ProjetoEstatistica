@@ -44,7 +44,7 @@
                  <font>Probabilidade - </font>
                 <font id="txtEntrei">Entre:</font>
 
-                <select id="opuniforme">
+                <select id="opuniforme"  onchange="arrumaElementosUniforme(this.value)">
                     <option value="opcao">escolha uma Opção</option>
                     <option value="maximo">No maximo</option>
                     <option value="minimo">No minimo</option>
@@ -70,7 +70,7 @@
                 <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
 
                 <button type="button" class="btnDigi" onclick="DistUniforme()">Calcular</button>
-                <font id="txtEntre">Entre:</font>
+                <!-- <font id="txtEntre">Entre:</font> -->
 
                 <input type="radio" name="condic" id="entre" onclick="entreUniforme()" value="E">
                 <font id="txtVoltar">Voltar:</font>
