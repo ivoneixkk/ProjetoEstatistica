@@ -327,68 +327,6 @@ function calcProjecao(param) {
     popularGrafico()
 }
 
-function removeData() {
-    myChart.data.datasets[1].data.pop();
-    myChart.data.datasets[1].forEach((dataset) => {
-        dataset.data.pop();
-    });
-    chart.update();
-}
-
-
-// function MostraGraCorrelacao() {
-
-//     removeData()
-//     console.log(linhaGraf)
-//     console.log(dadosGraficos)
-
-//     let CanvGraf = '<canvas id="Container" width="780" height="400"></canvas>';
-//     let mounGraf = document.getElementById('divGrafico');
-//     let titulo = document.getElementById('titulo')
-//     titulo.innerHTML = '<font id=ind>' + independente + '</font>    &nbsp;&nbsp;por&nbsp;&nbsp;<font id=dep>' + dependente + '</font>'
-
-//     var ctx = document.getElementById("Contain");
-
-//     var myChart = new Chart(ctx, {
-//         type: 'scatter',
-//         data: {
-
-//             datasets: [{
-//                 label: independente + ' - ' + dependente,
-//                 data: dadosGraficos,
-//                 backgroundColor: "rgba(255,0,0,1)"
-//             },
-//             {
-//                 type: 'line',
-//                 label: 'Reta',
-//                 data: linhaGraf,
-//                 showLine: true,
-//                 backgroundColor: "rgba(0,0,255,0)",
-//                 pointBorderColor: "rgba(0,0,255,0)",
-//                 borderColor: "rgba(0,0,255,.5)"
-
-//             },
-
-//             ]
-//         },
-//         events: {
-//             render: false
-//         },
-//         options: {
-//             scales: {
-//                 yAxes: [{
-//                     beginAtZero: true
-//                 }],
-//                 xAxes: [{
-//                     beginAtZero: true
-//                 }]
-//             }
-//         }
-//     });
-// }
-
-
-
 function outroGrafico(){
 
     Highcharts.chart('GraGra', {
