@@ -277,7 +277,11 @@ function calcProjecao(param) {
         document.getElementById('resprojecao').style.display = 'inline'
         let rescorrelacao = document.getElementById('resprojecao')
         rescorrelacao.innerHTML = '<b>' + independente + ' => ' + Y.toFixed(2) + '</b>'
+<<<<<<< HEAD
   //         popularGrafico()
+=======
+  //      popularGrafico()
+>>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
     } else {
         X = (a * param) + b
         console.log(X.toFixed(2))
@@ -303,8 +307,12 @@ function calcProjecao(param) {
         rescorrelacao.innerHTML = '<b>' + dependente + ' => ' + X.toFixed(0) + '</b>'
 //        popularGrafico()
     }
+<<<<<<< HEAD
   //  MostraGraCorrelacao()
     popularGrafico()
+=======
+    MostraGraCorrelacao()
+>>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
 }
 
 
@@ -339,12 +347,17 @@ function MostraGraCorrelacao() {
                 borderColor: "rgba(0,0,255,.5)"
 
             },
+<<<<<<< HEAD
             
             ]
         },
         events: {
             render: false
         },
+=======
+            ]
+        },
+>>>>>>> 83c9ec00064fae93a93c931f585de48bfbc5cf33
         options: {
             scales: {
                 yAxes: [{
