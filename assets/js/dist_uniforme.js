@@ -17,37 +17,28 @@ function DivDists(dist) {
 }
 
 function arrumaElementosUniforme(arruma) {
-    if (arruma == "media") {
+
+    if (arruma == "entre") {
         document.getElementById('qtdProd').style.display = 'none'
+        document.getElementById('pontoMin').style.display = 'inline'
+        document.getElementById('pontoMax').style.display = 'inline'
+        document.getElementById('entreProd1').style.display = 'inline'
+        document.getElementById('entreProd2').style.display = 'inline'
+        document.getElementById('btCalcUni').style.display = 'inline'
+    } else if (arruma == "maior" || arruma == "menor") {
+        document.getElementById('pontoMin').style.display = 'inline'
+        document.getElementById('pontoMax').style.display = 'inline'
+        document.getElementById('entreProd1').style.display = 'none'
+        document.getElementById('entreProd2').style.display = 'none'
+        document.getElementById('qtdProd').style.display = 'inline'
+        document.getElementById('btCalcUni').style.display = 'inline'
     }
+
+
+
+
 }
 
-
-function entreUniforme() {
-    document.getElementById('txtVoltar').style.display = "inline";
-    document.getElementById('txtEntre').style.display = "none";
-    document.getElementById('txtEntrei').style.display = "inline";
-    document.getElementById('desfaz').style.display = "inline";
-    document.getElementById('entre').style.display = "none";
-    document.getElementById('opuniforme').style.display = "none";
-    document.getElementById('entreProd1').style.display = "inline";
-    document.getElementById('entreProd2').style.display = "inline";
-    document.getElementById('qtdProd').style.display = "none";
-}
-
-function desfazEntre() {
-    document.getElementById('txtVoltar').style.display = "none";
-    document.getElementById('txtEntre').style.display = "inline";
-    document.getElementById('txtEntrei').style.display = "none";
-
-    document.getElementById('desfaz').style.display = "none";
-    document.getElementById('entre').style.display = "inline";
-    document.getElementById('opuniforme').style.display = "inline";
-    document.getElementById('entreProd1').style.display = "none";
-    document.getElementById('entreProd2').style.display = "none";
-    document.getElementById('qtdProd').style.display = "inline";
-
-}
 
 
 function DistUniforme() {
@@ -59,7 +50,6 @@ function DistUniforme() {
 
     let pontoMin = document.getElementById("pontoMin").value;
     let pontoMax = document.getElementById('pontoMax').value;
-    let entre = document.getElementById('entre').checked;
     let Umedia = 0;
     let Udesvio;
     let Ucv;
@@ -75,24 +65,37 @@ function DistUniforme() {
     Ucv = Ucv * 100;
 
     switch (escolha) {
-        case "amaximo":
-            ba = parseInt(qtdProd) - parseInt(pontoMin);
-            ba = ba + parseInt(qtdProd);
-            resultado = 'Maximo de :&nbsp;&nbsp;' + ba;
+        case "entre":
+            let entreProd1 = document.getElementById('entreProd1').value;
+            let entreProd2 = document.getElementById('entreProd2').value;
+            interr = entreProd1 - entreProd2;
+            ba = pontoMax - pontoMin;
+            fx = 1 / ba;
+            fx = fx * interr;
+            fx = fx * 100;
+            resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
             document.getElementById('resultadoDistribuicao').innerHTML = resultado;
+
             break;
-        case "aminimo":
-            ba = parseInt(pontoMax) - parseInt(qtdProd);
-            ba = parseInt(qtdProd) - ba;
-            resultado = 'Maximo de :&nbsp;&nbsp;' + ba;
-            document.getElementById('resultadoDistribuicao').innerHTML = resultado;
-            break;
+
+        // case "amaximo":
+        //     ba = parseInt(qtdProd) - parseInt(pontoMin);
+        //     ba = ba + parseInt(qtdProd);
+        //     resultado = 'Maximo de :&nbsp;&nbsp;' + ba;
+        //     document.getElementById('resultadoDistribuicao').innerHTML = resultado;
+        //     break;
+        // case "aminimo":
+        //     ba = parseInt(pontoMax) - parseInt(qtdProd);
+        //     ba = parseInt(qtdProd) - ba;
+        //     resultado = 'Maximo de :&nbsp;&nbsp;' + ba;
+        //     document.getElementById('resultadoDistribuicao').innerHTML = resultado;
+        //     break;
 
         case "minimo":
             break;
         case "deque":
             break;
-        case "maisque":
+        case "maior":
             interr = pontoMax - qtdProd;
             ba = pontoMax - pontoMin;
             fx = 1 / ba;
@@ -101,7 +104,7 @@ function DistUniforme() {
             resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
             document.getElementById('resultadoDistribuicao').innerHTML = resultado;
             break;
-        case "menosque":
+        case "menor":
             interr = qtdProd - pontoMin;
             ba = pontoMax - pontoMin;
             fx = 1 / ba;
@@ -110,55 +113,42 @@ function DistUniforme() {
             resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
             document.getElementById('resultadoDistribuicao').innerHTML = resultado;
             break;
-        case "prejuizo":
-            interr = qtdProd - pontoMin;
-            ba = pontoMax - pontoMin;
-            fx = 1 / ba;
-            fx = fx * interr;
-            fx = fx * 100;
-            resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
-            document.getElementById('resultadoDistribuicao').innerHTML = resultado;
-            break;
+        // case "prejuizo":
+        //     interr = qtdProd - pontoMin;
+        //     ba = pontoMax - pontoMin;
+        //     fx = 1 / ba;
+        //     fx = fx * interr;
+        //     fx = fx * 100;
+        //     resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
+        //     document.getElementById('resultadoDistribuicao').innerHTML = resultado;
+        //     break;
 
-        case "pelomenos":
-            break;
-        case "todos":
-            break;
-        case "exatamente":
-            break;
-        case "media":
-            let UmediaR = 'Valor Medio de:' + Umedia;
-            document.getElementById('qtdProd').style.display = 'none'
-            document.getElementById('Umedia').innerHTML = UmediaR;
-            break;
-        case "variDisv":
+        // case "pelomenos":
+        //     break;
+        // case "todos":
+        //     break;
+        // case "exatamente":
+        //     break;
+        // case "media":
+        //     let UmediaR = 'Valor Medio de:' + Umedia;
+        //     document.getElementById('qtdProd').style.display = 'none'
+        //     document.getElementById('Umedia').innerHTML = UmediaR;
+        //     break;
+        // case "variDisv":
 
-            let UdesvioR = 'Desvio padrao pela distribuiçao Uniforme é :&nbsp;&nbsp;' + Udesvio.toFixed(2);
-            document.getElementById('Udesvio').innerHTML = UdesvioR;
+        //     let UdesvioR = 'Desvio padrao pela distribuiçao Uniforme é :&nbsp;&nbsp;' + Udesvio.toFixed(2);
+        //     document.getElementById('Udesvio').innerHTML = UdesvioR;
 
-            let UcvR = 'Coeficiente de Variação é :&nbsp;&nbsp;' + Math.round(Ucv.toFixed(0)) + '%';
-            document.getElementById('cv').innerHTML = UcvR;
+        //     let UcvR = 'Coeficiente de Variação é :&nbsp;&nbsp;' + Math.round(Ucv.toFixed(0)) + '%';
+        //     document.getElementById('cv').innerHTML = UcvR;
 
-            let variacao = 'Variância é de :&nbsp;&nbsp;' + (Udesvio * Udesvio).toFixed(2);
-            document.getElementById('cv').innerHTML = variacao;
+        //     let variacao = 'Variância é de :&nbsp;&nbsp;' + (Udesvio * Udesvio).toFixed(2);
+        //     document.getElementById('cv').innerHTML = variacao;
 
-            break;
-
-    }
-
-    if (entre == true) {
-        let entreProd1 = document.getElementById('entreProd1').value;
-        let entreProd2 = document.getElementById('entreProd2').value;
-        interr = entreProd1 - entreProd2;
-        ba = pontoMax - pontoMin;
-        fx = 1 / ba;
-        fx = fx * interr;
-        fx = fx * 100;
-        resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
-        document.getElementById('resultadoDistribuicao').innerHTML = resultado;
-
+        //     break;
 
     }
+
 
 
 

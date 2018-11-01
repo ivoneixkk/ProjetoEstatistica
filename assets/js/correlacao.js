@@ -342,6 +342,7 @@ function outroGrafico() {
 
         },
         legend: {
+            enabled: false,
             align: 'auto',
             verticalAlign: 'top',
             x: 100,
@@ -349,6 +350,27 @@ function outroGrafico() {
             floating: true,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
             borderWidth: 1
+        },
+        credits:{
+            enabled:false,
+        },
+        yAxis: {
+            title: {
+                enabled: false
+            },
+            labels: {
+                style: {
+                    "color": "black"
+                }
+            },
+        },
+
+        xAxis: {
+            labels: {
+                style: {
+                    "color": "black"
+                }
+            },
         },
         plotOptions: {
             scatter: {
@@ -359,6 +381,9 @@ function outroGrafico() {
                             enabled: true,
                             lineColor: 'rgb(100,100,100)'
                         }
+                    },
+                    style: {
+                        color: 'black'
                     }
                 },
                 states: {
@@ -372,12 +397,13 @@ function outroGrafico() {
         },
         series: [{
             name: independente + ' - ' + dependente,
-            color: 'rgba(223, 83, 83, .5)',
+            color: 'blue',
             data: dadoGra
 
         },
         {
             type: 'line',
+            color: 'black',
             name: equi.replace(/&nbsp;/g, ' '),
             data: testeLInha,
         }]

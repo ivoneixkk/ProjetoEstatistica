@@ -236,6 +236,7 @@ input:focus {
     /* float: left; */
 }
 
+
 #resolucaoCalculos{
     width: 80%;
     height: auto;
@@ -419,13 +420,6 @@ footer{
     display: inline;
 }
 
-#entreProd1 {
-    display: none;
-}
-
-#entreProd2 {
-    display: none;
-}
 
 #principal {
     margin: 5% 5% 0 5%;
@@ -630,46 +624,55 @@ footer{
 
 
 #calcCorrelacao{
-    align-content: left
+    width: 96%;
+    display: flex;
+    margin: 2%;
 }
 #resultadoCorrelacao{
-    background: #EE7621;
-    box-shadow: 5px 5px 5px #fff;
-    float: left;
+    width: 30%;
+    background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
     color: #fff
 }
 #equacao{
+    width: 30%;
     margin-left: 2%;
-    background: #EE7621;
-    box-shadow: 5px 5px 5px #fff;
-    float: left;
+    background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
     color: #fff
 }
 #forca{
+    width: 30%;
     margin-left: 2%;
-    background: #EE7621;
-    box-shadow: 5px 5px 5px #fff;
-    float: left;
+    background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
     color: #fff
 }
 #entrproj{
     padding: 10px;
-    float: left;
-    margin-left: 2%;
+    margin-left: 8%;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
     border-radius: 10px;
 }   
 #separa{
     margin-top: 7%
 }
-#fazproje{
-    float: left
+#fazProjecao{
+    margin: 1% 0 1% 2%;
+    display: flex;
+}
+
+#inppt{
+    display: flex;
+}
+
+
+#fazproc{
+    width: 30%;
+    text-align: left;
 }
 .destacar{
     margin-left: 0.5cm;
@@ -680,26 +683,32 @@ footer{
     
 }
 #opproje, #fproje{
-    background: no-repeat #353680; 
-    background-color: #0077fF;
+    background-color: white;
     border-radius: 5px;
-    border: 1px solid black;
     padding: 10px;
-    color: #fff
+    color: black;
+    border: 1px solid black
+}
+
+#lab{
+    display: flex;
+    width: 60%;
 }
 
 #cproje{
-    float: left
+    margin-left: 8%;
 }
 #resprojecao{
     display: none
 }
 #resprojecao{
+    height: 66%;
+    width: 15%;
+    color:black;
     background: #fff;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
-    padding: 5px;
-    float: left;
-    margin-left: 2%;
+    padding: 3px;
+    margin: 0 0 0 10%;
     border-radius: 10px;}
 #abaixo{
     margin-top: 6%
@@ -726,4 +735,24 @@ footer{
     width: 100%;
     margin: 0;
     text-align: right;
+}
+#opuniforme{
+    padding: 5px;
+}
+
+#pontoMin, #pontoMax, #qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{
+    display: none;
+}
+#pontoMin, #pontoMax, #qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{
+    padding: 5px;
+    margin-left: 1%;
+    margin-top: 2% ;
+    float: left;
+}
+
+
+#seletor{
+    margin-top: 2%;
+    float: left
+    
 }
