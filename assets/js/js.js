@@ -4,6 +4,54 @@ let Elementos = [];
 let Lvalor = []
 let valores = []
 let dependente, independente
+let testvar
+
+//#####################################################################################################
+//#         PEGAR DIGITACAO DO USUARIO                                                                #
+//#####################################################################################################
+
+function DigitaUsuario() {
+    let vetdigitado = []
+    let digitado = campo4.value
+    if (digitado.indexOf(" ") > 0) {
+        digitado = digitado.trim().replace(/[\s]+/g, ';')
+
+        console.log(digitado)
+
+    } else if (digitado.indexOf(",") > 0) {
+        digitado = digitado.trim().replace(/,+/g, ';')
+
+        console.log(digitado)
+    }
+    vetdigitado = digitado.split(";")
+    testvar = parseFloat(vetdigitado[0])
+
+    console.log(testvar)
+    for (let j = 0; j < vetdigitado.length; j++) {
+        if (isNaN(testvar)) {
+            vetor.push(vetdigitado[j].trim());
+
+        } else {
+            vetor.push(parseFloat(vetdigitado[j]));
+        }
+
+    }
+
+
+        achar()
+        chamarPagina('descritivas')
+
+    console.log(vetor);
+    //    chamarPagina('descritivas')
+}
+
+
+
+
+
+
+
+
 
 //#####################################################################################################
 //#         MUDAR ESTADO DA DIV                                                                       #
@@ -44,7 +92,7 @@ function ChamarDiv(el) {
         } else {
             document.getElementById('btnImpC').style.display = 'none';
             document.getElementById('importarC').style.display = 'inline';
-            }
+        }
     } else if (display == "importar") {
         document.getElementById('escolha').style.display = 'none';
         document.getElementById('btnvoltarindex').style.display = 'none';
@@ -60,21 +108,21 @@ function ChamarDiv(el) {
         document.getElementById('btnDigi').style.display = 'none';
         document.getElementById('btnImp').style.display = 'none';
 
-    }  else if (display =="escolha"){
+    } else if (display == "escolha") {
         document.getElementById('digitarr').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
         document.getElementById('btnvoltarindex').style.display = 'inline';
         document.getElementById('btnImp').style.display = 'inline';
         document.getElementById('btnDigi').style.display = 'inline';
     }
-    else if (display == "escolhaDigi"){
+    else if (display == "escolhaDigi") {
         document.getElementById('importar').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
         document.getElementById('btnvoltarindex').style.display = 'inline';
         document.getElementById('btnImp').style.display = 'inline';
         document.getElementById('btnDigi').style.display = 'inline';
 
-    } 
+    }
 
 
     // else {
@@ -150,7 +198,6 @@ function pegaCSV(inputFile) {
     leitorDeCSV.readAsText(file);
 }
 
-let testvar
 
 function leCSV(evt) {
 
@@ -198,7 +245,7 @@ function pegaDesvio() {
 
 function chamarPagina(condic) {
 
-   var tamanho = [];
+    var tamanho = [];
 
     tamanho = tirarRepetidos(vetor)
     console.log(tamanho);
@@ -206,7 +253,7 @@ function chamarPagina(condic) {
 
     if (condic == 'descritivas') {
 
-             if (isNaN(testvar)) {
+        if (isNaN(testvar)) {
             return window.location.href = "teamplates/qualitativa.html?vetor=" + vetor + "&valores=" + valores + "&Lvalor=" + Lvalor
 
         } else if (tamanho.length <= 7) {

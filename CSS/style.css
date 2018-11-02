@@ -21,6 +21,10 @@ header i{
     display: none
 }
 
+select{
+    padding: 4px;
+}
+
 .ordInput{
     margin-left: 30px;
 }
@@ -210,13 +214,13 @@ label {
 }
 #importarC{
     display: none;
-    
 }
 
 
 
 
 input {
+    padding: 5px;
     margin-left: 0 auto;
 	margin-bottom:10px;
 	border:1px solid #999;
@@ -345,6 +349,7 @@ footer{
     padding: 2px;
     margin: 0 ;
     width: 98%;
+    height: 100px;
     color: rgb(0, 0, 0);
     display: none;
     background:  rgb(255, 255, 255);
@@ -376,9 +381,6 @@ footer{
     display: none;
 }
 
-#normal {
-    display: none;
-}
 #tabelab{
     border-collapse: collapse;
 }
@@ -703,7 +705,7 @@ footer{
 }
 #resprojecao{
     height: 66%;
-    width: 15%;
+    width: 30%;
     color:black;
     background: #fff;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
@@ -755,4 +757,9 @@ footer{
     margin-top: 2%;
     float: left
     
+}
+
+
+#GraGra{
+    width: 100%
 }

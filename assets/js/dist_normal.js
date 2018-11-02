@@ -1,10 +1,5 @@
 let tabelaNormal = []
 
-
-
-
-
-
 function queryString(parameter) {
     var loc = location.search.substring(1, location.search.length);
     var param_value = false;
@@ -26,7 +21,6 @@ function queryString(parameter) {
 
 let dmedia, ddesvio
 
-
 dmedia = queryString("media");
 ddesvio = queryString("desvio");
 
@@ -35,10 +29,11 @@ console.log(ddesvio);
 
 if (dmedia != undefined && ddesvio != undefined) {
     document.getElementById('normal').style.display = 'block';
+
     document.getElementById('nmedia').value = dmedia
+    document.getElementById('nmedia').style.display = 'focus'
     document.getElementById('ndesvio').value = ddesvio
 }
-
 
 
 function arrumaElementos(opvalor) {
@@ -199,7 +194,6 @@ function DistNormal() {
     const METAREA = parseFloat(0.5000);
     switch (opnormal) {
         case "uma":
-
             formZ = ((n1transf - nmedia) / ndesvio).toFixed(2)
             uformZ = formZ.charAt(formZ.length - 1)
             formZ = formZ.substring(x, y)

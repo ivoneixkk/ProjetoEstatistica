@@ -332,7 +332,8 @@ function outroGrafico() {
     Highcharts.chart('GraGra', {
         chart: {
             type: 'scatter',
-            zoomType: 'yx'
+            zoomType: 'yx',
+            borderWidth: 4,
         },
         title: {
             text: 'GRAFICO DE DISPERSÃO'

@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css" />
-    <script type='text/javascript' src='../assets/js/dist_uniforme.js'></script>
-    <script type='text/javascript' src='../assets/js/dist_binomial.js   '></script>
-    <script type='text/javascript' src='../assets/js/dist_normal.js'></script>
 
 </head>
 
@@ -29,7 +26,7 @@
 
         <button type="button" class="btnDigi" onclick="DivDists('uniforme')">UNIFORME</button>
         <button type="button" class="btnDigi" onclick="DivDists('binomial')">BINOMIAL</button>
-        <button type="button" class="btnDigi" onclick="DivDists('normal')">Normal</button>
+        <button type="button" id="chamaNormal" class="btnDigi" onclick="DivDists('normal')">Normal</button>
         <input type="button" class="btnDigiR" onclick="window.location.reload()" value="LIMPAR DADOS">
         <button type="button" id="btnCorrevoltarindex" onclick="window.location = '../index.html'">VOLTAR</button>
 
@@ -46,11 +43,19 @@
                 <div id="seletor">
                     <select id="opuniforme" onchange="arrumaElementosUniforme(this.value)">
                         <option value="opcao">escolha uma Opção</option>
+                        <option disabled="disabled">_____________________________</option>
+                        <option disabled="disabled">&nbsp;</option>
                         <option value="maior">Maior que</option>
                         <option value="entre">Entre</option>
                         <option value="menor">Menor que</option>
-                        <!-- <option value="amaximo">Achar o Maximo (precisa da media)</option>
+                        <option disabled="disabled">_____________________________</option>
+                        <option disabled="disabled">&nbsp;</option>
+                        <option value="variDisv">Variância e Desvio Padrao</option>
+                        <option value="media">Valor medio (media)</option>
+                        <option value="amaximo">Achar o Maximo (precisa da media)</option>
                         <option value="aminimo">Achar o Minimo (precisa da media)</option>
+
+                        <!-- 
                         <option value="deque">De que</option>
                         <option value="prejuizo">Prejuizo</option>
                         <option value="menosque">Menos que</option>
@@ -58,8 +63,7 @@
                         <option value="maisque">De que (k) ou mais </option>
                         <option value="exatamente">Exatamente</option>
                         <option value="pelomenos">Pelo menos</option>
-                        <option value="media">Valor medio (media)</option>
-                        <option value="variDisv">Variância e Desvio Padrao</option>
+                  
                         <option value="todos">Todos</option> -->
                     </select>
                 </div>
@@ -88,10 +92,15 @@
                 &nbsp;%&nbsp;&nbsp;&nbsp;
                 &nbsp;
                 <select id="opbinomial">
+
                     <option value="opcao">escolha uma Opção</option>
+                    <option disabled="disabled">_____________________________</option>
+                    <option disabled="disabled">&nbsp;</option>
+                    <option value="menosque">Menor que</option>
                     <option value="deque">De que</option>
-                    <option value="menosque">Menos que</option>
-                    <option value="maisque">De que (k) ou mais </option>
+                    <option value="maisque">Maior que </option>
+                    <option disabled="disabled">_____________________________</option>
+                    <option disabled="disabled">&nbsp;</option>
                     <option value="exatamente">Exatamente</option>
                     <option value="maximo">No maximo</option>
                     <option value="minimo">No minimo</option>
@@ -154,5 +163,8 @@
     </footer>
 
 </body>
+<script type='text/javascript' src='../assets/js/dist_uniforme.js'></script>
+<script type='text/javascript' src='../assets/js/dist_binomial.js   '></script>
+<script type='text/javascript' src='../assets/js/dist_normal.js'></script>
 
 </html>
