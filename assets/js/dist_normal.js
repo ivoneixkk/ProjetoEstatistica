@@ -29,7 +29,6 @@ console.log(ddesvio);
 
 if (dmedia != undefined && ddesvio != undefined) {
     document.getElementById('normal').style.display = 'block';
-
     document.getElementById('nmedia').value = dmedia
     document.getElementById('nmedia').style.display = 'focus'
     document.getElementById('ndesvio').value = ddesvio
