@@ -31,7 +31,7 @@ select{
 
 #sortable{
     margin-left: 40%;
-    width: 100%;
+    /* width: 100%; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white
 }
