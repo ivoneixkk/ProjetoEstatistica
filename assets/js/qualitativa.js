@@ -9,6 +9,8 @@ let Elementos = [];
 let vetEnt = [];
 let media = 0;
 let organiz = [];
+vetpeglista = []
+
 //let GFac = []; //Guardar as posiçoes Fac num vetor; 
 //let infDados = {}; //objeto dados da tabela
 let Dadostabela = [];//armazenar infDados dentro desse vetor
@@ -18,18 +20,20 @@ let somatorioFi = 0; //somatorio de
 //let modal = 0;
 //let king = 0;   
 let vetObjeto = [];
-desejaOrdenar()
+// desejaOrdenar()
 
-function desejaOrdenar() {
-    let desj = '<center><div id="desjOrdenar">Deseja ordenar a tabela<br>'
-    desj += '<input type="radio" id="sel1" onclick="executar()" class="coluna2" name="desj" value="S"> Sim'
-    desj += '<input type="radio" id="sel2" onclick="executar()" class="coluna3" name="desj" value="N" > Nao</div></center>'
-    let mdesj = document.getElementById('organizar');
-    //   document.write(mounTable3)
-    mdesj.innerHTML = desj;
+// function desejaOrdenar() {
+//     let desj = '<center><div id="desjOrdenar">Deseja ordenar a tabela<br>'
+//     desj += '<input type="radio" id="sel1" onclick="executar()" class="coluna2" name="desj" value="S"> Sim'
+//     desj += '<input type="radio" id="sel2" onclick="executar()" class="coluna3" name="desj" value="N" > Nao</div></center>'
+//     let mdesj = document.getElementById('organizar');
+//     //   document.write(mounTable3)
+//     mdesj.innerHTML = desj;
 
-}
+// }
 
+executar()
+//organizarDados(org)
 function executar() {
     vetor = []
     let testevar = queryString("vetor");
@@ -44,16 +48,15 @@ function executar() {
     console.log(vetor);
     ordenarVetor(vetor);
     repeticao(vetor, testvalores[0], testvalores[1]);
-    let tickado = document.getElementById('sel1').checked;
-    console.log(tickado)
-    if (tickado == true) {
-        organizarDados(organiz);
+    //    let tickado = document.getElementById('sel1').checked;
+    //    console.log(tickado)
+    organizarDados(organiz);
 
-    } else {
-        //   pegarPreferencias(organiz);
-        qualiTabela(vetor, testvalores[0], testvalores[1]);
-    }
-    //  mountarTabelaResultados(vetor);
+    // } else {
+    //     //   pegarPreferencias(organiz);
+    //     qualiTabela(vetor, testvalores[0], testvalores[1]);
+    // }
+    // //  mountarTabelaResultados(vetor);
     //  MostraGra(repetido, testvalores);
     //  desvioPadrao();
 
@@ -141,46 +144,62 @@ function repeticao(vet, val1, val2) {
 }
 
 console.log(Repeticao);
-
+console.log(vetEnt)
 
 function organizarDados(org) {
-    let mountDados = '<center><div id="titOrd">Enumere os Dados a ser mostrado na ordem de sua Preferência<br><br></div></center><div id="ordDentro">';
+
+    let mountDados = '<ul id="sortable">'
     for (let i = 0; i < org.length; i++) {
-        mountDados +='<input class="ordInput" name="org"' + i + ' size="2" id="org' + i + '"  type="text" placeholder="1-' + org.length + ' " />&nbsp;&nbsp;'  + org[i] +  '<br>'
+        mountDados += "<li id=org" + i + " class=listaQ>" + org[i] + "</li>"
     }
-    mountDados += '</div><center><input type="button"  id="btnexecutar"  style="display: inline-block"  onclick="pegarPreferencias(organiz)" value="OK"></div></center>'
+    mountDados += '</ul><input type="button"  id="btnexecutar"   onclick="pegarPreferencias(organiz)" value="OK">'
 
-    var orgdados = document.getElementById('organizar');
+    var orgdados = document.getElementById('teste');
     //   document.write(mounTable3)
+
     orgdados.innerHTML = mountDados;
-
-
-
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+    });
 }
 
 function pegarPreferencias(org) {
-        document.getElementById('titOrd').style.display = 'none';
-        document.getElementById('ordDentro').style.display = 'none';
-        document.getElementById('btnexecutar').style.display = 'none';
-     let btnvoltar = '<input type="button"  id="btnvoltar"  style="display: inline-block"  onclick="history.go(0)" value="VOLTAR">'
-     let porbtn = document.getElementById('voltarbtn');
-     porbtn.innerHTML = btnvoltar
+    document.getElementById('btnexecutar').style.display = 'none';
 
+    // $(document).ready(function () {
+    //     var vetlis = $("div").children().find(".listaQ");
+    //     $.each(vetlis, function (index, item) {
+    //         vetpeglista.pus(console.log($(item).text()));
 
-    console.log(org)
+    //     });
+    // });
+
+    $('#sortable li').each(function (index, element) {
+        vetpeglista.push(element.innerHTML);
+    });
+
+    console.log(vetpeglista[0])
+    console.log(vetEnt[0].elementos)
+
     let preferencias = {}
     let nome
     for (let i = 0; i < org.length; i++) {
-        nome = org[i]
-        preferencias = {
-            elementos: nome,
-            repeticao: vetEnt[i].repeticao,
-            id: (parseInt(document.getElementById('org' + i).value) - 1)
+        for (let h = 0; h < org.length; h++) {
+            if (vetpeglista[i] == vetEnt[h].elementos) {
+                nome = vetpeglista[i]
+                preferencias = {
+                    elementos: nome,
+                    repeticao: vetEnt[h].repeticao,
+                    id: (parseInt(document.getElementById('org' + h).value) - 1)
+
+                }
+            }
         }
 
         vetpreferencia.push(preferencias)
     }
-    vetpreferencia.sort(function (a, b) { return a.id - b.id; });
+    //vetpreferencia.sort(function (a, b) { return a.id - b.id; });
     console.log(vetpreferencia);
 
 
@@ -189,11 +208,24 @@ function pegarPreferencias(org) {
     console.log(vetEnt)
     vetEnt = vetpreferencia.slice()
     console.log(vetEnt)
+    document.getElementById('container').style.display = 'inline-block'
+
+    document.getElementById('tabelaDados').style.display = 'inline-block'
+    document.getElementById('tabDados').style.display = 'inline-block'
+    document.getElementById('tabResultado').style.display = 'inline-block'
+
+    document.getElementById('organizar').style.display = 'none'
+    document.getElementById('sortable').style.display = 'none'
+    document.getElementById('btnexecutar').style.display = 'none'
+
+
     qualiTabela(vetor, testvalores[0], testvalores[1])
+    tabelaMediaModa()
     MostraGraQuali(vetpreferencia, testvalores)
 
 
 }
+
 
 function qualiTabela(vet, val1, val2) {
 
@@ -226,7 +258,7 @@ function qualiTabela(vet, val1, val2) {
         mounTable3 += "<td>" + porfiacu.toFixed(2) + "&nbsp;&nbsp;%&nbsp;&nbsp; </td>";
         mounTable3 += "</tr>";
         media = media + (vetEnt[i].elementos * vetEnt[i].repeticao);//vai somando os fi emultiplicando
-
+        console.log(media)
         dadosObjeto = {
             VarPesquisada: vetEnt[i].elementos,
             Numero_elementos: vetEnt[i].repeticao,
@@ -247,7 +279,7 @@ function qualiTabela(vet, val1, val2) {
 
         }
     }
-    media = media / total;
+    console.log(media)
     mounTable3 += "</tr>";
     mounTable3 += "</table>";
     var tabela4 = document.getElementById('tabDados');
@@ -256,16 +288,40 @@ function qualiTabela(vet, val1, val2) {
     tabela4.innerHTML = mounTable3;
 }
 
+function tabelaMediaModa() {
+    let maior=0
+    let moda
+    let tott =0
+    for (let h = 0; h < vetEnt.length; h++) {
+        if (vetEnt[h].repeticao > maior) {
+            maior = vetEnt[h].repeticao;
+            moda = vetEnt[h].elementos
+        
+        }
+        tott += vetEnt[h].repeticao
+
+    }
+    console.log(maior)
+    console.log(tott)
+    media = tott / vetEnt.length
+    let Mtabresultado = '<table id=ResultQuali>'
+    Mtabresultado += '<th colspan=2>Resultados Obtidos</th>'
+    Mtabresultado += '<tr><th>Media</th><td>' + media + '</td></tr>'
+    Mtabresultado += '<tr><th>Moda</th><td>' + moda + '</td></tr>'
+    let MostraRes = document.getElementById('tabResultado')
+    MostraRes.innerHTML = Mtabresultado
+}
+
 
 function MostraGraQuali(dado, val1) {
     console.log(dado)
     let dadosV = []
-    for (let i = 0; i < dado.length ; i++) {
-            let dadosi = []
-            dadosi.push(dado[i].elementos)
-            dadosi.push(dado[i].repeticao)
+    for (let i = 0; i < dado.length; i++) {
+        let dadosi = []
+        dadosi.push(dado[i].elementos)
+        dadosi.push(dado[i].repeticao)
 
-            dadosV.push(dadosi)
+        dadosV.push(dadosi)
 
     }
 
@@ -304,7 +360,7 @@ function MostraGraQuali(dado, val1) {
         },
         series: [{
             type: 'pie',
-            name: testvalores[0] +' - por - '+ testvalores[1],
+            name: testvalores[0] + ' - por - ' + testvalores[1],
             data: dadosV
         }]
     });

@@ -12,7 +12,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css" />
+
+    <script src="../assets/js/jquery.331.js"> </script>
+
+    <script src="../assets/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+
+
     <style type="text/css">
+        #tabDados,
+        #tabelaDados,
+        #tabResultado {
+            display: none
+        }
+
+        #container {
+            display: none
+        }
+
         #container,
         #sliders {
             font-size: 9px;
@@ -22,7 +38,21 @@
         #container {
             height: 400px;
         }
+
+        #btnexecutar {
+            margin-top: 1%;
+            display: inline;
+            margin-left: 46%;
+            margin-bottom: 8%
+        }
     </style>
+
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+    </script>
 
 </head>
 
@@ -31,49 +61,53 @@
         <i class="far fa-chart-bar"></i>
         FATEC
     </header>
-    <center><div id='titulo'><h1>Analise de Dados Qualitativo</h1></div></center>
+    <center>
+        <div id='titulo'>
+            <h1>Analise de Dados Qualitativo</h1>
+        </div>
+    </center>
     <div id="voltarbtn"></div>
-    <div id="organizar"></div>
+    <div id="teste"></div>
+    <div id="organizar" class="listaQ"></div>
 
     <div id='resolucaoCalculos'>
         <div id="tabelaDados">
             <div id='tabDados'></div>
+
         </div>
+        <div id='tabResultado'></div>
+
         <div id="divGrafico">
             <div id="container"></div>
 
         </div>
     </div>
     <!-- <div id="divSeparatriz">
-            <hr>
-            <font face=arial color=black>Separatrizes&nbsp;</font>
-            <br>
-            <select id="lista">
-                <option value=" ">escolha</option>
-                <option value="Q">Quartil</option>
-                <option value="K">Quintil</option>
-                <option value="D">Decil</option>
-                <option value="P">Porcentil</option>
-            </select>
-            <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
-            <input type="button" onclick="separatrizDiscreta()" value="IR">
-            <div id="separatriz"></div>
+                    <hr>
+                        <font face=arial color=black>Separatrizes&nbsp;</font>
+                        <br>
+                            <select id="lista">
+                                <option value=" ">escolha</option>
+                                <option value="Q">Quartil</option>
+                                <option value="K">Quintil</option>
+                                <option value="D">Decil</option>
+                                <option value="P">Porcentil</option>
+                            </select>
+                            <input name="campo3" id="campo3" value="" size="6" type="text" placeholder="Digite aqui" />
+                            <input type="button" onclick="separatrizDiscreta()" value="IR">
+                                <div id="separatriz"></div>
         </div> -->
-    <div id="divResults">
-        <div id="Results"></div>
-    </div>
-    <!-- 
+
     <footer id="footerDiscreta">
         <i class="fa fa-registered"></i>
         FATEC - Análise e Desenvolvimento de Sistemas
-    </footer> -->
+    </footer>
 </body>
 <script type='text/javascript' src='../assets/js/qualitativa.js'></script>
-
-<script src="../assets/js/jquery.331.js"> </script>
 <script src="../assets/code/highcharts.js"></script>
 <script src="../assets/code/highcharts-3d.js"></script>
 <script src="../assets/code/modules/exporting.js"></script>
 <script src="../assets/code/modules/export-data.js"></script>
+
 
 </html>
