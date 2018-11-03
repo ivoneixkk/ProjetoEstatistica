@@ -112,23 +112,23 @@ function calcularCorrelacao() {
     resultado = resultado * 100
     resultado = resultado.toFixed(0)
 
-    document.getElementById('resultadoCorrelacao').innerHTML = '<b>Coeficciente de:</b><font class="destacar">' + coeficienteLinear + '</font>'
+    document.getElementById('resultadoCorrelacao').innerHTML = '<b>Coeficciente de:</b><br><font class="destacar">' + coeficienteLinear + '</font>'
     let resultadoFinal = Math.abs(resultado)
 
     if (Math.abs(resultado) == 0) {
-        correlacaoForca = "<b>Sem correlação de :</b><font class='destacar'> " + Math.abs(resultado) + " % </font>";
+        correlacaoForca = "<b>Sem correlação de :</b><br><font class='destacar'> " + Math.abs(resultado) + " % </font>";
     }
     else if (Math.abs(resultado) < 30) {
-        correlacaoForca = "<b>Correlação é fraca de :</b><font class='destacar'> " + Math.abs(resultado) + " %</font> ";
+        correlacaoForca = "<b>Correlação é fraca de :</b><br><font class='destacar'> " + Math.abs(resultado) + " %</font> ";
     }
     else if (Math.abs(resultado) < 60) {
-        forca = "<b>Correlação é Média de :</b><font class='destacar'> " + Math.abs(resultado) + " %</font>";
+        forca = "<b>Correlação é Média de :</b><br><font class='destacar'> " + Math.abs(resultado) + " %</font>";
     }
     else if (Math.abs(resultado) < 100) {
-        correlacaoForca = "<b>Correlação é Forte  de :</b><font class='destacar'> " + Math.abs(resultado) + " % </font>";
+        correlacaoForca = "<b>Correlação é Forte  de :</b><br><font class='destacar'> " + Math.abs(resultado) + " % </font>";
     }
     else {
-        correlacaoForca = "<b>Correlação Perfeita  :</b><font class='destacar'> " + Math.abs(resultado) + " % </font>";
+        correlacaoForca = "<b>Correlação Perfeita  :</b><br><font class='destacar'> " + Math.abs(resultado) + " % </font>";
     }
 
     document.getElementById('forca').innerHTML = correlacaoForca
@@ -150,11 +150,11 @@ function calcularCorrelacao() {
     console.log(b)
 
     if (b > 0) {
-        equa1grau = '<b>equação é&nbsp;</b> <font class="destacar"> y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
+        equa1grau = '<b>equação é:&nbsp;</b><br> <font class="destacar"> y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
         equi = 'y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2)
     }
     else {
-        equa1grau = '<b>equação é&nbsp;</b><font class"destacar">y =&nbsp;' + a.toFixed(2) + '&nbsp;&nbsp;x&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
+        equa1grau = '<b>equação é:&nbsp;</b><br><font class"destacar">y =&nbsp;' + a.toFixed(2) + '&nbsp;&nbsp;x&nbsp;&nbsp;' + b.toFixed(2) + '</font>';
         equi = 'y =&nbsp;' + a.toFixed(2) + '.x&nbsp;&nbsp;+&nbsp;&nbsp;' + b.toFixed(2)
 
     }

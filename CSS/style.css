@@ -500,6 +500,11 @@ footer{
     display: none;
     color: red
 }
+#erroD{
+    display: none;
+    color: red
+}
+
 
 #tituloDiscreta{
     text-align: center
@@ -680,7 +685,7 @@ footer{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     color: #fff;
-    font-size: 0.75cm;
+    font-size: 0.65cm;
     
 }
 #opproje, #fproje{

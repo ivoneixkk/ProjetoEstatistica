@@ -38,33 +38,32 @@ function DigitaUsuario() {
     }
 
 
-        achar()
-        chamarPagina('descritivas')
+    achar()
+    chamarPagina('descritivas')
 
     console.log(vetor);
     //    chamarPagina('descritivas')
 }
 
 
-
-
-
-
-
-
-
 //#####################################################################################################
 //#         MUDAR ESTADO DA DIV                                                                       #
 //#####################################################################################################
 function ChamarDiv(el) {
+
     //var display = document.getElementById(el).style.display;
     let display = el
-    console.log(display)
+    let lengthLvalor
+    console.log(el)
+    //    console.log(display)
     // if (display == "") {
     //     document.getElementById(el).style.display = 'block';
     //     document.getElementById('escolha').style.display = 'none';
     // }
     if (display == "estatisticaDescritiva") {
+
+
+
         document.getElementById('logoIndex').style.display = 'none';
         document.getElementById('estatisticaDescritiva').style.display = 'inline';
         document.getElementById('btnCorre').style.display = 'none';
@@ -82,6 +81,7 @@ function ChamarDiv(el) {
         document.getElementById('correlacao').style.display = "block";
         document.getElementById('escCorre').style.display = 'inline';
 
+
     } else if (display == "importarC") {
         independente = document.getElementById("Independ").value;
         dependente = document.getElementById("Depend").value;
@@ -90,24 +90,50 @@ function ChamarDiv(el) {
             document.getElementById('erro').style.display = "inline"
             return ChamarDiv('correlacao')
         } else {
+            document.getElementById('erro').style.display = "none"
+
             document.getElementById('btnImpC').style.display = 'none';
             document.getElementById('importarC').style.display = 'inline';
         }
     } else if (display == "importar") {
-        document.getElementById('escolha').style.display = 'none';
-        document.getElementById('btnvoltarindex').style.display = 'none';
-        document.getElementById('importar').style.display = 'inline';
-        document.getElementById('btnDigi').style.display = 'none';
-        document.getElementById('btnImp').style.display = 'none';
+        lengthLvalor = Lvalor.length
+
+        if (valores == " " || lengthLvalor == 0) {
+            console.log(Lvalor)
+            document.getElementById('erroD').style.display = "inline"
+            return ChamarDiv('estatisticaDescritiva')
+        } else {
+
+            document.getElementById('erroD').style.display = "none"
+            document.getElementById('escolha').style.display = 'none';
+            document.getElementById('btnvoltarindex').style.display = 'none';
+            document.getElementById('importar').style.display = 'inline';
+            document.getElementById('btnDigi').style.display = 'none';
+            document.getElementById('btnImp').style.display = 'none';
+
+
+
+        }
+
 
     } else if (display == "digitarr") {
-        document.getElementById('escolha').style.display = 'none';
-        document.getElementById('digitarr').style.display = 'inline';
-        document.getElementById('btnexecutar2').style.display = 'inline';
-        document.getElementById('btnvoltarindex').style.display = 'none';
-        document.getElementById('btnDigi').style.display = 'none';
-        document.getElementById('btnImp').style.display = 'none';
 
+        lengthLvalor = Lvalor.length
+
+        if (valores == " " || lengthLvalor == 0) {
+            console.log(Lvalor)
+            document.getElementById('erroD').style.display = "inline"
+            return ChamarDiv('estatisticaDescritiva')
+        } else {
+            document.getElementById('erroD').style.display = "none"   
+            document.getElementById('escolha').style.display = 'none';
+            document.getElementById('digitarr').style.display = 'inline';
+            document.getElementById('btnexecutar2').style.display = 'inline';
+            document.getElementById('btnvoltarindex').style.display = 'none';
+            document.getElementById('btnDigi').style.display = 'none';
+            document.getElementById('btnImp').style.display = 'none';
+
+        }
     } else if (display == "escolha") {
         document.getElementById('digitarr').style.display = 'none';
         document.getElementById('escolha').style.display = 'inline';
