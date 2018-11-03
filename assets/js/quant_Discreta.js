@@ -229,12 +229,16 @@ function mountTabelaResult(vet) {
     mounTable4 += "<tr><th>Mediana</th><td> " + mediana + "</td></tr>";
 
     mounTable4 += "<tr><th>Moda</strong></th>";
+    mounTable4 += "<td>"
     for (let i = 0; i < vetEnt.length; i++) {
         if (vetEnt[i].repeticao == maior) {
             modal.push(vetEnt[i].elementos);
-            mounTable4 += "<td>" + vetEnt[i].elementos + "</td></tr>";
+            mounTable4 +=  vetEnt[i].elementos + "&nbsp;&nbsp;&nbsp;";
         }
+
     }
+
+    mounTable4 += "</td></tr>"
     let pearson = 0;
     pearson = (3 * mediana) - (2 * media);
 
@@ -493,7 +497,7 @@ function desvioPadraoDiscreta(Lvalor) {
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
             document.getElementById('desviopadrao').innerHTML =  resPadrao ;
-            document.getElementById('coeficienteTexto').innerHTML = 'Amostra Coeficiente de Variação:';
+            document.getElementById('coeficienteTexto').innerHTML = 'Amostra (Variação):';
             document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
@@ -509,7 +513,7 @@ function desvioPadraoDiscreta(Lvalor) {
             coeficiente = Math.round(((resPadrao / media) * 100).toFixed(2));
 
             document.getElementById('desviopadrao').innerHTML = resPadrao.toFixed(3);
-            document.getElementById('coeficienteTexto').innerHTML = 'Populacao Coeficiente de Variação:';
+            document.getElementById('coeficienteTexto').innerHTML = 'Populacao (Variação):';
             document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
             break;
