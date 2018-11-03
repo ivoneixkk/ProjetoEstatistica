@@ -217,6 +217,7 @@ function pegarPreferencias(org) {
     document.getElementById('organizar').style.display = 'none'
     document.getElementById('sortable').style.display = 'none'
     document.getElementById('btnexecutar').style.display = 'none'
+    document.getElementById('titDrag').style.display = 'none'
 
 
     qualiTabela(vetor, testvalores[0], testvalores[1])
@@ -305,9 +306,9 @@ function tabelaMediaModa() {
     console.log(tott)
     media = tott / vetEnt.length
     let Mtabresultado = '<table id=ResultQuali>'
-    Mtabresultado += '<th colspan=2>Resultados Obtidos</th>'
-    Mtabresultado += '<tr><th>Media</th><td>' + media + '</td></tr>'
-    Mtabresultado += '<tr><th>Moda</th><td>' + moda + '</td></tr>'
+    Mtabresultado += '<th colspan=4>Resultados Obtidos</th>'
+    Mtabresultado += '<tr><th>Media</th><td>' + media + '</td>'
+    Mtabresultado += '<th>Moda</th><td>' + moda + '</td></tr>'
     let MostraRes = document.getElementById('tabResultado')
     MostraRes.innerHTML = Mtabresultado
 }
