@@ -101,6 +101,8 @@ function ChamarDiv(el) {
         if (valores == " " || lengthLvalor == 0) {
             console.log(Lvalor)
             document.getElementById('erroD').style.display = "inline"
+            document.getElementById('btnDigi').style.display = "none"
+
             return ChamarDiv('estatisticaDescritiva')
         } else {
 
@@ -117,15 +119,18 @@ function ChamarDiv(el) {
 
 
     } else if (display == "digitarr") {
+        document.getElementById('importar').style.display = 'none';
 
         lengthLvalor = Lvalor.length
 
         if (valores == " " || lengthLvalor == 0) {
             console.log(Lvalor)
             document.getElementById('erroD').style.display = "inline"
+            document.getElementById('btnImp').style.display = 'none';
+
             return ChamarDiv('estatisticaDescritiva')
         } else {
-            document.getElementById('erroD').style.display = "none"   
+            document.getElementById('erroD').style.display = "none"
             document.getElementById('escolha').style.display = 'none';
             document.getElementById('digitarr').style.display = 'inline';
             document.getElementById('btnexecutar2').style.display = 'inline';
@@ -187,8 +192,6 @@ function mudarDiv(condic) {
         document.getElementById(elementoD).style.display = 'block';
     });
     achar();
-
-
 }
 
 function achar() {
