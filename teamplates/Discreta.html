@@ -17,11 +17,17 @@
 
     <script>
         $(function () {
+            $("#tabDados").sortable();
+            $("#tabDados").disableSelection();
+        });
+
+
+        $(function () {
             $("#resolucaoCalculos").sortable();
             $("#resolucaoCalculos").disableSelection();
         });
     </script>
-    
+
 </head>
 
 <body onload="quantiDiscreta()">
@@ -33,9 +39,9 @@
     <div id='resolucaoCalculos'>
         <div id="tabDados">
             <div id="tabDadosDiscreta"></div>
-            <div id="XXX">    
+            <div id="XXX">
                 <div id="Results"></div>
-                <div id="X">    
+                <div id="X">
                     <div id="divContinua">
                         <table>
                             <tr>
@@ -63,10 +69,10 @@
                         </table>
                     </div>
                 </div>
-            <!-- <div id="topo"></div> -->
-            <!-- <div id="eleRept"></div> -->
-            <!-- <div id="desviopadrao"></div> -->
-            <!-- <div id="coeficiente"></div> -->
+                <!-- <div id="topo"></div> -->
+                <!-- <div id="eleRept"></div> -->
+                <!-- <div id="desviopadrao"></div> -->
+                <!-- <div id="coeficiente"></div> -->
             </div>
             <div id="conjuntoBtn">
                 <button type="button" id="btnVoltarindex" onclick="window.location = '../index.html'">PÁGINA INICIAL</button>

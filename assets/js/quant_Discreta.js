@@ -268,25 +268,27 @@ function separatrizDiscreta() {
     let medidaSeparatriz;
 
     function acharPosicao(sep) {
+
         console.log(sep);
+        console.log(vetObjeto)
         for (let i = 0; i < vetObjeto.length; i++) {
             if (sep == vetObjeto[vetObjeto.length - 1].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
                 sep = vetObjeto[vetObjeto.length - 1].VarPesquisada;
                 break;
             }
             else if (sep > vetObjeto[i].Fac_acumulado && sep < vetObjeto[i + 1].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
-                sep = vetObjeto[i].VarPesquisada;
+                sep = vetObjeto[i+1].VarPesquisada;
                 break;
             }
             else if (sep < vetObjeto[0].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
                 sep = vetObjeto[i].VarPesquisada;
                 break;
@@ -308,7 +310,9 @@ function separatrizDiscreta() {
             switch (Lvalor) {
                 case "1":
                     Mseparatriz = (total * 25) / 100;
+                    console.log(Mseparatriz)
                     Mseparatriz = acharPosicao(Mseparatriz);
+                    console.log(Mseparatriz)
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
                     document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;
@@ -317,6 +321,7 @@ function separatrizDiscreta() {
                 case "2":
                     Mseparatriz = (total * 50) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
+                    console.log(Mseparatriz)
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
                     document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
@@ -325,6 +330,7 @@ function separatrizDiscreta() {
                 case "3":
                     Mseparatriz = (total * 75) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
+                    console.log(Mseparatriz)
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
                     document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
@@ -333,6 +339,7 @@ function separatrizDiscreta() {
                 case "4":
                     Mseparatriz = total * 100 / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
+                    console.log(Mseparatriz)
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor; 
                     document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
