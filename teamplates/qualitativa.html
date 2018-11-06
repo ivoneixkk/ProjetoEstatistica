@@ -46,31 +46,32 @@
             margin-bottom: 3%
         }
 
-        #resolucaoCalculos{
+        #resolucaoCalculos {
             margin-bottom: 10%;
         }
 
-        #footerDiscreta{
+        #footerDiscreta {
             position: fixed;
         }
-            
-
     </style>
 
     <script>
+
+
+        $(function () {
+            $("#tabelaDados").sortable();
+            $("#tabelaDados").disableSelection();
+        });
+
         $(function () {
             $("#sortable").sortable();
             $("#sortable").disableSelection();
         });
+        $(function () {
+            $("#resolucaoCalculos").sortable();
+            $("#resolucaoCalculos").disableSelection();
+        });
     </script>
-
-
-<script>
-    $(function () {
-        $("#resolucaoCalculos").sortable();
-        $("#resolucaoCalculos").disableSelection();
-    });
-</script>
 
 
 
@@ -84,11 +85,14 @@
     <center>
         <div id='titulo'>
             <h1>Analise de Dados Qualitativo</h1>
-            <h3<center><h3 id="titDrag">Arraste e Solte para ordenar!</center></h3>
-        </div>
+            <h3<center>
+                <h3 id="titDrag">Arraste e Solte para ordenar!
+    </center>
+    </h3>
+    </div>
     </center>
     <div id="teste"></div>
-    <div id="conjuntoBtn">
+    <div id="conjuntoBtn5">
         <button type="button" id="btnMenu1" onclick="window.location = '../index.html'">PÁGINA PRINCIPAL</button>
     </div>
     <div id="organizar" class="listaQ"></div>

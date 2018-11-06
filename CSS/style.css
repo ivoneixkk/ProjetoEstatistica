@@ -650,6 +650,8 @@ footer{
     margin: 2%;
 }
 #resultadoCorrelacao{
+    margin-left: 0.5%;    
+    margin-right: 0.5%;    
     width: 30%;
     background: rgb(92, 92, 92);
     padding: 10px;
@@ -658,7 +660,9 @@ footer{
 }
 #equacao{
     width: 30%;
-    margin-left: 2%;
+    margin-left: 0.5%;    
+    margin-right: 0.5%;    
+
     background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
@@ -666,7 +670,8 @@ footer{
 }
 #forca{
     width: 30%;
-    margin-left: 2%;
+    margin-left: 0.5%;    
+    margin-right: 0.5%;    
     background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;

@@ -889,7 +889,7 @@ function pegarPreferencias(org) {
 
 
 function qualiTabela(vet, val1, val2) {
-
+   
     let mounTable3 = "<strong>TABELA DE ANALISE DOS DADOS</strong>";
 
 
