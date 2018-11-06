@@ -21,38 +21,327 @@ function quantiDiscreta() {
 
     /////////////////// CORRIGIR ERRO DE STRING QUANDO HÁ ESPAÇO NA FRASE///////////////////////////////
     for(let i = 0; i < testvalores.length; i++){
-        if(testvalores[i].match('%20')){
+        if (testvalores[i].match('%20')) {
             let auxTestValores;
             auxTestValores = testvalores[i].split('%20');
             testvalores[i] = ''
-            for(let j = 0; j < auxTestValores.length; j++){
+            for (let j = 0; j < auxTestValores.length; j++) {
                 testvalores[i] += auxTestValores[j] + ' ';
             }
-        } 
-        if(testvalores[i].match('%C3%A7')){
+        }
+
+        if (testvalores[i].match('%C3%A1')) {
+            let auxTestVetor;
+            auxTestValores = testvalores[i].split('%C3%A1');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'á';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%81')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%81');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Á';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%89')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%89');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'É';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%A9')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%A9');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'é';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%AD')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%AD');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'í';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%8D')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%8D');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Í';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%B3')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%B3');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ó';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%93')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%93');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ó';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%BA')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%BA');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ú';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%9A')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%9A');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ú';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%BD')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%BD');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ý';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%9D')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%9D');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ý';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%A2')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%A2');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'â';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%AA')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%AA');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ê';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%B4')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%B4');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'ô';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%82')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%82');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Â';
+                }
+            }
+        }
+
+
+        if (testvalores[i].match('%C3%8A')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%8A');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ê';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%94')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%94');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ô';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%87')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%87');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ç';
+                }
+            }
+        }
+
+        if (testvalores[i].match('%C3%A7')) {
             let auxTestValores;
             auxTestValores = testvalores[i].split('%C3%A7');
             testvalores[i] = ''
-            for(let j = 0; j < auxTestValores.length; j++){
-                if(j == auxTestValores.length -1){
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
                     testvalores[i] += auxTestValores[j];
                 } else {
                     testvalores[i] += auxTestValores[j] + 'ç';
                 }
-            } 
-        } 
-        if(testvalores[i].match('%C3%A3')){
+            }
+        }
+
+        if (testvalores[i].match('%C3%83')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%83');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Ã';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%A3')) {
             let auxTestValores;
             auxTestValores = testvalores[i].split('%C3%A3');
             testvalores[i] = ''
-            for(let j = 0; j < auxTestValores.length; j++){
-                if(j == auxTestValores.length -1){
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
                     testvalores[i] += auxTestValores[j];
                 } else {
                     testvalores[i] += auxTestValores[j] + 'ã';
                 }
             }
-        }	
+        }
+
+        if (testvalores[i].match('%C3%95')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%95');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'Õ';
+                }
+            }
+        }
+        if (testvalores[i].match('%C3%B5')) {
+            let auxTestValores;
+            auxTestValores = testvalores[i].split('%C3%B5');
+            testvalores[i] = ''
+            for (let j = 0; j < auxTestValores.length; j++) {
+                if (j == auxTestValores.length - 1) {
+                    testvalores[i] += auxTestValores[j];
+                } else {
+                    testvalores[i] += auxTestValores[j] + 'õ';
+                }
+            }
+        }
     }
     /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
 

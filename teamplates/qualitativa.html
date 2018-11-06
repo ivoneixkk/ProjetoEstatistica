@@ -19,7 +19,7 @@
 
 
     <style type="text/css">
-        #tabDados,
+        #tabDados1,
         #tabelaDados,
         #tabResultado {
             display: none
@@ -45,6 +45,16 @@
             margin-left: 46%;
             margin-bottom: 3%
         }
+
+        #resolucaoCalculos{
+            margin-bottom: 10%;
+        }
+
+        #footerDiscreta{
+            position: fixed;
+        }
+            
+
     </style>
 
     <script>
@@ -74,21 +84,25 @@
     <center>
         <div id='titulo'>
             <h1>Analise de Dados Qualitativo</h1>
-            <hr>
             <h3<center><h3 id="titDrag">Arraste e Solte para ordenar!</center></h3>
         </div>
     </center>
-    <div id="voltarbtn"></div>
     <div id="teste"></div>
+    <div id="conjuntoBtn">
+        <button type="button" id="btnMenu1" onclick="window.location = '../index.html'">PÁGINA PRINCIPAL</button>
+    </div>
     <div id="organizar" class="listaQ"></div>
 
     <div id='resolucaoCalculos'>
         <div id="tabelaDados">
-            <div id='tabDados'></div>
-
+            <div id='tabDados1'></div>
+            <div id="XXX">
+                <div id='Results'></div>
+            </div>
+            <div id="conjuntoBtn">
+                <button type="button" id="btnVoltarindex1" onclick="window.location = '../index.html'">PÁGINA INICIAL</button>
+            </div>
         </div>
-        <div id='tabResultado'></div>
-
         <div id="divGrafico">
             <div id="container"></div>
 

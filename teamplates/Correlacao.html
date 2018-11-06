@@ -23,6 +23,13 @@
 
 <script>
     $(function () {
+        $("#calcCorrelacao").sortable();
+        $("#calcCorrelacao").disableSelection();
+    });
+</script>
+
+<script>
+    $(function () {
         $("#resolucaoCalculos").sortable();
         $("#resolucaoCalculos").disableSelection();
     });
@@ -61,6 +68,9 @@
                     <div id="inppt"></div>
                     <div id="resprojecao"></div>
                 </div>
+            </div>
+            <div id="conjuntoBtn">
+                <button type="button" id="btnMenu2" onclick="window.location = '../index.html'">PÁGINA PRINCIPAL</button>
             </div>
         </div>
 

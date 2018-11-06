@@ -23,6 +23,674 @@ executar();
 function executar() {
     dependente = queryString("dependente");
     independente = queryString("independente");
+
+////////////////////////////////////////////////////////////////////////////
+console.log(dependente)
+console.log(independente)
+for (let i = 0; i < dependente.length; i++) {
+
+    if (dependente.match('%20')) {
+
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%20');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            dependente += auxTestDependente[j] + ' ';
+        }
+    }
+
+    if (dependente.match('%C3%A1')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%A1');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'á';
+            }
+        }
+    }
+    if (dependente.match('%C3%81')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%81');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Á';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%89')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%89');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'É';
+            }
+        }
+    }
+    if (dependente.match('%C3%A9')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%A9');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'é';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%AD')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%AD');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'í';
+            }
+        }
+    }
+    if (dependente.match('%C3%8D')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%8D');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Í';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%B3')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%B3');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ó';
+            }
+        }
+    }
+    if (dependente.match('%C3%93')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%93');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ó';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%BA')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%BA');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ú';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%9A')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%9A');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ú';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%BD')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%BD');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ý';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%9D')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%9D');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ý';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%A2')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%A2');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'â';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%AA')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%AA');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ê';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%B4')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%B4');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ô';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%82')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%82');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Â';
+            }
+        }
+    }
+
+
+    if (dependente.match('%C3%8A')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%8A');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ê';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%94')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%94');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ô';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%87')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%87');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ç';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%A7')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%A7');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ç';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%83')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%83');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Ã';
+            }
+        }
+    }
+    if (dependente.match('%C3%A3')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%A3');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'ã';
+            }
+        }
+    }
+
+    if (dependente.match('%C3%95')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%95');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'Õ';
+            }
+        }
+    }
+    if (dependente.match('%C3%B5')) {
+        let auxTestDependente;
+        auxTestDependente = dependente.split('%C3%B5');
+        dependente = ''
+        for (let j = 0; j < auxTestDependente.length; j++) {
+            if (j == auxTestDependente.length - 1) {
+                dependente += auxTestDependente[j];
+            } else {
+                dependente += auxTestDependente[j] + 'õ';
+            }
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+for (let i = 0; i < independente.length; i++) {
+
+    if (independente.match('%20')) {
+
+        let auxTestDependente;
+        auxTestIndependente = independente.split('%20');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            independente += auxTestIndependente[j] + ' ';
+        }
+    }
+
+    if (independente.match('%C3%A1')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%A1');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'á';
+            }
+        }
+    }
+    if (independente.match('%C3%81')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%81');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Á';
+            }
+        }
+    }
+
+    if (independente.match('%C3%89')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%89');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'É';
+            }
+        }
+    }
+    if (independente.match('%C3%A9')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%A9');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'é';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%AD')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%AD');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'í';
+            }
+        }
+    }
+    if (independente.match('%C3%8D')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%8D');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Í';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%B3')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%B3');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ó';
+            }
+        }
+    }
+    if (independente.match('%C3%93')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%93');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ó';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%BA')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%BA');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ú';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%9A')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%9A');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ú';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%BD')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%BD');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ý';
+            }
+        }
+    }
+
+    if (independente.match('%C3%9D')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%9D');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ý';
+            }
+        }
+    }
+
+    if (independente.match('%C3%A2')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%A2');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'â';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%AA')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%AA');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ê';
+            }
+        }
+    }
+
+    if (independente.match('%C3%B4')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%B4');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ô';
+            }
+        }
+    }
+
+    if (independente.match('%C3%82')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%82');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Â';
+            }
+        }
+    }
+
+
+    if (independente.match('%C3%8A')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%8A');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ê';
+            }
+        }
+    }
+
+    if (independente.match('%C3%94')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%94');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ô';
+            }
+        }
+    }
+
+    if (independente.match('%C3%87')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%87');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ç';
+            }
+        }
+    }
+
+    if (independente.match('%C3%A7')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%A7');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ç';
+            }
+        }
+    }
+
+    if (independente.match('%C3%83')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%83');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Ã';
+            }
+        }
+    }
+    if (independente.match('%C3%A3')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%A3');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'ã';
+            }
+        }
+    }
+
+    if (independente.match('%C3%95')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%95');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'Õ';
+            }
+        }
+    }
+    if (independente.match('%C3%B5')) {
+        let auxTestIndependente;
+        auxTestIndependente = independente.split('%C3%B5');
+        independente = ''
+        for (let j = 0; j < auxTestIndependente.length; j++) {
+            if (j == auxTestIndependente.length - 1) {
+                independente += auxTestIndependente[j];
+            } else {
+                independente += auxTestIndependente[j] + 'õ';
+            }
+        }
+    }
+}
+
+console.log(dependente)
+console.log(independente)
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
     let verCSV = queryString("docimport");
     verCSV = verCSV.replace(/,/g, '.')
     verCSV = verCSV.replace(/-/g, ' ')
@@ -329,11 +997,10 @@ function calcProjecao(param) {
 
 function outroGrafico() {
 
-    Highcharts.chart('GraGra', {
+    var chart = new Highcharts.chart('GraGra', {
         chart: {
             type: 'scatter',
             zoomType: 'yx',
-            borderWidth: 4,
         },
         title: {
             text: 'GRAFICO DE DISPERSÃO'
@@ -350,7 +1017,6 @@ function outroGrafico() {
             y: 50,
             floating: true,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
-            borderWidth: 1
         },
         credits:{
             enabled:false,
@@ -410,6 +1076,6 @@ function outroGrafico() {
         }]
     });
 
-
+    chart.reflow();
 }
 

@@ -28,12 +28,21 @@ select{
 .ordInput{
     margin-left: 30px;
 }
+ol{
+    margin: 15% 0 
+}
+
+#teste{
+    text-align: center;
+    margin: 0% 0;
+}
 
 #sortable{
-    margin-left: 40%;
+    padding: 0;
+    text-align: center;
     /* width: 100%; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white
+    color: black;
 }
 #dadosEntrada{
     height: 100%;
@@ -62,7 +71,8 @@ label {
 #btnexecutar{
     display: none;
 }
-#btnexecutar, #btnexecutar2 {
+
+#btnexecutar, #btnexecutar2, #btnexecutarok{
     border-width: 0;
     background-color: #0077ff;
     border-radius: 5px;
@@ -71,6 +81,8 @@ label {
     margin: 10px;
     padding: 8px 12px
 }
+
+
 
 #btnexecutarc{
     display: none;
@@ -103,7 +115,7 @@ label {
       display: none
   }
 
-#btnvoltarindex, #btnCorrevoltarindex, #btnDescrivoltarindex, #btnDigivoltarindex, #btnVoltarindex, #btnMenu{
+#btnvoltarindex, #btnCorrevoltarindex, #btnDescrivoltarindex, #btnDigivoltarindex, #btnVoltarindex, #btnMenu, #btnVoltarindex1, #btnMenu1, #btnMenu2{
     border-width: 0;
     background-color: rgb(158, 0, 0) ;
     border-radius: 5px;
@@ -231,13 +243,6 @@ input:focus {
 	outline:none;
 }
 
-#tabelaDados{
-    border: 2px solid #0077ff;
-    width: 100%;
-    margin-left: 1%;
-    margin-top: 3%;
-    /* float: left; */
-}
 
 
 #resolucaoCalculos{
@@ -250,7 +255,7 @@ input:focus {
 }
 
 
-#tabDados{
+#tabDados, #tabelaDados{
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
     width: 100%;
     border: solid 1px white;
@@ -303,7 +308,7 @@ input:focus {
     font-size: 150%;
 }
 
-#tabDiscreta th ,#tabDiscreta tr,#tabDiscreta td{
+#tabDiscreta th ,#tabDiscreta tr,#tabDiscreta td, #tabQuali th, #tabQuali tr #tabQuali td{
     border-radius: 5px;
     text-align: center;
     padding: 1px;
@@ -510,20 +515,20 @@ footer{
     text-align: center
 }
 
-#tabDadosDiscreta{
+#tabDadosDiscreta,#tabDados1{
     width: 96%;
     margin: 2%;
     font-size: 120%;
 }
 
-#tabDiscreta{
+#tabDiscreta, #tabQuali{
     width: 100%;
 }
 
-#tabDiscreta tr:nth-child(even){
+#tabDiscreta tr:nth-child(even), #tabQuali tr:nth-child(even){
     background-color: rgb(218, 218, 218);
 }
-#tabDiscreta tr:nth-child(odd){
+#tabDiscreta tr:nth-child(odd), #tabQuali tr:nth-child(odd){
     background-color: rgb(235, 235, 235);
 }
 
@@ -538,20 +543,20 @@ footer{
     margin: 2% 20% 0 0
 }
 
-#Results td {
+#Results td, #tabResultado td {
     border-radius: 5px;
     background: #202c2c;
     color: white;
     font: bold;
 }
 
-#Results tr:first-child th{
+#Results tr:first-child th, #tabResultado tr:first-child th{
     padding: 2px 0px;
     color: white;
     background-color: rgb(92, 92, 92); 
 }
 
-#Results th{
+#Results th, #tabResultado th{
     border-radius: 5px;
 }
 
@@ -560,18 +565,28 @@ footer{
     margin: 0 auto;
 }
 
-#tabDiscreta tr:first-child th{
+#tabDiscreta tr:first-child th, #tabQuali tr:first-child th{
     color: white;
     background-color: rgb(92, 92, 92);
 }
 
-#Results {
+#Results, #tabResultado {
     width: 34%;
     margin: 0;
 }
-#Results table{
+#Results table , #tabResultado table{
     width: 100%;
 }
+
+#ResultQuali tr:last-child th{
+    width: 95%;
+}
+
+#ResultQuali tr:last-child td{
+    width: 5%;
+}
+
+
 
 #XXX{
     margin: 2% 2% 0 2%;
@@ -738,7 +753,7 @@ footer{
 }
 
 #conjuntoBtn{
-    width: 100%;
+    width: 100%; 
     margin: 0;
     text-align: right;
 }
@@ -773,14 +788,14 @@ ul {
     
 }
 li{
-    margin-top: 1%;
+    margin-top: 15px;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 25px;
     border: 2px solid #f1f1f1;
     padding: 10px;
-    background: #202c2c;
+    background: white;
     width: 100px;
-    box-shadow: 0 0 10px 5px rgba(56, 124, 16, 0.4);
+    box-shadow: 0 0 10px 5px #0077ff;
 
 }
 #organizar{
@@ -791,4 +806,7 @@ li{
     background: #fff;
     margin-top: 6%;
     width: 100%
+}
+#titulo{
+    margin-top: 0%
 }
