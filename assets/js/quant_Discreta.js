@@ -403,8 +403,8 @@ function ordenarVetor(ent, cont) {
 
 function mountTabelaDiscreta(vet, val1, val2) {
 
-    let mounTable3 = "<strong>TABELA DE ANALISE DE DADOS</strong>";
-    mounTable3 += "<div>"
+    let mounTable3 ="<div>"
+    mounTable3 += "<strong>TABELA DE ANALISE DE DADOS</strong>";
 
 
     mounTable3 += "<table id='tabDiscreta'>";
@@ -562,22 +562,22 @@ function separatrizDiscreta() {
         console.log(vetObjeto)
         for (let i = 0; i < vetObjeto.length; i++) {
             if (sep == vetObjeto[vetObjeto.length - 1].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
                 sep = vetObjeto[vetObjeto.length - 1].VarPesquisada;
                 break;
             }
             else if (sep > vetObjeto[i].Fac_acumulado && sep < vetObjeto[i + 1].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
                 sep = vetObjeto[i+1].VarPesquisada;
                 break;
             }
             else if (sep < vetObjeto[0].Fac_acumulado) {
-                // alert('eu sou a posicao ' + sep);
-                // alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
+                alert('eu sou a posicao ' + sep);
+                alert('eu sou o FAC acumulado' + vetObjeto[i].Fac_acumulado);
 
                 sep = vetObjeto[i].VarPesquisada;
                 break;

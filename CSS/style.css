@@ -273,20 +273,20 @@ input:focus {
     width: 100%;
 }
 
-#tabDadosContinua tr:first-child th, #tabDadosContinua tr:last-child th{
+#tabDadosContinua tr:first-child th, #tabDadosContinua tr:last-child th, #tabelab tr:first-child th{
     color: white;
     background-color: rgb(92, 92, 92);
 }
 
-#tabDadosContinua tr th, #tabDadosContinua tr td{
+#tabDadosContinua tr th, #tabDadosContinua tr td, #tabelab tr th, #tabelab tr td{
     border-radius: 5px;
 }
 
-#tabDadosContinua tr:nth-child(even){
+#tabDadosContinua tr:nth-child(even), #tabelab tr:nth-child(even){
     background-color: rgb(218, 218, 218);
 }
 
-#tabDadosContinua tr:nth-child(odd){
+#tabDadosContinua tr:nth-child(odd), #tabelab tr:nth-child(odd){
     background-color: rgb(235, 235, 235);}
 
 #tabDadosContinua strong{
@@ -348,8 +348,13 @@ footer{
     color: black
 }
 
+#resultadoDistribuicao{
+    padding: 1%;
+    width: 30%;
+    margin: 0 auto;
+}
+
 #uniforme {
-    border: 4px solid #0077ff;
     padding: 2px;
     margin: 0 ;
     width: 98%;
@@ -361,7 +366,6 @@ footer{
 }
 
 #normal {
-    border: 4px solid #0077ff;
     padding: 2px;
     margin: 0 auto;
     width: 98%;
@@ -371,7 +375,6 @@ footer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 #binomial {
-    border: 4px solid #0077ff;
     padding: 2px;
     margin: 0 auto;
     width: 98%;
@@ -387,11 +390,14 @@ footer{
 
 #tabelab{
     border-collapse: collapse;
+    width: 30%;
+    margin: 0 auto
 }
 
-#tabelab table, #tabelab th, #tabelab td{
-    border: 1px solid black;
+#tabelab table{
+    width: 100%
 }
+
 
 .btnDigi {
     border-width: 0;
@@ -428,6 +434,8 @@ footer{
 
 
 #principal {
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.40);
+    background-color: white;
     margin: 5% 5% 0 5%;
     width: 90%;
 }
@@ -629,11 +637,13 @@ footer{
 }
 
 #separatriz th{
+    width: 85%;
     border-radius: 5px;
     background-color: #e3e6eb
 }
 
 #separatriz td{
+    width: 15%;
     border-radius: 5px;
     color: white;
     background-color: #202c2c;
@@ -650,8 +660,6 @@ footer{
     margin: 2%;
 }
 #resultadoCorrelacao{
-    margin-left: 0.5%;    
-    margin-right: 0.5%;    
     width: 30%;
     background: rgb(92, 92, 92);
     padding: 10px;
@@ -660,9 +668,7 @@ footer{
 }
 #equacao{
     width: 30%;
-    margin-left: 0.5%;    
-    margin-right: 0.5%;    
-
+    margin-left: 2%;
     background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
@@ -670,8 +676,7 @@ footer{
 }
 #forca{
     width: 30%;
-    margin-left: 0.5%;    
-    margin-right: 0.5%;    
+    margin-left: 2%;
     background: rgb(92, 92, 92);
     padding: 10px;
     border-radius: 10px;
@@ -764,6 +769,7 @@ footer{
 }
 #opuniforme{
     padding: 5px;
+    margin-top: 1%
 }
 
 #pontoMin, #pontoMax, #qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{
@@ -773,14 +779,6 @@ footer{
     padding: 5px;
     margin-left: 1%;
     margin-top: 2% ;
-    float: left;
-}
-
-
-#seletor{
-    margin-top: 2%;
-    float: left
-    
 }
 
 

@@ -23,17 +23,16 @@
     <div id="central">
 
         <h2>Distribuições</h2>
-
-        <button type="button" class="btnDigi" onclick="DivDists('uniforme')">UNIFORME</button>
-        <button type="button" class="btnDigi" onclick="DivDists('binomial')">BINOMIAL</button>
-        <button type="button" id="chamaNormal" class="btnDigi" onclick="DivDists('normal')">Normal</button>
-        <input type="button" class="btnDigiR" onclick="window.location.reload()" value="LIMPAR DADOS">
-        <button type="button" id="btnCorrevoltarindex" onclick="window.location = '../index.html'">VOLTAR</button>
-
-        <br>
-        <!-- <input type="button" onclick="quantiDiscreta(vetor)" value="EXECUTAR"> -->
-        <!-- <input type="button" onclick="MostraGra(Repeticao)" value="GRAFICOS"> -->
         <div id="principal">
+            <button type="button" class="btnDigi" onclick="DivDists('uniforme')">UNIFORME</button>
+            <button type="button" class="btnDigi" onclick="DivDists('binomial')">BINOMIAL</button>
+            <button type="button" id="chamaNormal" class="btnDigi" onclick="DivDists('normal')">Normal</button>
+            <input type="button" class="btnDigiR" onclick="window.location.reload()" value="LIMPAR DADOS">
+            <button type="button" id="btnCorrevoltarindex" onclick="window.location = '../index.html'">VOLTAR</button>
+
+            <br>
+            <!-- <input type="button" onclick="quantiDiscreta(vetor)" value="EXECUTAR"> -->
+            <!-- <input type="button" onclick="MostraGra(Repeticao)" value="GRAFICOS"> -->
 
             <div id="uniforme">
                 Uniforme
@@ -66,19 +65,18 @@
                   
                         <option value="todos">Todos</option> -->
                     </select>
+                    <input name="pontoMin" id="pontoMin" value="" size="10" type="text" placeholder="Ponto Minimo" />
+                    <font id="ao">&nbsp;&nbsp;- ao -&nbsp;&nbsp; </font>
+                    <input name="pontoMax" id="pontoMax" value="" size="10" type="text" placeholder="Ponto Maximo" />
+
+                    <input name="prodentre1" id="entreProd1" value="" size="10" type="text" placeholder="de (X)" />
+                    <input name="prodentre2" id="entreProd2" value="" size="10" type="text" placeholder="ate (Y)" />
+                    <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
+
+                    <button type="button" id="btCalcUni" class="btnDigi" onclick="DistUniforme()">Calcular</button>
+
+                    <input type="radio" name="condic" id="desfaz" onclick="desfazEntre()" value="D">
                 </div>
-                <input name="pontoMin" id="pontoMin" value="" size="10" type="text" placeholder="Ponto Minimo" />
-                <font id="ao">&nbsp;&nbsp;- ao -&nbsp;&nbsp; </font>
-                <input name="pontoMax" id="pontoMax" value="" size="10" type="text" placeholder="Ponto Maximo" />
-
-                <input name="prodentre1" id="entreProd1" value="" size="10" type="text" placeholder="de (X)" />
-                <input name="prodentre2" id="entreProd2" value="" size="10" type="text" placeholder="ate (Y)" />
-                <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
-
-                <button type="button" id="btCalcUni" class="btnDigi" onclick="DistUniforme()">Calcular</button>
-
-                <input type="radio" name="condic" id="desfaz" onclick="desfazEntre()" value="D">
-
 
             </div>
             <div id="binomial">
@@ -86,13 +84,11 @@
                 <br>
                 <input name="pesqb" id="pesquisa" value="" size="10" type="text" placeholder="Ojeto da pesquisa(texto)" />X
                 <input name="destib" id="ppesquisa" value="" size="10" type="text" placeholder="Referente a:(texto)" />
-
                 <input id="pesquisan" value="" size="5" type="text" placeholder="n(amostra)" />
                 <input id="pesquisap" value="" size="10" type="text" placeholder="p(sucesso)" />
                 &nbsp;%&nbsp;&nbsp;&nbsp;
                 &nbsp;
                 <select id="opbinomial">
-
                     <option value="opcao">escolha uma Opção</option>
                     <option disabled="disabled">_____________________________</option>
                     <option disabled="disabled">&nbsp;</option>
@@ -107,15 +103,11 @@
                     <option value="pelomenos">Pelo menos</option>
                     <option value="acharQtd">Achar o evento (k)</option>
                     <option value="bvariancia">Variancia</option>
-
                     <option value="todos">Todos</option>
                 </select>
                 <input id="pesquisak" value="" size="10" type="text" placeholder="k(evento)" />
-                <span style=""></span>
                 </button>
-
                 <button type="button" class="btnDigi" onclick="DistBinomial()">Calcular</button>
-
             </div>
 
             <div id="normal">
@@ -151,10 +143,12 @@
                 <button type="button" class="btnDigi" onclick="DistNormal()">Calcular</button>
 
             </div>
+            <div id="resultadoDistribuicao"></div>
+            <div id="tabelab"></div>
+
 
         </div>
-        <div id="tabelab"></div>
-        <div id="resultadoDistribuicao"></div>
+    </div>
         <div id="Umedia"></div>
         <div id="Udesvio"></div>
         <div id="cv"></div>
