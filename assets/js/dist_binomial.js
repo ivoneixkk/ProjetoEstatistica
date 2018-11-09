@@ -79,17 +79,17 @@ function acharEvento() {
 }
 
 function varianciaB() {
-    let vp, vq, vn, resv,vu;
+    let vp, vq, vn, resv, vu;
     vp = p / 100;
-//    vp = document.getElementById('pesquisap').value;
+    //    vp = document.getElementById('pesquisap').value;
     vn = parseInt(document.getElementById('pesquisan').value);
     vq = 100 - p;
     vu = vn * vp;
-    resv = vp * vn * (vq/100);
+    resv = vp * vn * (vq / 100);
     console.log(vp)
     console.log(vn)
     console.log(vq)
-    
+
     let resultv = 'Variancia de&nbsp;:&nbsp;' + resv;
     document.getElementById('resultadoDistribuicao').innerHTML = resultv;
     console.log(vp);
@@ -119,7 +119,9 @@ function DistBinomial() {
             count = 0;
             break;
         case "maisque":
+            vk = vk + 1
             count = vn - vk;
+            console.log(count)
             break;
         case "menosque":
             count = vk - 1;
@@ -154,7 +156,7 @@ function DistBinomial() {
     //###########################################################################################
 
 
-
+    console.log(count)
 
     let vetBinomial = [];
 

@@ -24,8 +24,8 @@ function executar() {
 
     testvalores = testvalores.split(',');
 
-/////////////////// CORRIGIR ERRO DE STRING QUANDO HÁ ESPAÇO NA FRASE///////////////////////////////
-    for(let i = 0; i < testvalores.length; i++){
+    /////////////////// CORRIGIR ERRO DE STRING QUANDO HÁ ESPAÇO NA FRASE///////////////////////////////
+    for (let i = 0; i < testvalores.length; i++) {
         if (testvalores[i].match('%20')) {
             let auxTestValores;
             auxTestValores = testvalores[i].split('%20');
@@ -349,8 +349,8 @@ function executar() {
         }
 
     }
-/////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
-    
+    /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////
+
 
 
 
@@ -425,11 +425,11 @@ function medianaCont(vet) {
     //ACHAR A POSIÇAO PARA ANALIZAR O CALCULO DA MEDIANA
     //CASO FOR PAR ACHA O MEIO DO VETOR E SOMA COM A PROXIMA POSIÇAO E DIVIDE POR 2
     if (Med % 2 == 0) {
-//        alert('sou par');
+        //        alert('sou par');
         Med = vet.length / 2;
         Med = (Med + (Med + 1)) / 2;
     } else {
-      //  alert('sou impar');
+        //  alert('sou impar');
         //SE FOR IMPAR PEGA O MEIO DO VETOR 
         Med = vet.length / 2;
 
@@ -637,11 +637,11 @@ function mountarTabelaResultados() {
     for (let i = 0; i < Dadostabela.length; i++) {
         if (posicao == Dadostabela[i].fac) {
             if (posicao == GFac[0]) {
-              //  alert("fac anterior nao existe, entao assume o valor 0 na formula");
+                //  alert("fac anterior nao existe, entao assume o valor 0 na formula");
                 mediana = Dadostabela[i].intervalo_classeI + ((((somatorioFi / 2) - 0) / Dadostabela[i].n_elementos_fi) * Dadostabela[i].h_Ic);
             }
             else {
-               // alert('oba achei vou analizar a classe .: ' + Dadostabela[i].classe);
+                // alert('oba achei vou analizar a classe .: ' + Dadostabela[i].classe);
                 console.log(Dadostabela[i].intervalo_classeI);
                 console.log(somatorioFi);
                 console.log(Dadostabela[i - 1].fac);
@@ -722,7 +722,7 @@ function separatrizCont() {
                 break;
             }
         }
-    //    alert("sou a posiçao da medida separatriz" + sep);
+        //    alert("sou a posiçao da medida separatriz" + sep);
         let ope1 = 0;
         let ope2 = 0;
         let ope3 = 0;
@@ -765,13 +765,13 @@ function separatrizCont() {
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;                    break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "2":
                     Mseparatriz = (somatorioFi * 50) / 100;
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
 
                 case "3":
@@ -779,14 +779,14 @@ function separatrizCont() {
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 case "4":
                     Mseparatriz = (somatorioFi * 100) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Quartil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML =  Mseparatriz;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;
                     break;
                 default:
 
@@ -838,61 +838,61 @@ function separatrizCont() {
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "2":
                     Mseparatriz = (somatorioFi * 20) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "3":
                     Mseparatriz = (somatorioFi * 30) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "4":
                     Mseparatriz = (somatorioFi * 40) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "5":
                     Mseparatriz = (somatorioFi * 50) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "6":
                     Mseparatriz = (somatorioFi * 60) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "7":
                     Mseparatriz = (somatorioFi * 70) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "8":
                     Mseparatriz = (somatorioFi * 80) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "9":
                     Mseparatriz = (somatorioFi * 90) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
                 case "10":
                     Mseparatriz = (somatorioFi * 100) / 100
                     Mseparatriz = acharPosicao(Mseparatriz);
                     document.getElementById('trSeparatriz').style.display = 'table-row'
                     document.getElementById('separatriz1').innerHTML = 'Decil &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp; ' + Lvalor;
-                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz;break;
+                    document.getElementById('resulSeparatriz1').innerHTML = Mseparatriz; break;
 
                 default:
                     window.alert("escolha um parametro valido ex(1 , 2 , 3 , 4, 5, 6, 7, 8, 9, 10 )");
@@ -929,7 +929,7 @@ function desvioPadrao() {
     // facpercent: Facp.toFixed(0)
 
 
-//    let Lvalor = document.getElementsByName('desvio');
+    //    let Lvalor = document.getElementsByName('desvio');
     resPadrao = 0;
     let teste1 = 0;
     let coeficiente = 0;
@@ -945,7 +945,7 @@ function desvioPadrao() {
             resPadrao = Math.sqrt(resPadrao).toFixed(2);
             coeficiente = Math.round(((resPadrao / Media) * 100).toFixed(2));
 
-            document.getElementById('desviopadrao').innerHTML =  resPadrao ;
+            document.getElementById('desviopadrao').innerHTML = resPadrao;
             document.getElementById('coeficienteTexto').innerHTML = 'Amostra Coeficiente de Variação:';
             document.getElementById('coeficienteResp').innerHTML = coeficiente + "%";
 
@@ -975,7 +975,7 @@ function desvioPadrao() {
 }
 
 function modaCk(Dadostabela) {
-
+    console.log(Dadostabela)
     let czuber = 0;
     let king = 0;
     let ope1 = 0;
@@ -984,6 +984,8 @@ function modaCk(Dadostabela) {
     let ope4 = 0;
     let ope5 = 0;
     let fiant = 0;
+    let ultimo = Dadostabela.length - 1
+
     for (let i = 0; i < Dadostabela.length; i++) {
         if (modal == Dadostabela[i].media_Ic) {
             if (Dadostabela[i].classe == 1) {
@@ -993,18 +995,46 @@ function modaCk(Dadostabela) {
                 fiant = Dadostabela[i - 1].n_elementos_fi;
                 ope1 = Dadostabela[i].n_elementos_fi - fiant;
             }
-            ope2 = (2 * Dadostabela[i].n_elementos_fi) - (fiant + Dadostabela[i + 1].n_elementos_fi);
-            ope3 = ope1 / ope2;
-            ope4 = ope3 * Dadostabela[i].h_Ic;
-            ope5 = ope4 + Dadostabela[i].intervalo_classeI;
 
-            king = Dadostabela[i].intervalo_classeI + ((Dadostabela[i + 1].n_elementos_fi / (fiant + Dadostabela[i + 1].n_elementos_fi)) * Dadostabela[i].h_Ic)
 
-            break;
+
+            if (Dadostabela[ultimo].n_elementos_fi == Dadostabela[i].n_elementos_fi) {
+                ope2 = (2 * Dadostabela[i].n_elementos_fi) - (fiant + Dadostabela[ultimo].n_elementos_fi);
+                
+                ope3 = ope1 / ope2;
+                ope4 = ope3 * Dadostabela[i].h_Ic;
+                ope5 = ope4 + Dadostabela[i].intervalo_classeI;
+                console.log(ope5)
+                king = Dadostabela[i].intervalo_classeI + ((Dadostabela[ultimo].n_elementos_fi / (fiant + Dadostabela[ultimo].n_elementos_fi)) * Dadostabela[i].h_Ic)
+                console.log(ope5)
+                if(isNaN(ope5)){
+                    ope5 = 0
+                }
+
+
+                break;
+
+            } else {
+
+                ope2 = (2 * Dadostabela[i].n_elementos_fi) - (fiant + Dadostabela[i + 1].n_elementos_fi);
+                
+                ope3 = ope1 / ope2;
+                ope4 = ope3 * Dadostabela[i].h_Ic;
+                ope5 = ope4 + Dadostabela[i].intervalo_classeI;
+                console.log(ope5)
+                king = Dadostabela[i].intervalo_classeI + ((Dadostabela[i + 1].n_elementos_fi / (fiant + Dadostabela[i + 1].n_elementos_fi)) * Dadostabela[i].h_Ic)
+
+                break;
+
+            }
+
+
 
         }
     }
     console.log(king);
+    console.log(ope5)
+
 
     return [Math.round(ope5), king.toFixed(2)];
 }
@@ -1043,21 +1073,21 @@ function MostraGra(dado, val1) {
         subtitle: {
             text: ''
         },
-        legend:{
-            enabled:false
+        legend: {
+            enabled: false
         },
-        credits:{
-            enabled:false
+        credits: {
+            enabled: false
         },
         xAxis: {
- //           alignTicks: false,
+            //           alignTicks: false,
             categories: data,
-//            crosshair: true,
-   //         type: 'scatter'
+            //            crosshair: true,
+            //         type: 'scatter'
         },
         yAxis: {
-            labels:{
-                format:'{value}\%'
+            labels: {
+                format: '{value}\%'
             },
             title: {
                 text: ''
@@ -1093,7 +1123,7 @@ function MostraGra(dado, val1) {
     chart.reflow();
 }
 
-function chamaDistribuicao(){
+function chamaDistribuicao() {
     return window.location.href = "Distribuicoes.html?media=" + Media + "&desvio=" + resPadrao
 }
 

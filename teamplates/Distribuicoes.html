@@ -26,7 +26,7 @@
         <div id="principal">
             <button type="button" class="btnDigi" onclick="DivDists('uniforme')">UNIFORME</button>
             <button type="button" class="btnDigi" onclick="DivDists('binomial')">BINOMIAL</button>
-            <button type="button" id="chamaNormal" class="btnDigi" onclick="DivDists('normal')">Normal</button>
+            <button type="button" id="chamaNormal" class="btnDigi" onclick="DivDists('normal')">NORMAL</button>
             <input type="button" class="btnDigiR" onclick="window.location.reload()" value="LIMPAR DADOS">
             <button type="button" id="btnCorrevoltarindex" onclick="window.location = '../index.html'">VOLTAR</button>
 
@@ -35,7 +35,7 @@
             <!-- <input type="button" onclick="MostraGra(Repeticao)" value="GRAFICOS"> -->
 
             <div id="uniforme">
-                Uniforme
+                <b>UNIFORME</b>
                 <br>
                 <!-- <font>Probabilidade - </font>
                     <font id="txtEntrei">Entre:</font> -->
@@ -73,20 +73,20 @@
                     <input name="prodentre2" id="entreProd2" value="" size="10" type="text" placeholder="ate (Y)" />
                     <input name="prod1" id="qtdProd" value="" size="10" type="text" placeholder="quantidade" />
 
-                    <button type="button" id="btCalcUni" class="btnDigi" onclick="DistUniforme()">Calcular</button>
+                    <button type="button" id="btCalcUni" class="btnDigi" onclick="DistUniforme()">CALCULAR</button>
 
                     <input type="radio" name="condic" id="desfaz" onclick="desfazEntre()" value="D">
                 </div>
 
             </div>
             <div id="binomial">
-                Binomial
+                <b>BINOMIAL</b><br>
                 <br>
-                <input name="pesqb" id="pesquisa" value="" size="10" type="text" placeholder="Ojeto da pesquisa(texto)" />X
+                <input name="pesqb" id="pesquisa" value="" size="10" type="text" placeholder="Ojeto da pesquisa(texto)" />&nbsp;<b>X</b>&nbsp;
                 <input name="destib" id="ppesquisa" value="" size="10" type="text" placeholder="Referente a:(texto)" />
                 <input id="pesquisan" value="" size="5" type="text" placeholder="n(amostra)" />
                 <input id="pesquisap" value="" size="10" type="text" placeholder="p(sucesso)" />
-                &nbsp;%&nbsp;&nbsp;&nbsp;
+                &nbsp;<b>%</b>&nbsp;&nbsp;&nbsp;
                 &nbsp;
                 <select id="opbinomial">
                     <option value="opcao">escolha uma Opção</option>
@@ -107,11 +107,11 @@
                 </select>
                 <input id="pesquisak" value="" size="10" type="text" placeholder="k(evento)" />
                 </button>
-                <button type="button" class="btnDigi" onclick="DistBinomial()">Calcular</button>
+                <button type="button" class="btnDigi" onclick="DistBinomial()">CALCULAR</button>
             </div>
 
             <div id="normal">
-                Normal
+              <b>NORMAL</b>
                 <br>
                 <input name="media" id="nmedia" value="" size="10" type="text" placeholder="media" />&nbsp;&nbsp;
                 <input name="desvio" id="ndesvio" value="" size="10" type="text" placeholder="desvio padrao" />
@@ -140,7 +140,7 @@
                 <input name="n1transf" id="dn1transf" value="" size="10" type="text" onblur="mostraDesvio(this.value)"
                     placeholder="parametro" />
 
-                <button type="button" class="btnDigi" onclick="DistNormal()">Calcular</button>
+                <button type="button" class="btnDigi" onclick="DistNormal()">CALCULAR</button>
 
             </div>
             <div id="resultadoDistribuicao"></div>
