@@ -999,13 +999,13 @@ function modaCk(Dadostabela) {
 
 
             if (Dadostabela[ultimo].n_elementos_fi == Dadostabela[i].n_elementos_fi) {
-                ope2 = (2 * Dadostabela[i].n_elementos_fi) - (fiant + Dadostabela[ultimo].n_elementos_fi);
+                ope2 = (2 * Dadostabela[i].n_elementos_fi) - (fiant + 0);
                 
                 ope3 = ope1 / ope2;
                 ope4 = ope3 * Dadostabela[i].h_Ic;
                 ope5 = ope4 + Dadostabela[i].intervalo_classeI;
                 console.log(ope5)
-                king = Dadostabela[i].intervalo_classeI + ((Dadostabela[ultimo].n_elementos_fi / (fiant + Dadostabela[ultimo].n_elementos_fi)) * Dadostabela[i].h_Ic)
+                king = Dadostabela[i].intervalo_classeI + ((0 / (fiant + Dadostabela[ultimo].n_elementos_fi)) * Dadostabela[i].h_Ic)
                 console.log(ope5)
                 if(isNaN(ope5)){
                     ope5 = 0
