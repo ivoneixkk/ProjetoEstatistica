@@ -2,9 +2,64 @@ body {
     height: 100%;
     margin: 0 auto;
     line-height: 1.6;
-    background: #f1f1f1;
+    background:  #f1f1f1;
+    /* background: #f1f1f1; */
     font-family: 'Times New Roman', Times, serif;
 }
+
+#pato{
+    margin-left: 130px;
+    display: flex;
+    width: 100px;
+    height: 100px;
+}
+#fpato{
+    margin-left: 20px;
+    margin-top: 1px;
+}
+
+#carrousel{
+    margin-top: 1%;
+    width: 100%;
+    /* background: #0ac5c5 */
+    background-color: #f1f1f1;
+    text-align: center;
+
+}
+
+#lCarrosel li{
+    width: 700px;
+    margin-left: 2px;
+}
+
+#itens{
+    /* margin-left: 1%; */
+    border-radius: 6%;
+    overflow-x: auto;
+    overflow: hidden;
+    width: 730px;
+    height: 490px;
+    display: inline-block;
+
+}
+#itens ul{
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+
+.item{
+    width: 700px;
+
+}
+
+#dadosEntrada{
+    display: none
+}
+
 header {
     width: 100%;
     padding: 0.5% 0;
@@ -82,6 +137,18 @@ label {
     padding: 8px 12px
 }
 
+
+#btnEnt{
+    float: right;
+    border-width: 0;
+    background-color: #0077ff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 30%;
+    margin-right: 2%;
+    padding: 20px 30px
+}
 
 
 #btnexecutarc{
@@ -300,13 +367,14 @@ input:focus {
 #logoIndex{
     font-size: 250%;
     margin-bottom: 10%;
+    display: flex
 }
-
+/* 
 #logoIndex i{
     margin-left: -10%;
     margin-right: 2%;
     font-size: 150%;
-}
+} */
 
 #tabDiscreta th ,#tabDiscreta tr,#tabDiscreta td, #tabQuali th, #tabQuali tr #tabQuali td{
     border-radius: 5px;

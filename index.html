@@ -11,7 +11,10 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/style.css" />
+
+
 
 
 
@@ -20,15 +23,45 @@
 <body>
     <header>
         <i class="far fa-chart-bar"></i>
-        nome do software
-        <script type='text/javascript' src='assets/js/js.js'></script>
-
+        WHITE DUCK
     </header>
 
+    <div id="carrousel">
+
+        <img id="prev" src="assets/img/esquerda.png">
+        <div id="itens">
+            <ul id='lCarrosel'>
+
+                <li>
+                    <div><img class="item" src="assets/img/1-imagem.png" /></div>
+                </li>
+                <li>
+                    <div><img class="item" src="assets/img/Qualitativa.png" /></div>
+                </li>
+                <li>
+                    <div><img class="item" src="assets/img/Discreta.png" /></div>
+                </li>
+                <li>
+                    <div><img class="item" src="assets/img/Continua.png" /></div>
+                </li>
+                <li>
+                    <div><img class="item" src="assets/img/Correlacao.png" /></div>
+                </li>
+
+            </ul>
+        </div>
+
+        <img id="next" src="assets/img/direita.png">
+        <button type="button" id="btnEnt" onclick="someLanding()"><b>ENTRAR</b> </button>&nbsp;&nbsp;&nbsp;
+    </div>
+
+
     <div id='dadosEntrada'>
-        <div id = "logoIndex">
-            <i class="far fa-chart-bar"></i>
-            nome do software
+        <div id="logoIndex">
+                <img id="pato"  src="assets/img/white-duck.png"/>
+ 
+            <!-- <i class="far fa-chart-bar"></i> -->
+            <font id="fpato" >WHITE DUCK </font> 
         </div>
         <button type="button" id="btnDescri" onclick="ChamarDiv('estatisticaDescritiva')">ESTATISTICA DESCRITIVA</button>
         <button type="button" id="btnDist" onclick="window.location.href = 'teamplates/Distribuicoes.html'">PROBABILIDADE</button>
@@ -37,11 +70,11 @@
         <div id="correlacao">
             <h2>CORRELAÇÃO</h2>
             <h2>Defina as Variaveis Dependente e Independente</h2>
-            <h4 id="erro" >Por favor preencha todos os campos!!<br><br></h4>
-            <td><input name="varDependente" id="Depend"   value="" type="text" placeholder="Variavel Dependente" /></td>
+            <h4 id="erro">Por favor preencha todos os campos!!<br><br></h4>
+            <td><input name="varDependente" id="Depend" value="" type="text" placeholder="Variavel Dependente" /></td>
             <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
             <hr>
-            <div id ="escCorre">
+            <div id="escCorre">
                 <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
                 <!-- <button type="button" id="btnDigiC" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
                 <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">IMPORTAR </button>
@@ -58,35 +91,37 @@
                 <center><input type="button" id="btnexecutarc" onclick="chamarPagina('correlacao')" value="OK"></center>
             </div>
 
-        </div>          
- 
- 
- 
+        </div>
+
+
+
         <div id="estatisticaDescritiva">
-            <table> 
+            <table>
                 <h2>ESTATISTICA DESCRITIVA</h2>
                 <h2>Escolha a opçao de entrada dos Dados:</h2>
-                <h4 id="erroD" >Por favor preencha todos os campos!!<br><br></h4>
+                <h4 id="erroD">Por favor preencha todos os campos!!<br><br></h4>
 
                 <tr>
                     <td><input name="campo1" id="campo1" class="coluna1" value="" type="text" placeholder="Variavel Pesquisada" /></td>
                 </tr>
                 <tr>
                     <td><input name="campo2" id="campo2" class="coluna1" value="" type="text" placeholder="(fi) pesquisada" /></td>
-                    <td><input type="radio" id="select2" class="coluna2" name="desvio" onclick="pegaDesvio(this.value)" value="P"> População</td>
-                    <td><input type="radio" id="select1" class="coluna3" name="desvio" onclick="pegaDesvio(this.value)"  value="A"> Amostra</td>
+                    <td><input type="radio" id="select2" class="coluna2" name="desvio" onclick="pegaDesvio(this.value)"
+                            value="P"> População</td>
+                    <td><input type="radio" id="select1" class="coluna3" name="desvio" onclick="pegaDesvio(this.value)"
+                            value="A"> Amostra</td>
                 </tr>
             </table>
             <hr>
             <div id="escolha">
-                <button type="button" id="btnvoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
+                <button type="button" id="btnvoltarindex" onclick="window.location = 'index.html?landing=0'">VOLTAR</button>
                 <button type="button" id="btnImp" onclick="ChamarDiv('importar')">IMPORTAR </button>
-                <button type="button" id="btnDigi" onclick="ChamarDiv('digitarr')">DIGITAR </button>&nbsp;&nbsp;&nbsp;            
+                <button type="button" id="btnDigi" onclick="ChamarDiv('digitarr')">DIGITAR </button>&nbsp;&nbsp;&nbsp;
             </div>
             <div id="digitarr">
                 <button type="button" id="btnDigivoltarindex" onclick="ChamarDiv('escolha')">VOLTAR</button>
-                <input name="campo1" id="campo4"  value="" type="text" placeholder="dados ex: 1;2;3;4" />
-                <input type="button" id="btnexecutar2" for="campo4"  onclick="DigitaUsuario()"  value="OK">
+                <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
+                <input type="button" id="btnexecutar2" for="campo4" onclick="DigitaUsuario()" value="OK">
             </div>
             <div id="importar">
                 <button type="button" id="btnDescrivoltarindex" onclick="ChamarDiv('escolhaDigi')">VOLTAR</button>
@@ -104,6 +139,7 @@
         FATEC - Análise e Desenvolvimento de Sistemas
     </footer>
 </body>
+<script type='text/javascript' src='assets/js/js.js'></script>
 
 <!-- <script src="assets/Chart.js"></script> -->
 
