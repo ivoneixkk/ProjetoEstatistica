@@ -20,13 +20,12 @@ function tabelaBinomial() {
     let mountTable = '<table id="Tbinomial">';
     mountTable += '<tr>';
     mountTable += '<th>';
-    mountTable += '';
-    mountTable += '</th>';
-    mountTable += '<th>';
-
     let contaPalavra = [];
     contaPalavra.push(document.getElementById('ppesquisa').value);
     mountTable += document.getElementById('pesquisa').value;
+    mountTable += '</th>';
+    mountTable += '<th>';
+    mountTable += '(%)'
     mountTable += '</th>';
     mountTable += '<th>';
     mountTable += 'Porcentagem (%)';
