@@ -28,8 +28,10 @@
 
     <div id="carrousel">
 
-        <img id="prev" src="assets/img/esquerda.png">
         <div id="itens">
+            <img id="prev" src="assets/img/esquerda.png">
+            <img id="next" src="assets/img/direita.png">
+
             <ul id='lCarrosel'>
 
                 <li>
@@ -51,7 +53,6 @@
             </ul>
         </div>
 
-        <img id="next" src="assets/img/direita.png">
         <button type="button" id="btnEnt" onclick="someLanding()"><b>ENTRAR</b> </button>&nbsp;&nbsp;&nbsp;
     </div>
 
@@ -75,7 +76,7 @@
             <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
             <hr>
             <div id="escCorre">
-                <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html'">VOLTAR</button>
+                <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html?landing=0'">VOLTAR</button>
                 <!-- <button type="button" id="btnDigiC" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
                 <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">IMPORTAR </button>
                 <!-- <button type="button" id="btnRecC" onclick="history.go(0)">Recarregar </button> -->

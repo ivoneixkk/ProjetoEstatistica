@@ -46,7 +46,7 @@ function queryString(parameter) {
 
 $(document).ready(function () {
 
-    var speed = 5000;
+    var speed = 8000;
     var run = setInterval('rotate()', speed);
     var item_width = $('#itens li').outerWidth();
     var left_value = item_width * (-1);
