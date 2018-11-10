@@ -25,7 +25,7 @@ function tabelaBinomial() {
     mountTable += document.getElementById('pesquisa').value;
     mountTable += '</th>';
     mountTable += '<th>';
-    mountTable += '(%)'
+    mountTable += 'quantidade'
     mountTable += '</th>';
     mountTable += '<th>';
     mountTable += 'Porcentagem (%)';
@@ -36,7 +36,8 @@ function tabelaBinomial() {
     mountTable += document.getElementById('ppesquisa').value;
     mountTable += '</td>';
     mountTable += '<td>';
-    mountTable += p;
+    let test = document.getElementById('pesquisan').value;
+    mountTable += test / 100 * p;
     mountTable += '</td>';
     mountTable += '<td>';
     mountTable += p + '(%) ==  ' + p / 100;
@@ -56,7 +57,7 @@ function tabelaBinomial() {
 
     mountTable += '</td>';
     mountTable += '<td>';
-    mountTable += 100 - p;
+    mountTable += test - (test / 100 * p);
     mountTable += '</td>';
     mountTable += '<td>';
     mountTable += 100 - p + '(%) ==  ' + ((100 - p) / 100);

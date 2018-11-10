@@ -499,6 +499,7 @@ function mountarTabelaDados(vet, val1, val2) {
     }
 
     let tabelaDados = '<table>';
+    tabelaDados += "<strong>TABELA DE ANALISE DE DADOS</strong>";
     tabelaDados += '<tr>';
     tabelaDados += '<th>Classes</th>';
     tabelaDados += '<th>' + varpesq + '</th>';
