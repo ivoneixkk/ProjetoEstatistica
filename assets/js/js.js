@@ -180,6 +180,44 @@ function DigitaUsuario() {
     //    chamarPagina('descritivas')
 }
 
+function DigitaCorrelacao() {
+    let vetY = []
+    let vetX = []
+    let docimport
+    vetY = VarY.value
+    vetX = VarX.value
+    console.log(vetY)
+    console.log(vetX)
+    console.log(independente)
+    console.log(dependente)
+
+    if (vetY.indexOf(" ") > 0 || vetX.indexOf(" ") > 0) {
+        vetY = vetY.trim().replace(/[\s]+/g, ';')
+        vetX = vetX.trim().replace(/[\s]+/g, ';')
+
+
+    } else if (vetY.indexOf(",") > 0 || vetX.indexOf(",") > 0) {
+        vetY = vetY.trim().replace(/,+/g, ';')
+        vetX = vetX.trim().replace(/,+/g, ';')
+    }
+
+    console.log(vetY)
+    console.log(vetX)
+
+    docimport = vetX + '-' + vetY
+    console.log(docimport)
+
+
+   return window.location.href = "teamplates/Correlacao.html?dependente=" + dependente + "&independente=" + independente + "&docimport=" + docimport
+
+}
+
+
+
+
+
+
+
 
 //#####################################################################################################
 //#         MUDAR ESTADO DA DIV                                                                       #
@@ -196,8 +234,6 @@ function ChamarDiv(el) {
     //     document.getElementById('escolha').style.display = 'none';
     // }
     if (display == "estatisticaDescritiva") {
-
-
 
         document.getElementById('logoIndex').style.display = 'none';
         document.getElementById('estatisticaDescritiva').style.display = 'inline';
@@ -218,6 +254,10 @@ function ChamarDiv(el) {
 
 
     } else if (display == "importarC") {
+        document.getElementById('btnDigiC').style.display = "none"
+        document.getElementById('btnCorrevoltarindex').style.display = "none"
+        document.getElementById('btnDigivoltarC').style.display = 'inline';
+
         independente = document.getElementById("Independ").value;
         dependente = document.getElementById("Depend").value;
 
@@ -226,9 +266,9 @@ function ChamarDiv(el) {
             return ChamarDiv('correlacao')
         } else {
             document.getElementById('erro').style.display = "none"
-
             document.getElementById('btnImpC').style.display = 'none';
             document.getElementById('importarC').style.display = 'inline';
+
         }
     } else if (display == "importar") {
         lengthLvalor = Lvalor.length
@@ -288,7 +328,37 @@ function ChamarDiv(el) {
         document.getElementById('btnImp').style.display = 'inline';
         document.getElementById('btnDigi').style.display = 'inline';
 
+    } else if (display == "DigitaC") {
+        independente = document.getElementById("Independ").value;
+        dependente = document.getElementById("Depend").value;
+
+        if (independente == "" || dependente == "") {
+            document.getElementById('erro').style.display = "inline"
+            return ChamarDiv('correlacao')
+        }
+        else {
+            document.getElementById('erro').style.display = "none"
+            document.getElementById('btnImpC').style.display = 'none';
+            document.getElementById('digitarC').style.display = 'inline';
+            document.getElementById('btnCorrevoltarindex').style.display = 'none';
+            document.getElementById('btnDigiC').style.display = 'none';
+            document.getElementById('btnexecutar3').style.display = 'inline';
+        }
+    } else if (display == "voltaImpC") {
+        alert('toaqui')
+        document.getElementById('btnImpC').style.display = 'inline';
+        document.getElementById('digitarC').style.display = 'none';
+        document.getElementById('btnCorrevoltarindex').style.display = 'inline';
+        document.getElementById('btnDigiC').style.display = 'inline';
+        document.getElementById('btnexecutar3').style.display = 'none';
+
+
+
+
     }
+
+
+
 
 
     // else {

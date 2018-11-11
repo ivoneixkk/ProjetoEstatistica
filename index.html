@@ -70,15 +70,26 @@
             <h2>CORRELAÇÃO</h2>
             <h2>Defina as Variaveis Dependente e Independente</h2>
             <h4 id="erro">Por favor preencha todos os campos!!<br><br></h4>
-            <td><input name="varDependente" id="Depend" value="" type="text" placeholder="Variavel Dependente" /></td>
-            <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="Variavel Independente" /></td>
+            <td><input name="varDependente" id="Depend" value="" type="text" placeholder="NOME  Dependente" /></td>
+            <td><input name="varIndependente" id="Independ" value="" type="text" placeholder="NOME Independente" /></td>
             <hr>
             <div id="escCorre">
                 <button type="button" id="btnCorrevoltarindex" onclick="window.location = 'index.html?landing=0'">VOLTAR</button>
-                <!-- <button type="button" id="btnDigiC" onclick="ChamarDiv('digitar')">Digitar </button>&nbsp;&nbsp;&nbsp; -->
                 <button type="button" id="btnImpC" onclick="ChamarDiv('importarC')">IMPORTAR </button>
-                <!-- <button type="button" id="btnRecC" onclick="history.go(0)">Recarregar </button> -->
+                <button type="button" id="btnDigiC" onclick="ChamarDiv('DigitaC')">DIGITAR </button>&nbsp;&nbsp;&nbsp;
             </div>
+        <div id="digitarC">
+            <input name="VarX" id="VarX" value="" size="80" type="text" placeholder="VALOR INDEPENDENTE (X)" /><br>
+            &nbsp;&nbsp;&nbsp;<input name="VarY" id="VarY" value="" type="text" size="80" placeholder="VALOR DEPENDENTE (Y)" /><br>
+
+            <input type="button" id="btnexecutar3" for="VarY,VarX" onclick="DigitaCorrelacao()" value="OK">
+            <button type="button" id="btnDigivoltarC" onclick="ChamarDiv('voltaImpC')">VOLTAR</button>
+        </div>
+
+
+
+
+
             <!-- <div id="digitarC">
                 <input name="campo1" id="campo4" value="" type="text" placeholder="dados ex: 1;2;3;4" />
             </div> -->

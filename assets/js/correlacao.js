@@ -1,10 +1,10 @@
-let vetor = []
+//let vetor = []
 let VetDependente = []
 let VetIndependente = []
 let troca = []
 let historico
-let dependente
-let independente
+//let dependente
+//let independente
 let a, b
 let correlacaoForca
 let dispersao = []

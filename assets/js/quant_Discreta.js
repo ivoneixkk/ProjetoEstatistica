@@ -451,10 +451,6 @@ function mountTabelaDiscreta(vet, val1, val2) {
         }
     }
 
-
-
-
-
     media = media / total;
     mounTable3 += "</table>";
     mounTable3 += "</div>"
@@ -586,9 +582,6 @@ function separatrizDiscreta() {
         }
         return sep;
     }
-
-
-
 
 
     console.log(lista);

@@ -9,6 +9,8 @@ let Elementos = [];
 let vetEnt = [];
 let media = 0;
 let organiz = [];
+let medianaVet = []
+let MEdiana
 vetpeglista = []
 
 //let GFac = []; //Guardar as posiçoes Fac num vetor; 
@@ -690,17 +692,9 @@ function executar() {
             }
         }
 
-
-
-
-
     }
 
-
     /////////////////////////////////////FIM DA CORREÇÃO////////////////////////////////    
-
-
-
 
     console.log(vetor);
     ordenarVetor(vetor);
@@ -717,11 +711,7 @@ function executar() {
     //  MostraGra(repetido, testvalores);
     //  desvioPadrao();
 
-
 }
-
-
-
 
 function queryString(parameter) {
     var loc = location.search.substring(1, location.search.length);
@@ -746,8 +736,6 @@ function queryString(parameter) {
 //#         ORDENAÇAO DA ENTRADA DOS DADOS                                                            #
 //#####################################################################################################
 
-
-
 function ordenarVetor(ent) {
 
     let h = 0;
@@ -763,8 +751,6 @@ function ordenarVetor(ent) {
     }
     return ent;
 }
-
-
 
 function repeticao(vet, val1, val2) {
 
@@ -795,7 +781,7 @@ function repeticao(vet, val1, val2) {
     }
 
     maior = vetEnt[0].repeticao;
-    //    console.log(vetEnt)
+    console.log(vetEnt)
     return vetEnt
     //    console.log(organiz)
 }
@@ -822,6 +808,7 @@ function organizarDados(org) {
 }
 
 function pegarPreferencias(org) {
+    let countVet = 0
     document.getElementById('btnexecutarok').style.display = 'none';
 
     // $(document).ready(function () {
@@ -858,16 +845,30 @@ function pegarPreferencias(org) {
     }
     //vetpreferencia.sort(function (a, b) { return a.id - b.id; });
     console.log(vetpreferencia);
+    for (let i = 0; i < vetpreferencia.length; i++) {
+        countVet = vetpreferencia[i].repeticao
+        for (let h = 0; h < countVet; h++) {
+            medianaVet.push(vetpreferencia[i].elementos)
+        }
+    }
 
+    let tamVetMed = medianaVet.length
+    if (medianaVet.length % 2 == 0) {
+        MEdiana = medianaVet[Math.round(tamVetMed / 2) - 1]
+
+    } else {
+        MEdiana = medianaVet[Math.round(tamVetMed / 2)]
+    }
+
+
+    console.log(medianaVet)
 
     vetEnt = []
-
     console.log(vetEnt)
     vetEnt = vetpreferencia.slice()
     console.log(vetEnt)
     document.getElementById('container').style.display = 'inline-block'
     document.getElementById('resolucaoCalculos').style.display = 'block'
-
     document.getElementById('tabelaDados').style.display = 'inline-block'
     document.getElementById('tabDados1').style.display = 'block'
     document.getElementById('Results').style.display = 'inline-block'
@@ -878,12 +879,9 @@ function pegarPreferencias(org) {
     document.getElementById('titDrag').style.display = 'none'
     document.getElementById('teste').style.display = 'none'
     document.getElementById('btnMenu1').style.display = 'none'
-
-
     qualiTabela(vetor, testvalores[0], testvalores[1])
     tabelaMediaModa()
     MostraGraQuali(vetpreferencia, testvalores)
-
 
 }
 
@@ -891,8 +889,6 @@ function pegarPreferencias(org) {
 function qualiTabela(vet, val1, val2) {
 
     let mounTable3 = "<strong>TABELA DE ANALISE DOS DADOS</strong>";
-
-
     mounTable3 += "<table id='tabQuali'>";
     mounTable3 += "<tr>";
     mounTable3 += "<th>" + val1 + "</th>";
@@ -962,12 +958,14 @@ function tabelaMediaModa() {
         tott += vetEnt[h].repeticao
 
     }
+
+    console.log(Elementos)
+
     console.log(maior)
     console.log(tott)
-    media = tott / vetEnt.length
     let Mtabresultado = '<table id=ResultQuali>'
     Mtabresultado += '<th colspan=4>Resultados Obtidos</th>'
-    Mtabresultado += '<tr><th>Media</th><td>' + media + '</td>'
+    Mtabresultado += '<tr><th>Mediana</th><td>&nbsp;&nbsp;' + MEdiana + '&nbsp;&nbsp;</td>'
     Mtabresultado += '</tr>'
     Mtabresultado += '<tr>'
     Mtabresultado += '<th>Moda</th><td>' + moda + '</td></tr>'
@@ -988,12 +986,7 @@ function MostraGraQuali(dado, val1) {
 
     }
 
-
-
-
-
     console.log(dadosV)
-
 
     var chart = new Highcharts.chart('container', {
         chart: {
