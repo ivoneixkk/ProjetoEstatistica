@@ -345,7 +345,6 @@ function ChamarDiv(el) {
             document.getElementById('btnexecutar3').style.display = 'inline';
         }
     } else if (display == "voltaImpC") {
-        alert('toaqui')
         document.getElementById('btnImpC').style.display = 'inline';
         document.getElementById('digitarC').style.display = 'none';
         document.getElementById('btnCorrevoltarindex').style.display = 'inline';
