@@ -866,7 +866,7 @@ footer{
     margin-top: 1%
 }
 
-#pontoMin, #pontoMax, #qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{
+#qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{
     display: none;
 }
 #pontoMin, #pontoMax, #qtdProd,#ao,#btCalcUni,#entreProd1,#entreProd2{

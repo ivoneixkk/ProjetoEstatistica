@@ -71,6 +71,9 @@ function arrumaElementosUniforme(arruma) {
         document.getElementById('pontoMax').value = ""
         document.getElementById('btCalcUni').style.display = 'inline'
         document.getElementById('resultadoDistribuicao').innerHTML = ""
+        document.getElementById('entreProd1').style.display = 'none'
+        document.getElementById('entreProd2').style.display = 'none'
+
 
     } else if (arruma == "variDisv") {
         document.getElementById('pontoMin').style.display = 'inline'
@@ -80,6 +83,9 @@ function arrumaElementosUniforme(arruma) {
         document.getElementById('qtdProd').style.display = 'none'
         document.getElementById('pontoMin').value = ""
         document.getElementById('pontoMax').value = ""
+        document.getElementById('entreProd1').style.display = 'none'
+        document.getElementById('entreProd2').style.display = 'none'
+
  
         document.getElementById('resultadoDistribuicao').innerHTML = ""
 
@@ -148,7 +154,7 @@ function DistUniforme() {
             fx = 1 / ba;
             fx = fx * interr;
             fx = fx * 100;
-            resultado = 'Probabilidade de :&nbsp;&nbsp;' + fx.toFixed(2) + '%';
+            resultado = 'Probabilidade de :&nbsp;&nbsp;' + Math.abs(fx.toFixed(2)) + '%';
             document.getElementById('resultadoDistribuicao').innerHTML = resultado;
 
             break;
@@ -206,18 +212,18 @@ function DistUniforme() {
         //     break;
         case "media":
             let UmediaR = 'Valor Medio de:' + Umedia;
-            document.getElementById('Umedia').innerHTML = UmediaR;
+            document.getElementById('resultadoDistribuicao').innerHTML = UmediaR;
             break;
         case "variDisv":
 
-            let UdesvioR = 'Desvio padrao pela distribuiçao Uniforme é :&nbsp;&nbsp;' + Udesvio.toFixed(2);
-            document.getElementById('Udesvio').innerHTML = UdesvioR;
+            let UdesvioR = 'Desvio padrao pela Uniforme é :&nbsp;&nbsp;' + Udesvio.toFixed(2);
+            document.getElementById('resultadoDistribuicao').innerHTML = UdesvioR;
 
-            let UcvR = 'Coeficiente de Variação é :&nbsp;&nbsp;' + Math.round(Ucv.toFixed(0)) + '%';
-            document.getElementById('cv').innerHTML = UcvR;
+            let UcvR = '<br>Coeficiente de Variação é :&nbsp;&nbsp;' + Math.round(Ucv.toFixed(0)) + '%';
+            document.getElementById('resultadoDistribuicao').innerHTML += UcvR;
 
-            let variacao = 'Variância é de :&nbsp;&nbsp;' + (Udesvio * Udesvio).toFixed(2);
-            document.getElementById('cv').innerHTML = variacao;
+            let variacao = '<br>Variância é de :&nbsp;&nbsp;' + (Udesvio * Udesvio).toFixed(2);
+            document.getElementById('resultadoDistribuicao').innerHTML += variacao;
 
             break;
 
